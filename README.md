@@ -1,6 +1,6 @@
 # cloudpayments_api
 
-Dart REST client for [Yookassa Payments API](https://yookassa.ru/developers/payment-acceptance/getting-started/quick-start)
+Dart REST client for [CloudPayments API](https://developers.cloudpayments.ru/#api)
 
 ## Get started
 
@@ -8,55 +8,40 @@ Dart REST client for [Yookassa Payments API](https://yookassa.ru/developers/paym
 
 ```yaml
 dependencies:
-  cloudpayments_api: ^1.0.0
+  cloudpayments_api: ^1.0.1
 ```
 
 ### Simple to use
 
 ```dart
-import 'package:dio/dio.dart';
 import 'package:cloudpayments_api/cloudpayments_api.dart';
+import 'package:dio/dio.dart';
 
+void main() async {
+  final paymentRequest = CardPaymentRequest(
+    amount: 100,
+    ipAddress: '$ipAddress',
+    cardCryptogramPacket: '$cardCryptogramPacket',
+  );
 
-    final dio = Dio();
+  final dio = Dio();
 
-  final yookassaClient = YookassaClient(
+  final cloudPaymentsApi = CloudPaymentsApi(
     dio,
-    shopId: 'your_shop_id',
-    secretKey: 'your_secret_key',
-  );
-
-  const createdPaymentRequest = CreatePaymentRequest(
-    amount: Amount(
-      value: '100.00',
-      currency: 'RUB',
+    cpAuthCredentials: CpAuthCredentials(
+      publicID: '$id',
+      apiPassword: '$secretKey',
     ),
-    paymentMethodData: YookassaPaymentMethod.sbp(),
-    confirmation: YookassaConfirmation.qr(),
-    capture: true,
-    description: 'Заказ #1',
   );
 
-  try {
-    final payment =
-        await yookassaClient.createPayment(payment: createdPaymentRequest);
+  final result = await cloudPaymentsApi.chargeCryptogramPayment(paymentRequest);
 
-    payment.map(
-      pending: (payment) {
-        print(payment);
-      },
-      waitingForCapture: (payment) {
-        print(payment);
-      },
-      succeeded: (payment) {
-        print(payment);
-      },
-      canceled: (payment) {
-        print(payment);
-      },
-    );
-  } on YookassaError catch (e) {
-    print(e);
-  }
+  result.when(
+    success: (TransactionInfo info) {},
+    incorrectlyRequest: (message) {},
+    required3dsecure: (Three3DSecureResponse response) {},
+    error: (TransactionInfo info) {},
+  );
 }
+
 ```
