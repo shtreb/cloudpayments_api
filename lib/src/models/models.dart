@@ -3,7 +3,7 @@ export 'card_payment_transaction/payment_transaction.dart';
 export 'card_payment_transaction/transaction_info.dart';
 export 'cloud_payments_response.dart';
 export 'credentials/cp_auth_credentials.dart';
-export 'payer/payer.dart';
+export 'payer/transaction_entity.dart';
 export 'payload/payload_data.dart';
 export 'recurrent/recurrent.dart';
 export 'recurrent/recurrent_create_request.dart';

@@ -1,5 +1,4 @@
 import 'package:cloudpayments_api/cloudpayments_api.dart';
-import 'package:cloudpayments_api/src/models/payer/transaction_entity.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'card_payment_request.freezed.dart';
