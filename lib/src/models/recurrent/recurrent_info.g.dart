@@ -10,7 +10,7 @@ _$RecurrentInfoImpl _$$RecurrentInfoImplFromJson(Map<String, dynamic> json) =>
     _$RecurrentInfoImpl(
       id: json['Id'] as String,
       accountId: json['AccountId'] as String,
-      amount: (json['Amount'] as num).toDouble(),
+      amount: json['Amount'] as num,
       status: $enumDecode(_$RecurrentStatusEnumMap, json['Status']),
       description: json['Description'] as String?,
       email: json['Email'] as String?,

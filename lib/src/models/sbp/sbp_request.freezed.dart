@@ -21,7 +21,7 @@ SbpRequest _$SbpRequestFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$SbpRequest {
   /// Сумма платежа
-  int get amount => throw _privateConstructorUsedError;
+  String get amount => throw _privateConstructorUsedError;
 
   /// Валюта: RUB/USD/EUR/GBP (см. [справочник](https://developers.cloudpayments.ru/#spisok-valyut)). Если параметр не передан, то по умолчанию принимает значение RUB
   String get currency => throw _privateConstructorUsedError;
@@ -62,7 +62,7 @@ abstract class $SbpRequestCopyWith<$Res> {
       _$SbpRequestCopyWithImpl<$Res, SbpRequest>;
   @useResult
   $Res call(
-      {int amount,
+      {String amount,
       String currency,
       String? invoiceId,
       String? ipAddress,
@@ -102,7 +102,7 @@ class _$SbpRequestCopyWithImpl<$Res, $Val extends SbpRequest>
       amount: null == amount
           ? _value.amount
           : amount // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       currency: null == currency
           ? _value.currency
           : currency // ignore: cast_nullable_to_non_nullable
@@ -160,7 +160,7 @@ abstract class _$$SbpRequestImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {int amount,
+      {String amount,
       String currency,
       String? invoiceId,
       String? ipAddress,
@@ -199,7 +199,7 @@ class __$$SbpRequestImplCopyWithImpl<$Res>
       amount: null == amount
           ? _value.amount
           : amount // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       currency: null == currency
           ? _value.currency
           : currency // ignore: cast_nullable_to_non_nullable
@@ -255,7 +255,7 @@ class _$SbpRequestImpl implements _SbpRequest {
 
   /// Сумма платежа
   @override
-  final int amount;
+  final String amount;
 
   /// Валюта: RUB/USD/EUR/GBP (см. [справочник](https://developers.cloudpayments.ru/#spisok-valyut)). Если параметр не передан, то по умолчанию принимает значение RUB
   @override
@@ -341,7 +341,7 @@ class _$SbpRequestImpl implements _SbpRequest {
 
 abstract class _SbpRequest implements SbpRequest {
   factory _SbpRequest(
-      {required final int amount,
+      {required final String amount,
       final String currency,
       final String? invoiceId,
       final String? ipAddress,
@@ -357,7 +357,7 @@ abstract class _SbpRequest implements SbpRequest {
   @override
 
   /// Сумма платежа
-  int get amount;
+  String get amount;
   @override
 
   /// Валюта: RUB/USD/EUR/GBP (см. [справочник](https://developers.cloudpayments.ru/#spisok-valyut)). Если параметр не передан, то по умолчанию принимает значение RUB

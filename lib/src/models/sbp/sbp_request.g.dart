@@ -8,7 +8,7 @@ part of 'sbp_request.dart';
 
 _$SbpRequestImpl _$$SbpRequestImplFromJson(Map<String, dynamic> json) =>
     _$SbpRequestImpl(
-      amount: (json['Amount'] as num).toInt(),
+      amount: json['Amount'] as String,
       currency: json['Currency'] as String? ?? 'RUB',
       invoiceId: json['InvoiceId'] as String?,
       ipAddress: json['IpAddress'] as String?,

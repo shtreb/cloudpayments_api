@@ -30,7 +30,7 @@ mixin _$RecurrentRequest {
   String get description => throw _privateConstructorUsedError;
 
   /// Сумма платежа. Должна быть больше 0
-  int get amount => throw _privateConstructorUsedError;
+  String get amount => throw _privateConstructorUsedError;
 
   /// Дата и время первого платежа по плану во временной зоне UTC.
   ///
@@ -85,7 +85,7 @@ abstract class $RecurrentRequestCopyWith<$Res> {
       {String token,
       String accountId,
       String description,
-      int amount,
+      String amount,
       DateTime startDate,
       String interval,
       int period,
@@ -138,7 +138,7 @@ class _$RecurrentRequestCopyWithImpl<$Res, $Val extends RecurrentRequest>
       amount: null == amount
           ? _value.amount
           : amount // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       startDate: null == startDate
           ? _value.startDate
           : startDate // ignore: cast_nullable_to_non_nullable
@@ -187,7 +187,7 @@ abstract class _$$RecurrentRequestImplCopyWith<$Res>
       {String token,
       String accountId,
       String description,
-      int amount,
+      String amount,
       DateTime startDate,
       String interval,
       int period,
@@ -238,7 +238,7 @@ class __$$RecurrentRequestImplCopyWithImpl<$Res>
       amount: null == amount
           ? _value.amount
           : amount // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       startDate: null == startDate
           ? _value.startDate
           : startDate // ignore: cast_nullable_to_non_nullable
@@ -310,7 +310,7 @@ class _$RecurrentRequestImpl implements _RecurrentRequest {
 
   /// Сумма платежа. Должна быть больше 0
   @override
-  final int amount;
+  final String amount;
 
   /// Дата и время первого платежа по плану во временной зоне UTC.
   ///
@@ -436,7 +436,7 @@ abstract class _RecurrentRequest implements RecurrentRequest {
       {required final String token,
       required final String accountId,
       required final String description,
-      required final int amount,
+      required final String amount,
       required final DateTime startDate,
       required final String interval,
       required final int period,
@@ -464,7 +464,7 @@ abstract class _RecurrentRequest implements RecurrentRequest {
   @override
 
   /// Сумма платежа. Должна быть больше 0
-  int get amount;
+  String get amount;
   @override
 
   /// Дата и время первого платежа по плану во временной зоне UTC.

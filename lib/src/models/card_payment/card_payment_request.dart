@@ -14,7 +14,7 @@ class CardPaymentRequest with _$CardPaymentRequest {
 
   factory CardPaymentRequest({
     /// Сумма платежа
-    required int amount,
+    required String amount,
 
     /// IP-адрес плательщика
     required String ipAddress,

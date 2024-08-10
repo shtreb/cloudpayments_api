@@ -21,7 +21,7 @@ TokenPaymenRequest _$TokenPaymenRequestFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$TokenPaymenRequest {
   /// Сумма платежа
-  int get amount => throw _privateConstructorUsedError;
+  String get amount => throw _privateConstructorUsedError;
 
   /// Токен карты, выданный системой после первого платежа
   String get token => throw _privateConstructorUsedError;
@@ -71,7 +71,7 @@ abstract class $TokenPaymenRequestCopyWith<$Res> {
       _$TokenPaymenRequestCopyWithImpl<$Res, TokenPaymenRequest>;
   @useResult
   $Res call(
-      {int amount,
+      {String amount,
       String token,
       String? accountId,
       int trInitiatorCode,
@@ -113,7 +113,7 @@ class _$TokenPaymenRequestCopyWithImpl<$Res, $Val extends TokenPaymenRequest>
       amount: null == amount
           ? _value.amount
           : amount // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       token: null == token
           ? _value.token
           : token // ignore: cast_nullable_to_non_nullable
@@ -175,7 +175,7 @@ abstract class _$$TokenPaymenRequestImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {int amount,
+      {String amount,
       String token,
       String? accountId,
       int trInitiatorCode,
@@ -216,7 +216,7 @@ class __$$TokenPaymenRequestImplCopyWithImpl<$Res>
       amount: null == amount
           ? _value.amount
           : amount // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       token: null == token
           ? _value.token
           : token // ignore: cast_nullable_to_non_nullable
@@ -277,7 +277,7 @@ class _$TokenPaymenRequestImpl implements _TokenPaymenRequest {
 
   /// Сумма платежа
   @override
-  final int amount;
+  final String amount;
 
   /// Токен карты, выданный системой после первого платежа
   @override
@@ -385,7 +385,7 @@ class _$TokenPaymenRequestImpl implements _TokenPaymenRequest {
 
 abstract class _TokenPaymenRequest implements TokenPaymenRequest {
   factory _TokenPaymenRequest(
-          {required final int amount,
+          {required final String amount,
           required final String token,
           required final String? accountId,
           required final int trInitiatorCode,
@@ -403,7 +403,7 @@ abstract class _TokenPaymenRequest implements TokenPaymenRequest {
   @override
 
   /// Сумма платежа
-  int get amount;
+  String get amount;
   @override
 
   /// Токен карты, выданный системой после первого платежа

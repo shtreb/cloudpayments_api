@@ -21,7 +21,7 @@ CardPaymentRequest _$CardPaymentRequestFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$CardPaymentRequest {
   /// Сумма платежа
-  int get amount => throw _privateConstructorUsedError;
+  String get amount => throw _privateConstructorUsedError;
 
   /// IP-адрес плательщика
   String get ipAddress => throw _privateConstructorUsedError;
@@ -66,7 +66,7 @@ abstract class $CardPaymentRequestCopyWith<$Res> {
       _$CardPaymentRequestCopyWithImpl<$Res, CardPaymentRequest>;
   @useResult
   $Res call(
-      {int amount,
+      {String amount,
       String ipAddress,
       String cardCryptogramPacket,
       String currency,
@@ -109,7 +109,7 @@ class _$CardPaymentRequestCopyWithImpl<$Res, $Val extends CardPaymentRequest>
       amount: null == amount
           ? _value.amount
           : amount // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       ipAddress: null == ipAddress
           ? _value.ipAddress
           : ipAddress // ignore: cast_nullable_to_non_nullable
@@ -183,7 +183,7 @@ abstract class _$$CardPaymentImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {int amount,
+      {String amount,
       String ipAddress,
       String cardCryptogramPacket,
       String currency,
@@ -226,7 +226,7 @@ class __$$CardPaymentImplCopyWithImpl<$Res>
       amount: null == amount
           ? _value.amount
           : amount // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       ipAddress: null == ipAddress
           ? _value.ipAddress
           : ipAddress // ignore: cast_nullable_to_non_nullable
@@ -287,7 +287,7 @@ class _$CardPaymentImpl implements _CardPayment {
 
   /// Сумма платежа
   @override
-  final int amount;
+  final String amount;
 
   /// IP-адрес плательщика
   @override
@@ -389,7 +389,7 @@ class _$CardPaymentImpl implements _CardPayment {
 
 abstract class _CardPayment implements CardPaymentRequest {
   factory _CardPayment(
-      {required final int amount,
+      {required final String amount,
       required final String ipAddress,
       required final String cardCryptogramPacket,
       final String currency,
@@ -406,7 +406,7 @@ abstract class _CardPayment implements CardPaymentRequest {
   @override
 
   /// Сумма платежа
-  int get amount;
+  String get amount;
   @override
 
   /// IP-адрес плательщика

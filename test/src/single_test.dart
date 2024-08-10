@@ -8,7 +8,7 @@ void start() {
   );
 
   final paymentRequest = CardPaymentRequest(
-    amount: 100,
+    amount: '100',
     ipAddress: '10.110.71.20',
     cardCryptogramPacket: '',
   );

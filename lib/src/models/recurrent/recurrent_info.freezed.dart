@@ -22,7 +22,7 @@ RecurrentInfo _$RecurrentInfoFromJson(Map<String, dynamic> json) {
 mixin _$RecurrentInfo {
   String get id => throw _privateConstructorUsedError;
   String get accountId => throw _privateConstructorUsedError;
-  double get amount => throw _privateConstructorUsedError;
+  num get amount => throw _privateConstructorUsedError;
   RecurrentStatus get status => throw _privateConstructorUsedError;
   String? get description => throw _privateConstructorUsedError;
   String? get email => throw _privateConstructorUsedError;
@@ -61,7 +61,7 @@ abstract class $RecurrentInfoCopyWith<$Res> {
   $Res call(
       {String id,
       String accountId,
-      double amount,
+      num amount,
       RecurrentStatus status,
       String? description,
       String? email,
@@ -137,7 +137,7 @@ class _$RecurrentInfoCopyWithImpl<$Res, $Val extends RecurrentInfo>
       amount: null == amount
           ? _value.amount
           : amount // ignore: cast_nullable_to_non_nullable
-              as double,
+              as num,
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -241,7 +241,7 @@ abstract class _$$RecurrentInfoImplCopyWith<$Res>
   $Res call(
       {String id,
       String accountId,
-      double amount,
+      num amount,
       RecurrentStatus status,
       String? description,
       String? email,
@@ -315,7 +315,7 @@ class __$$RecurrentInfoImplCopyWithImpl<$Res>
       amount: null == amount
           ? _value.amount
           : amount // ignore: cast_nullable_to_non_nullable
-              as double,
+              as num,
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -446,7 +446,7 @@ class _$RecurrentInfoImpl implements _RecurrentInfo {
   @override
   final String accountId;
   @override
-  final double amount;
+  final num amount;
   @override
   final RecurrentStatus status;
   @override
@@ -600,7 +600,7 @@ abstract class _RecurrentInfo implements RecurrentInfo {
   factory _RecurrentInfo(
       {required final String id,
       required final String accountId,
-      required final double amount,
+      required final num amount,
       required final RecurrentStatus status,
       final String? description,
       final String? email,
@@ -632,7 +632,7 @@ abstract class _RecurrentInfo implements RecurrentInfo {
   @override
   String get accountId;
   @override
-  double get amount;
+  num get amount;
   @override
   RecurrentStatus get status;
   @override

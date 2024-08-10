@@ -10,7 +10,7 @@ class TokenPaymenRequest with _$TokenPaymenRequest {
   ///
   factory TokenPaymenRequest({
     /// Сумма платежа
-    required int amount,
+    required String amount,
 
     /// Токен карты, выданный системой после первого платежа
     required String token,

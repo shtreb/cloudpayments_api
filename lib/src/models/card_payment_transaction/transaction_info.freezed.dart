@@ -27,10 +27,10 @@ mixin _$TransactionInfo {
   String? get publicId => throw _privateConstructorUsedError;
   String? get terminalUrl => throw _privateConstructorUsedError;
   int? get transactionId => throw _privateConstructorUsedError;
-  int? get amount => throw _privateConstructorUsedError;
+  num? get amount => throw _privateConstructorUsedError;
   String? get currency => throw _privateConstructorUsedError;
   int? get currencyCode => throw _privateConstructorUsedError;
-  int? get paymentAmount => throw _privateConstructorUsedError;
+  num? get paymentAmount => throw _privateConstructorUsedError;
   String? get paymentCurrency => throw _privateConstructorUsedError;
   int? get paymentCurrencyCode => throw _privateConstructorUsedError;
   String? get invoiceId => throw _privateConstructorUsedError;
@@ -41,7 +41,7 @@ mixin _$TransactionInfo {
   String? get createdDate => throw _privateConstructorUsedError;
   String? get payoutDate => throw _privateConstructorUsedError;
   String? get payoutDateIso => throw _privateConstructorUsedError;
-  double? get payoutAmount => throw _privateConstructorUsedError;
+  num? get payoutAmount => throw _privateConstructorUsedError;
   String? get createdDateIso => throw _privateConstructorUsedError;
   String? get authDate => throw _privateConstructorUsedError;
   String? get authDateIso => throw _privateConstructorUsedError;
@@ -103,10 +103,10 @@ abstract class $TransactionInfoCopyWith<$Res> {
       String? publicId,
       String? terminalUrl,
       int? transactionId,
-      int? amount,
+      num? amount,
       String? currency,
       int? currencyCode,
-      int? paymentAmount,
+      num? paymentAmount,
       String? paymentCurrency,
       int? paymentCurrencyCode,
       String? invoiceId,
@@ -117,7 +117,7 @@ abstract class $TransactionInfoCopyWith<$Res> {
       String? createdDate,
       String? payoutDate,
       String? payoutDateIso,
-      double? payoutAmount,
+      num? payoutAmount,
       String? createdDateIso,
       String? authDate,
       String? authDateIso,
@@ -257,7 +257,7 @@ class _$TransactionInfoCopyWithImpl<$Res, $Val extends TransactionInfo>
       amount: freezed == amount
           ? _value.amount
           : amount // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as num?,
       currency: freezed == currency
           ? _value.currency
           : currency // ignore: cast_nullable_to_non_nullable
@@ -269,7 +269,7 @@ class _$TransactionInfoCopyWithImpl<$Res, $Val extends TransactionInfo>
       paymentAmount: freezed == paymentAmount
           ? _value.paymentAmount
           : paymentAmount // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as num?,
       paymentCurrency: freezed == paymentCurrency
           ? _value.paymentCurrency
           : paymentCurrency // ignore: cast_nullable_to_non_nullable
@@ -313,7 +313,7 @@ class _$TransactionInfoCopyWithImpl<$Res, $Val extends TransactionInfo>
       payoutAmount: freezed == payoutAmount
           ? _value.payoutAmount
           : payoutAmount // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as num?,
       createdDateIso: freezed == createdDateIso
           ? _value.createdDateIso
           : createdDateIso // ignore: cast_nullable_to_non_nullable
@@ -500,10 +500,10 @@ abstract class _$$TransactionInfoImplCopyWith<$Res>
       String? publicId,
       String? terminalUrl,
       int? transactionId,
-      int? amount,
+      num? amount,
       String? currency,
       int? currencyCode,
-      int? paymentAmount,
+      num? paymentAmount,
       String? paymentCurrency,
       int? paymentCurrencyCode,
       String? invoiceId,
@@ -514,7 +514,7 @@ abstract class _$$TransactionInfoImplCopyWith<$Res>
       String? createdDate,
       String? payoutDate,
       String? payoutDateIso,
-      double? payoutAmount,
+      num? payoutAmount,
       String? createdDateIso,
       String? authDate,
       String? authDateIso,
@@ -652,7 +652,7 @@ class __$$TransactionInfoImplCopyWithImpl<$Res>
       amount: freezed == amount
           ? _value.amount
           : amount // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as num?,
       currency: freezed == currency
           ? _value.currency
           : currency // ignore: cast_nullable_to_non_nullable
@@ -664,7 +664,7 @@ class __$$TransactionInfoImplCopyWithImpl<$Res>
       paymentAmount: freezed == paymentAmount
           ? _value.paymentAmount
           : paymentAmount // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as num?,
       paymentCurrency: freezed == paymentCurrency
           ? _value.paymentCurrency
           : paymentCurrency // ignore: cast_nullable_to_non_nullable
@@ -708,7 +708,7 @@ class __$$TransactionInfoImplCopyWithImpl<$Res>
       payoutAmount: freezed == payoutAmount
           ? _value.payoutAmount
           : payoutAmount // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as num?,
       createdDateIso: freezed == createdDateIso
           ? _value.createdDateIso
           : createdDateIso // ignore: cast_nullable_to_non_nullable
@@ -965,13 +965,13 @@ class _$TransactionInfoImpl extends _TransactionInfo {
   @override
   final int? transactionId;
   @override
-  final int? amount;
+  final num? amount;
   @override
   final String? currency;
   @override
   final int? currencyCode;
   @override
-  final int? paymentAmount;
+  final num? paymentAmount;
   @override
   final String? paymentCurrency;
   @override
@@ -1001,7 +1001,7 @@ class _$TransactionInfoImpl extends _TransactionInfo {
   @override
   final String? payoutDateIso;
   @override
-  final double? payoutAmount;
+  final num? payoutAmount;
   @override
   final String? createdDateIso;
   @override
@@ -1289,10 +1289,10 @@ abstract class _TransactionInfo extends TransactionInfo {
       final String? publicId,
       final String? terminalUrl,
       final int? transactionId,
-      final int? amount,
+      final num? amount,
       final String? currency,
       final int? currencyCode,
-      final int? paymentAmount,
+      final num? paymentAmount,
       final String? paymentCurrency,
       final int? paymentCurrencyCode,
       final String? invoiceId,
@@ -1303,7 +1303,7 @@ abstract class _TransactionInfo extends TransactionInfo {
       final String? createdDate,
       final String? payoutDate,
       final String? payoutDateIso,
-      final double? payoutAmount,
+      final num? payoutAmount,
       final String? createdDateIso,
       final String? authDate,
       final String? authDateIso,
@@ -1364,13 +1364,13 @@ abstract class _TransactionInfo extends TransactionInfo {
   @override
   int? get transactionId;
   @override
-  int? get amount;
+  num? get amount;
   @override
   String? get currency;
   @override
   int? get currencyCode;
   @override
-  int? get paymentAmount;
+  num? get paymentAmount;
   @override
   String? get paymentCurrency;
   @override
@@ -1392,7 +1392,7 @@ abstract class _TransactionInfo extends TransactionInfo {
   @override
   String? get payoutDateIso;
   @override
-  double? get payoutAmount;
+  num? get payoutAmount;
   @override
   String? get createdDateIso;
   @override

@@ -5,7 +5,7 @@ import 'const.dart';
 
 void main() async {
   final paymentRequest = CardPaymentRequest(
-    amount: 100,
+    amount: '100',
     ipAddress: '$ipAddress',
     cardCryptogramPacket: '$cardCryptogramPacket',
   );

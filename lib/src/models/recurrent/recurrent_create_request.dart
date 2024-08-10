@@ -25,7 +25,7 @@ class RecurrentCreateRequest with _$RecurrentCreateRequest {
     required String description,
 
     /// Сумма платежа. Должна быть больше 0
-    required int amount,
+    required String amount,
 
     /// Дата и время первого платежа по плану во временной зоне UTC.
     ///

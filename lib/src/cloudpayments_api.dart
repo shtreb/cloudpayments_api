@@ -52,7 +52,7 @@ abstract class CloudPaymentsApi {
     @Field('TransactionId') required String transactionId,
 
     /// Сумма возврата в валюте транзакции, максимальное количество не нулевых знаков после запятой: 2
-    @Field('Amount') required num amount,
+    @Field('Amount') required String amount,
 
     /// Любые другие данные, которые будут связаны с транзакцией, в том числе инструкции для формирования онлайн-чека
     @Field('JsonData') Map<String, Object?>? jsonData,

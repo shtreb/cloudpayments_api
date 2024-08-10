@@ -12,7 +12,7 @@ _$RecurrentRequestImpl _$$RecurrentRequestImplFromJson(
       token: json['Token'] as String,
       accountId: json['AccountId'] as String,
       description: json['Description'] as String,
-      amount: (json['Amount'] as num).toInt(),
+      amount: json['Amount'] as String,
       startDate: DateTime.parse(json['StartDate'] as String),
       interval: json['Interval'] as String,
       period: (json['Period'] as num).toInt(),

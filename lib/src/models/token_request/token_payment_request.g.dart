@@ -9,7 +9,7 @@ part of 'token_payment_request.dart';
 _$TokenPaymenRequestImpl _$$TokenPaymenRequestImplFromJson(
         Map<String, dynamic> json) =>
     _$TokenPaymenRequestImpl(
-      amount: (json['Amount'] as num).toInt(),
+      amount: json['Amount'] as String,
       token: json['Token'] as String,
       accountId: json['AccountId'] as String?,
       trInitiatorCode: (json['TrInitiatorCode'] as num).toInt(),

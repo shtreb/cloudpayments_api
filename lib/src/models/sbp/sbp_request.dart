@@ -13,7 +13,7 @@ class SbpRequest with _$SbpRequest {
 
   factory SbpRequest({
     /// Сумма платежа
-    required int amount,
+    required String amount,
 
     /// Валюта: RUB/USD/EUR/GBP (см. [справочник](https://developers.cloudpayments.ru/#spisok-valyut)). Если параметр не передан, то по умолчанию принимает значение RUB
     @Default('RUB') String currency,

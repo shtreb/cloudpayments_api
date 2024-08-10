@@ -16,8 +16,6 @@
 *.iws
 .idea/
 
-# VS Code related
-.vscode/
 
 # Flutter/Dart/Pub related
 **/doc/api/
@@ -31,14 +29,6 @@
 /build/
 pubspec.lock
 
-# Web related
-lib/generated_plugin_registrant.dart
-
-# Symbolication related
-app.*.symbols
-
-# Obfuscation related
-app.*.map.json
 
 # Code generation
 **/*.g.dart
@@ -46,9 +36,6 @@ app.*.map.json
 **/*.gen.dart
 **/*.freezed.dart
 **/*.select.dart
-
-# Flutter Version Manager related
-.fvm/flutter_sdk
 
 coverage/
 example/const.dart

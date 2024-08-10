@@ -12,7 +12,7 @@ class RecurrentInfo with _$RecurrentInfo {
   factory RecurrentInfo({
     required String id,
     required String accountId,
-    required double amount,
+    required num amount,
     required RecurrentStatus status,
     String? description,
     String? email,

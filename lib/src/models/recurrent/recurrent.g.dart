@@ -11,7 +11,7 @@ _$RecurrentImpl _$$RecurrentImplFromJson(Map<String, dynamic> json) =>
       interval: $enumDecode(_$ReccurentIntervalEnumMap, json['Interval']),
       period: (json['Period'] as num).toInt(),
       maxPeriods: (json['MaxPeriods'] as num?)?.toInt(),
-      amount: (json['Amount'] as num?)?.toDouble(),
+      amount: json['Amount'] as num?,
       startDate: json['StartDate'] == null
           ? null
           : DateTime.parse(json['StartDate'] as String),

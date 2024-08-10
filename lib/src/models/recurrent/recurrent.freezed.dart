@@ -46,7 +46,7 @@ mixin _$Recurrent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(ReccurentInterval interval, int period, int? maxPeriods,
-            double? amount, DateTime? startDate, String? customerReceipt)
+            num? amount, DateTime? startDate, String? customerReceipt)
         $default, {
     required TResult Function(
             ReccurentInterval interval, DateTime? startDate, int period)
@@ -56,7 +56,7 @@ mixin _$Recurrent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(ReccurentInterval interval, int period, int? maxPeriods,
-            double? amount, DateTime? startDate, String? customerReceipt)?
+            num? amount, DateTime? startDate, String? customerReceipt)?
         $default, {
     TResult? Function(
             ReccurentInterval interval, DateTime? startDate, int period)?
@@ -66,7 +66,7 @@ mixin _$Recurrent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(ReccurentInterval interval, int period, int? maxPeriods,
-            double? amount, DateTime? startDate, String? customerReceipt)?
+            num? amount, DateTime? startDate, String? customerReceipt)?
         $default, {
     TResult Function(
             ReccurentInterval interval, DateTime? startDate, int period)?
@@ -153,7 +153,7 @@ abstract class _$$RecurrentImplCopyWith<$Res>
       {ReccurentInterval interval,
       int period,
       int? maxPeriods,
-      double? amount,
+      num? amount,
       DateTime? startDate,
       String? customerReceipt});
 }
@@ -192,7 +192,7 @@ class __$$RecurrentImplCopyWithImpl<$Res>
       amount: freezed == amount
           ? _value.amount
           : amount // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as num?,
       startDate: freezed == startDate
           ? _value.startDate
           : startDate // ignore: cast_nullable_to_non_nullable
@@ -242,7 +242,7 @@ class _$RecurrentImpl extends _Recurrent {
   ///
   ///  Если указываете другую сумму, проверьте, чтобы она была больше 0
   @override
-  final double? amount;
+  final num? amount;
 
   /// Дата и время первого регулярного платежа.
   ///
@@ -296,7 +296,7 @@ class _$RecurrentImpl extends _Recurrent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(ReccurentInterval interval, int period, int? maxPeriods,
-            double? amount, DateTime? startDate, String? customerReceipt)
+            num? amount, DateTime? startDate, String? customerReceipt)
         $default, {
     required TResult Function(
             ReccurentInterval interval, DateTime? startDate, int period)
@@ -310,7 +310,7 @@ class _$RecurrentImpl extends _Recurrent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(ReccurentInterval interval, int period, int? maxPeriods,
-            double? amount, DateTime? startDate, String? customerReceipt)?
+            num? amount, DateTime? startDate, String? customerReceipt)?
         $default, {
     TResult? Function(
             ReccurentInterval interval, DateTime? startDate, int period)?
@@ -324,7 +324,7 @@ class _$RecurrentImpl extends _Recurrent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(ReccurentInterval interval, int period, int? maxPeriods,
-            double? amount, DateTime? startDate, String? customerReceipt)?
+            num? amount, DateTime? startDate, String? customerReceipt)?
         $default, {
     TResult Function(
             ReccurentInterval interval, DateTime? startDate, int period)?
@@ -382,7 +382,7 @@ abstract class _Recurrent extends Recurrent {
       {required final ReccurentInterval interval,
       required final int period,
       final int? maxPeriods,
-      final double? amount,
+      final num? amount,
       final DateTime? startDate,
       final String? customerReceipt}) = _$RecurrentImpl;
   const _Recurrent._() : super._();
@@ -409,7 +409,7 @@ abstract class _Recurrent extends Recurrent {
   /// Сумма регулярного платежа. По умолчанию совпадает с суммой первого, установочного платежа.
   ///
   ///  Если указываете другую сумму, проверьте, чтобы она была больше 0
-  double? get amount;
+  num? get amount;
   @override
 
   /// Дата и время первого регулярного платежа.
@@ -539,7 +539,7 @@ class _$MonthlyRecurrentImpl extends _MonthlyRecurrent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(ReccurentInterval interval, int period, int? maxPeriods,
-            double? amount, DateTime? startDate, String? customerReceipt)
+            num? amount, DateTime? startDate, String? customerReceipt)
         $default, {
     required TResult Function(
             ReccurentInterval interval, DateTime? startDate, int period)
@@ -552,7 +552,7 @@ class _$MonthlyRecurrentImpl extends _MonthlyRecurrent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(ReccurentInterval interval, int period, int? maxPeriods,
-            double? amount, DateTime? startDate, String? customerReceipt)?
+            num? amount, DateTime? startDate, String? customerReceipt)?
         $default, {
     TResult? Function(
             ReccurentInterval interval, DateTime? startDate, int period)?
@@ -565,7 +565,7 @@ class _$MonthlyRecurrentImpl extends _MonthlyRecurrent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(ReccurentInterval interval, int period, int? maxPeriods,
-            double? amount, DateTime? startDate, String? customerReceipt)?
+            num? amount, DateTime? startDate, String? customerReceipt)?
         $default, {
     TResult Function(
             ReccurentInterval interval, DateTime? startDate, int period)?

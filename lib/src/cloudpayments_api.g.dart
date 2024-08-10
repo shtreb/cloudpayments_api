@@ -81,7 +81,7 @@ class _CloudPaymentsApi implements CloudPaymentsApi {
   @override
   Future<CloudPaymentResponse<TransactionInfo>> refund({
     required String transactionId,
-    required num amount,
+    required String amount,
     Map<String, Object?>? jsonData,
   }) async {
     final _extra = <String, dynamic>{};
