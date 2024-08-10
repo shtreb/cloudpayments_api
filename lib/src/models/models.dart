@@ -9,8 +9,6 @@ export 'recurrent/recurrent.dart';
 export 'recurrent/recurrent_create_request.dart';
 export 'recurrent/recurrent_info.dart';
 export 'recurrent/recurrent_payment.dart';
-export 'recurrent/recurrent_request.dart';
-export 'recurrent/recurrents_response.dart';
 export 'recurrent/subscription_canceled_response.dart';
 export 'recurrent/subscription_update_request.dart';
 export 'sbp/sbp_request.dart';

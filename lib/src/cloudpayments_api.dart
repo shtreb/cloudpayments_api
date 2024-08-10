@@ -91,7 +91,7 @@ abstract class CloudPaymentsApi {
   /// В ответ на корректно сформированный запрос система возвращает сообщение об успешно выполненной операции и идентификатор подписки.
   @POST(CloudpaymentsApiUrls.createSuscription)
   Future<RecurrentPayment> createSubscription(
-    @Body() RecurrentRequest recurrentRequest,
+    @Body() RecurrentCreateRequest recurrentRequest,
   );
 
   ///	Отмена подписки на рекуррентные платежи
@@ -125,7 +125,7 @@ abstract class CloudPaymentsApi {
   ///	Получение списка подписок для определенного аккаунта.
   @POST(CloudpaymentsApiUrls.findSubscriptions)
   @FormUrlEncoded()
-  Future<RecurrentsResponse> findSubscriptions(
+  Future<CloudPaymentsResponse<List<RecurrentInfo>?>> findSubscriptions(
     /// Идентификатор пользователя
     @Field('accountId') String accountId,
   );
