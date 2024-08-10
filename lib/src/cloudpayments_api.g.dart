@@ -79,7 +79,7 @@ class _CloudPaymentsApi implements CloudPaymentsApi {
   }
 
   @override
-  Future<CloudPaymentResponse<TransactionInfo>> refund({
+  Future<CloudPaymentsResponse<TransactionInfo>> refund({
     required String transactionId,
     required String amount,
     Map<String, Object?>? jsonData,
@@ -95,7 +95,7 @@ class _CloudPaymentsApi implements CloudPaymentsApi {
     };
     _data.removeWhere((k, v) => v == null);
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<CloudPaymentResponse<TransactionInfo>>(Options(
+        _setStreamType<CloudPaymentsResponse<TransactionInfo>>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
@@ -112,7 +112,7 @@ class _CloudPaymentsApi implements CloudPaymentsApi {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final _value = CloudPaymentResponse<TransactionInfo>.fromJson(
+    final _value = CloudPaymentsResponse<TransactionInfo>.fromJson(
       _result.data!,
       (json) => TransactionInfo.fromJson(json as Map<String, dynamic>),
     );
@@ -236,7 +236,7 @@ class _CloudPaymentsApi implements CloudPaymentsApi {
 
   @override
   Future<RecurrentPayment> createSubscription(
-      RecurrentRequest recurrentRequest) async {
+      RecurrentCreateRequest recurrentRequest) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
@@ -264,14 +264,14 @@ class _CloudPaymentsApi implements CloudPaymentsApi {
   }
 
   @override
-  Future<CloudPaymentResponse<RecurrentInfo?>> cancelSubscription(
+  Future<CloudPaymentsResponse<RecurrentInfo?>> cancelSubscription(
       String id) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = {'Id': id};
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<CloudPaymentResponse<RecurrentInfo>>(Options(
+        _setStreamType<CloudPaymentsResponse<RecurrentInfo>>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
@@ -288,7 +288,7 @@ class _CloudPaymentsApi implements CloudPaymentsApi {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final _value = CloudPaymentResponse<RecurrentInfo?>.fromJson(
+    final _value = CloudPaymentsResponse<RecurrentInfo?>.fromJson(
       _result.data!,
       (json) => json == null
           ? null
@@ -298,7 +298,7 @@ class _CloudPaymentsApi implements CloudPaymentsApi {
   }
 
   @override
-  Future<CloudPaymentResponse<RecurrentInfo?>> updateSubscription(
+  Future<CloudPaymentsResponse<RecurrentInfo?>> updateSubscription(
       {required SubscriptionUpdateRequest updateRequest}) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
@@ -306,7 +306,7 @@ class _CloudPaymentsApi implements CloudPaymentsApi {
     final _data = <String, dynamic>{};
     _data.addAll(updateRequest.toJson());
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<CloudPaymentResponse<RecurrentInfo>>(Options(
+        _setStreamType<CloudPaymentsResponse<RecurrentInfo>>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
@@ -323,7 +323,7 @@ class _CloudPaymentsApi implements CloudPaymentsApi {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final _value = CloudPaymentResponse<RecurrentInfo?>.fromJson(
+    final _value = CloudPaymentsResponse<RecurrentInfo?>.fromJson(
       _result.data!,
       (json) => json == null
           ? null
@@ -333,13 +333,14 @@ class _CloudPaymentsApi implements CloudPaymentsApi {
   }
 
   @override
-  Future<CloudPaymentResponse<RecurrentInfo>> getSubscription(String id) async {
+  Future<CloudPaymentsResponse<RecurrentInfo>> getSubscription(
+      String id) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = {'Id': id};
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<CloudPaymentResponse<RecurrentInfo>>(Options(
+        _setStreamType<CloudPaymentsResponse<RecurrentInfo>>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
@@ -356,7 +357,7 @@ class _CloudPaymentsApi implements CloudPaymentsApi {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final _value = CloudPaymentResponse<RecurrentInfo>.fromJson(
+    final _value = CloudPaymentsResponse<RecurrentInfo>.fromJson(
       _result.data!,
       (json) => RecurrentInfo.fromJson(json as Map<String, dynamic>),
     );
@@ -364,13 +365,14 @@ class _CloudPaymentsApi implements CloudPaymentsApi {
   }
 
   @override
-  Future<RecurrentsResponse> findSubscriptions(String accountId) async {
+  Future<CloudPaymentsResponse<List<RecurrentInfo>?>> findSubscriptions(
+      String accountId) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = {'accountId': accountId};
-    final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<RecurrentsResponse>(Options(
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<CloudPaymentsResponse<List<RecurrentInfo>>>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
@@ -387,7 +389,15 @@ class _CloudPaymentsApi implements CloudPaymentsApi {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final _value = RecurrentsResponse.fromJson(_result.data!);
+    final _value = CloudPaymentsResponse<List<RecurrentInfo>>.fromJson(
+      _result.data!,
+      (json) => json is List<dynamic>
+          ? json
+              .map<RecurrentInfo>(
+                  (i) => RecurrentInfo.fromJson(i as Map<String, dynamic>))
+              .toList()
+          : List.empty(),
+    );
     return _value;
   }
 

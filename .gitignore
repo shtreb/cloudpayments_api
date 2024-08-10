@@ -31,11 +31,11 @@ pubspec.lock
 
 
 # Code generation
-**/*.g.dart
-**/*.gr.dart
-**/*.gen.dart
-**/*.freezed.dart
-**/*.select.dart
+# **/*.g.dart
+# **/*.gr.dart
+# **/*.gen.dart
+# **/*.freezed.dart
+# **/*.select.dart
 
 coverage/
 example/const.dart
