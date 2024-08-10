@@ -8,7 +8,7 @@ Dart REST client for [CloudPayments API](https://developers.cloudpayments.ru/#ap
 
 ```yaml
 dependencies:
-  cloudpayments_api: ^1.0.1
+  cloudpayments_api: ^1.0.3
 ```
 
 ### Simple to use
@@ -17,9 +17,11 @@ dependencies:
 import 'package:cloudpayments_api/cloudpayments_api.dart';
 import 'package:dio/dio.dart';
 
+import 'const.dart';
+
 void main() async {
   final paymentRequest = CardPaymentRequest(
-    amount: 100,
+    amount: '100',
     ipAddress: '$ipAddress',
     cardCryptogramPacket: '$cardCryptogramPacket',
   );
