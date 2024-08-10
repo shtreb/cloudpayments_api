@@ -11,25 +11,26 @@ _$RecurrentInfoImpl _$$RecurrentInfoImplFromJson(Map<String, dynamic> json) =>
       id: json['Id'] as String,
       accountId: json['AccountId'] as String,
       amount: (json['Amount'] as num).toDouble(),
+      status: $enumDecode(_$RecurrentStatusEnumMap, json['Status']),
       description: json['Description'] as String?,
       email: json['Email'] as String?,
-      currencyCode: json['CurrencyCode'] as int?,
+      currencyCode: (json['CurrencyCode'] as num?)?.toInt(),
       currency: json['Currency'] as String?,
       requireConfirmation: json['RequireConfirmation'] as bool?,
       startDate: json['StartDate'] as String?,
       startDateIso: json['StartDateIso'] == null
           ? null
           : DateTime.parse(json['StartDateIso'] as String),
-      intervalCode: json['IntervalCode'] as int?,
+      intervalCode: (json['IntervalCode'] as num?)?.toInt(),
       interval: json['Interval'] as String?,
-      period: json['Period'] as int?,
-      maxPeriods: json['MaxPeriods'] as int?,
+      period: (json['Period'] as num?)?.toInt(),
+      maxPeriods: (json['MaxPeriods'] as num?)?.toInt(),
       cultureName: json['CultureName'] as String?,
-      statusCode: json['StatusCode'] as int?,
-      status: json['Status'] as String?,
+      statusCode: (json['StatusCode'] as num?)?.toInt(),
       successfulTransactionsNumber:
-          json['SuccessfulTransactionsNumber'] as int?,
-      failedTransactionsNumber: json['FailedTransactionsNumber'] as int?,
+          (json['SuccessfulTransactionsNumber'] as num?)?.toInt(),
+      failedTransactionsNumber:
+          (json['FailedTransactionsNumber'] as num?)?.toInt(),
       lastTransactionDate: json['LastTransactionDate'] as String?,
       lastTransactionDateIso: json['LastTransactionDateIso'] == null
           ? null
@@ -47,6 +48,7 @@ Map<String, dynamic> _$$RecurrentInfoImplToJson(_$RecurrentInfoImpl instance) =>
       'Id': instance.id,
       'AccountId': instance.accountId,
       'Amount': instance.amount,
+      'Status': _$RecurrentStatusEnumMap[instance.status]!,
       'Description': instance.description,
       'Email': instance.email,
       'CurrencyCode': instance.currencyCode,
@@ -60,7 +62,6 @@ Map<String, dynamic> _$$RecurrentInfoImplToJson(_$RecurrentInfoImpl instance) =>
       'MaxPeriods': instance.maxPeriods,
       'CultureName': instance.cultureName,
       'StatusCode': instance.statusCode,
-      'Status': instance.status,
       'SuccessfulTransactionsNumber': instance.successfulTransactionsNumber,
       'FailedTransactionsNumber': instance.failedTransactionsNumber,
       'LastTransactionDate': instance.lastTransactionDate,
@@ -72,3 +73,11 @@ Map<String, dynamic> _$$RecurrentInfoImplToJson(_$RecurrentInfoImpl instance) =>
       'Receipt': instance.receipt,
       'FailoverSchemeId': instance.failoverSchemeId,
     };
+
+const _$RecurrentStatusEnumMap = {
+  RecurrentStatus.active: 'Active',
+  RecurrentStatus.pastDue: 'PastDue',
+  RecurrentStatus.cancelled: 'Cancelled',
+  RecurrentStatus.rejected: 'Rejected',
+  RecurrentStatus.expired: 'Expired',
+};

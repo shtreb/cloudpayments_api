@@ -11,6 +11,12 @@ class CloudpaymentsApiUrls {
   /// Одностадийная оплата по криптограмме
   static const String cardPaymentCharge = '/payments/cards/charge';
 
+  /// Возврат денег
+  static const String refund = '/payments/refund';
+
+  /// Выплата по криптограмме
+  static const String cardTopup = '/payments/cards/topup';
+
   /// Двухстадийная оплата по криптограмме
   static const String authPaymentCharge = '/payments/cards/auth';
 
@@ -46,4 +52,10 @@ class CloudpaymentsApiUrls {
 
   /// Получение транзакции
   static const String getPayment = '/payments/get';
+
+  /// Информация о подписке
+  static const String getSubscription = '/subscriptions/get';
+
+  /// Обновление подписки
+  static const String updateSubscription = '/subscriptions/update';
 }

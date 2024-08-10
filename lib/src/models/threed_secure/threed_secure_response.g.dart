@@ -9,7 +9,7 @@ part of 'threed_secure_response.dart';
 _$Three3DSecureResponseImpl _$$Three3DSecureResponseImplFromJson(
         Map<String, dynamic> json) =>
     _$Three3DSecureResponseImpl(
-      transactionId: json['TransactionId'] as int,
+      transactionId: (json['TransactionId'] as num).toInt(),
       paReq: json['PaReq'] as String,
       acsUrl: json['AcsUrl'] as String,
       iFrameIsAllowed: json['IFrameIsAllowed'] as bool?,

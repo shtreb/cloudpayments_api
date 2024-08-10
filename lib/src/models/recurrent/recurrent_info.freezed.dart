@@ -12,7 +12,7 @@ part of 'recurrent_info.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 RecurrentInfo _$RecurrentInfoFromJson(Map<String, dynamic> json) {
   return _RecurrentInfo.fromJson(json);
@@ -23,6 +23,7 @@ mixin _$RecurrentInfo {
   String get id => throw _privateConstructorUsedError;
   String get accountId => throw _privateConstructorUsedError;
   double get amount => throw _privateConstructorUsedError;
+  RecurrentStatus get status => throw _privateConstructorUsedError;
   String? get description => throw _privateConstructorUsedError;
   String? get email => throw _privateConstructorUsedError;
   int? get currencyCode => throw _privateConstructorUsedError;
@@ -36,7 +37,6 @@ mixin _$RecurrentInfo {
   int? get maxPeriods => throw _privateConstructorUsedError;
   String? get cultureName => throw _privateConstructorUsedError;
   int? get statusCode => throw _privateConstructorUsedError;
-  String? get status => throw _privateConstructorUsedError;
   int? get successfulTransactionsNumber => throw _privateConstructorUsedError;
   int? get failedTransactionsNumber => throw _privateConstructorUsedError;
   String? get lastTransactionDate => throw _privateConstructorUsedError;
@@ -62,6 +62,7 @@ abstract class $RecurrentInfoCopyWith<$Res> {
       {String id,
       String accountId,
       double amount,
+      RecurrentStatus status,
       String? description,
       String? email,
       int? currencyCode,
@@ -75,7 +76,6 @@ abstract class $RecurrentInfoCopyWith<$Res> {
       int? maxPeriods,
       String? cultureName,
       int? statusCode,
-      String? status,
       int? successfulTransactionsNumber,
       int? failedTransactionsNumber,
       String? lastTransactionDate,
@@ -102,6 +102,7 @@ class _$RecurrentInfoCopyWithImpl<$Res, $Val extends RecurrentInfo>
     Object? id = null,
     Object? accountId = null,
     Object? amount = null,
+    Object? status = null,
     Object? description = freezed,
     Object? email = freezed,
     Object? currencyCode = freezed,
@@ -115,7 +116,6 @@ class _$RecurrentInfoCopyWithImpl<$Res, $Val extends RecurrentInfo>
     Object? maxPeriods = freezed,
     Object? cultureName = freezed,
     Object? statusCode = freezed,
-    Object? status = freezed,
     Object? successfulTransactionsNumber = freezed,
     Object? failedTransactionsNumber = freezed,
     Object? lastTransactionDate = freezed,
@@ -138,6 +138,10 @@ class _$RecurrentInfoCopyWithImpl<$Res, $Val extends RecurrentInfo>
           ? _value.amount
           : amount // ignore: cast_nullable_to_non_nullable
               as double,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as RecurrentStatus,
       description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
@@ -190,10 +194,6 @@ class _$RecurrentInfoCopyWithImpl<$Res, $Val extends RecurrentInfo>
           ? _value.statusCode
           : statusCode // ignore: cast_nullable_to_non_nullable
               as int?,
-      status: freezed == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as String?,
       successfulTransactionsNumber: freezed == successfulTransactionsNumber
           ? _value.successfulTransactionsNumber
           : successfulTransactionsNumber // ignore: cast_nullable_to_non_nullable
@@ -242,6 +242,7 @@ abstract class _$$RecurrentInfoImplCopyWith<$Res>
       {String id,
       String accountId,
       double amount,
+      RecurrentStatus status,
       String? description,
       String? email,
       int? currencyCode,
@@ -255,7 +256,6 @@ abstract class _$$RecurrentInfoImplCopyWith<$Res>
       int? maxPeriods,
       String? cultureName,
       int? statusCode,
-      String? status,
       int? successfulTransactionsNumber,
       int? failedTransactionsNumber,
       String? lastTransactionDate,
@@ -280,6 +280,7 @@ class __$$RecurrentInfoImplCopyWithImpl<$Res>
     Object? id = null,
     Object? accountId = null,
     Object? amount = null,
+    Object? status = null,
     Object? description = freezed,
     Object? email = freezed,
     Object? currencyCode = freezed,
@@ -293,7 +294,6 @@ class __$$RecurrentInfoImplCopyWithImpl<$Res>
     Object? maxPeriods = freezed,
     Object? cultureName = freezed,
     Object? statusCode = freezed,
-    Object? status = freezed,
     Object? successfulTransactionsNumber = freezed,
     Object? failedTransactionsNumber = freezed,
     Object? lastTransactionDate = freezed,
@@ -316,6 +316,10 @@ class __$$RecurrentInfoImplCopyWithImpl<$Res>
           ? _value.amount
           : amount // ignore: cast_nullable_to_non_nullable
               as double,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as RecurrentStatus,
       description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
@@ -368,10 +372,6 @@ class __$$RecurrentInfoImplCopyWithImpl<$Res>
           ? _value.statusCode
           : statusCode // ignore: cast_nullable_to_non_nullable
               as int?,
-      status: freezed == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as String?,
       successfulTransactionsNumber: freezed == successfulTransactionsNumber
           ? _value.successfulTransactionsNumber
           : successfulTransactionsNumber // ignore: cast_nullable_to_non_nullable
@@ -415,6 +415,7 @@ class _$RecurrentInfoImpl implements _RecurrentInfo {
       {required this.id,
       required this.accountId,
       required this.amount,
+      required this.status,
       this.description,
       this.email,
       this.currencyCode,
@@ -428,7 +429,6 @@ class _$RecurrentInfoImpl implements _RecurrentInfo {
       this.maxPeriods,
       this.cultureName,
       this.statusCode,
-      this.status,
       this.successfulTransactionsNumber,
       this.failedTransactionsNumber,
       this.lastTransactionDate,
@@ -447,6 +447,8 @@ class _$RecurrentInfoImpl implements _RecurrentInfo {
   final String accountId;
   @override
   final double amount;
+  @override
+  final RecurrentStatus status;
   @override
   final String? description;
   @override
@@ -474,8 +476,6 @@ class _$RecurrentInfoImpl implements _RecurrentInfo {
   @override
   final int? statusCode;
   @override
-  final String? status;
-  @override
   final int? successfulTransactionsNumber;
   @override
   final int? failedTransactionsNumber;
@@ -494,11 +494,11 @@ class _$RecurrentInfoImpl implements _RecurrentInfo {
 
   @override
   String toString() {
-    return 'RecurrentInfo(id: $id, accountId: $accountId, amount: $amount, description: $description, email: $email, currencyCode: $currencyCode, currency: $currency, requireConfirmation: $requireConfirmation, startDate: $startDate, startDateIso: $startDateIso, intervalCode: $intervalCode, interval: $interval, period: $period, maxPeriods: $maxPeriods, cultureName: $cultureName, statusCode: $statusCode, status: $status, successfulTransactionsNumber: $successfulTransactionsNumber, failedTransactionsNumber: $failedTransactionsNumber, lastTransactionDate: $lastTransactionDate, lastTransactionDateIso: $lastTransactionDateIso, nextTransactionDate: $nextTransactionDate, nextTransactionDateIso: $nextTransactionDateIso, receipt: $receipt, failoverSchemeId: $failoverSchemeId)';
+    return 'RecurrentInfo(id: $id, accountId: $accountId, amount: $amount, status: $status, description: $description, email: $email, currencyCode: $currencyCode, currency: $currency, requireConfirmation: $requireConfirmation, startDate: $startDate, startDateIso: $startDateIso, intervalCode: $intervalCode, interval: $interval, period: $period, maxPeriods: $maxPeriods, cultureName: $cultureName, statusCode: $statusCode, successfulTransactionsNumber: $successfulTransactionsNumber, failedTransactionsNumber: $failedTransactionsNumber, lastTransactionDate: $lastTransactionDate, lastTransactionDateIso: $lastTransactionDateIso, nextTransactionDate: $nextTransactionDate, nextTransactionDateIso: $nextTransactionDateIso, receipt: $receipt, failoverSchemeId: $failoverSchemeId)';
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$RecurrentInfoImpl &&
@@ -506,6 +506,7 @@ class _$RecurrentInfoImpl implements _RecurrentInfo {
             (identical(other.accountId, accountId) ||
                 other.accountId == accountId) &&
             (identical(other.amount, amount) || other.amount == amount) &&
+            (identical(other.status, status) || other.status == status) &&
             (identical(other.description, description) ||
                 other.description == description) &&
             (identical(other.email, email) || other.email == email) &&
@@ -530,7 +531,6 @@ class _$RecurrentInfoImpl implements _RecurrentInfo {
                 other.cultureName == cultureName) &&
             (identical(other.statusCode, statusCode) ||
                 other.statusCode == statusCode) &&
-            (identical(other.status, status) || other.status == status) &&
             (identical(other.successfulTransactionsNumber,
                     successfulTransactionsNumber) ||
                 other.successfulTransactionsNumber ==
@@ -558,6 +558,7 @@ class _$RecurrentInfoImpl implements _RecurrentInfo {
         id,
         accountId,
         amount,
+        status,
         description,
         email,
         currencyCode,
@@ -571,7 +572,6 @@ class _$RecurrentInfoImpl implements _RecurrentInfo {
         maxPeriods,
         cultureName,
         statusCode,
-        status,
         successfulTransactionsNumber,
         failedTransactionsNumber,
         lastTransactionDate,
@@ -601,6 +601,7 @@ abstract class _RecurrentInfo implements RecurrentInfo {
       {required final String id,
       required final String accountId,
       required final double amount,
+      required final RecurrentStatus status,
       final String? description,
       final String? email,
       final int? currencyCode,
@@ -614,7 +615,6 @@ abstract class _RecurrentInfo implements RecurrentInfo {
       final int? maxPeriods,
       final String? cultureName,
       final int? statusCode,
-      final String? status,
       final int? successfulTransactionsNumber,
       final int? failedTransactionsNumber,
       final String? lastTransactionDate,
@@ -633,6 +633,8 @@ abstract class _RecurrentInfo implements RecurrentInfo {
   String get accountId;
   @override
   double get amount;
+  @override
+  RecurrentStatus get status;
   @override
   String? get description;
   @override
@@ -659,8 +661,6 @@ abstract class _RecurrentInfo implements RecurrentInfo {
   String? get cultureName;
   @override
   int? get statusCode;
-  @override
-  String? get status;
   @override
   int? get successfulTransactionsNumber;
   @override

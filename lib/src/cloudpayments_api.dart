@@ -44,6 +44,32 @@ abstract class CloudPaymentsApi {
     @Body() TokenPaymenRequest tokenPaymenRequest,
   );
 
+  /// Возврат денег
+  @POST(CloudpaymentsApiUrls.refund)
+  @FormUrlEncoded()
+  Future<CloudPaymentResponse<TransactionInfo>> refund({
+    /// Номер транзакции оплаты
+    @Field('TransactionId') required String transactionId,
+
+    /// Сумма возврата в валюте транзакции, максимальное количество не нулевых знаков после запятой: 2
+    @Field('Amount') required num amount,
+
+    /// Любые другие данные, которые будут связаны с транзакцией, в том числе инструкции для формирования онлайн-чека
+    @Field('JsonData') Map<String, Object?>? jsonData,
+  });
+
+  /// Выплата по криптограмме
+  @POST(CloudpaymentsApiUrls.cardTopup)
+  Future<PaymentTransaction> cardTopup(
+    @Body() CardPaymentRequest cardPaymentRequest,
+  );
+
+  /// Выплата по токену
+  @POST(CloudpaymentsApiUrls.tokenPopup)
+  Future<PaymentTransaction> tokenTopup(
+    @Body() TokenPaymenRequest tokenPaymenRequest,
+  );
+
   ///	Подтверждение 3-D Secure
   ///
   /// В ответ на корректно сформированный запрос сервер вернет либо информацию об успешной транзакции, либо — об отклоненной.
@@ -73,7 +99,25 @@ abstract class CloudPaymentsApi {
   /// В ответ на корректно сформированный запрос система возвращает сообщение об успешно выполненной операции.
   @POST(CloudpaymentsApiUrls.cancelSubscription)
   @FormUrlEncoded()
-  Future<SubscriptionCanceledResponse> cancelSubscription(
+  Future<CloudPaymentResponse<RecurrentInfo?>> cancelSubscription(
+    /// Идентификатор подписки
+    @Field('Id') String id,
+  );
+
+  ///	Изменения ранее созданной подписки.
+  @POST(CloudpaymentsApiUrls.updateSubscription)
+  @FormUrlEncoded()
+  Future<CloudPaymentResponse<RecurrentInfo?>> updateSubscription({
+    /// Идентификатор подписки
+    @Body() required SubscriptionUpdateRequest updateRequest,
+  });
+
+  ///	Запрос информации о подписке
+  ///
+  /// Метод получения информации о статусе подписки.
+  @POST(CloudpaymentsApiUrls.getSubscription)
+  @FormUrlEncoded()
+  Future<CloudPaymentResponse<RecurrentInfo>> getSubscription(
     /// Идентификатор подписки
     @Field('Id') String id,
   );

@@ -10,7 +10,7 @@ part 'recurrent_payment.freezed.dart';
 /// {@endtemplate}
 @Freezed(unionKey: 'Model')
 class RecurrentPayment with _$RecurrentPayment {
-    /// {@macro recurrent_info}
+  /// {@macro recurrent_info}
 
   /// Успешный запрос
   const factory RecurrentPayment.success(

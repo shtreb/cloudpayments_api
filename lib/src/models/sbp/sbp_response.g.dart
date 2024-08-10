@@ -8,7 +8,7 @@ part of 'sbp_response.dart';
 
 _$SbpResponseImpl _$$SbpResponseImplFromJson(Map<String, dynamic> json) =>
     _$SbpResponseImpl(
-      transactionId: json['TransactionId'] as int,
+      transactionId: (json['TransactionId'] as num).toInt(),
       amount: json['Amount'] as num,
       qrUrl: json['QrUrl'] as String?,
       qrImage: json['QrImage'] as String?,

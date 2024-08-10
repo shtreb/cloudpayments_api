@@ -13,7 +13,7 @@ class Recurrent with _$Recurrent {
 
   const factory Recurrent({
     /// Интервал. Возможные значения: Day, Week, Month
-    required String interval,
+    required ReccurentInterval interval,
 
     /// Период. В комбинации с интервалом, 1 Month значит раз в месяц, а 2 Week — раз в две недели.
     ///
@@ -44,7 +44,14 @@ class Recurrent with _$Recurrent {
   /// Ежемесячная подписка
   const factory Recurrent.monthly({
     /// Интервал. Возможные значения: Day, Week, Month
-    @Default('Month') String interval,
+    @Default(ReccurentInterval.month) ReccurentInterval interval,
+
+    /// Дата и время первого регулярного платежа.
+    ///
+    ///  По умолчанию запуск произойдет через указанный интервал и период, например через месяц.
+    ///
+    ///  Если указываете другую дату, то она должна стоять в будущем времени
+    DateTime? startDate,
 
     /// Период. В комбинации с интервалом, 1 Month значит раз в месяц, а 2 Week — раз в две недели.
     ///
@@ -58,4 +65,17 @@ class Recurrent with _$Recurrent {
   /// Converts a JSON [Map] into a [Recurrent] instance
   factory Recurrent.fromJson(Map<String, dynamic> json) =>
       _$RecurrentFromJson(json);
+}
+
+/// Интервал. Возможные значения: Day, Week, Month
+@JsonEnum(fieldRename: FieldRename.pascal)
+enum ReccurentInterval {
+  /// День
+  day,
+
+  /// Неделя
+  week,
+
+  /// Месяц
+  month,
 }

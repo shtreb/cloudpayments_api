@@ -9,9 +9,9 @@ part of 'sbp_status.dart';
 _$SbpStatusCreatedImpl _$$SbpStatusCreatedImplFromJson(
         Map<String, dynamic> json) =>
     _$SbpStatusCreatedImpl(
-      transactionId: json['TransactionId'] as int,
+      transactionId: (json['TransactionId'] as num).toInt(),
       providerQrId: json['ProviderQrId'] as String?,
-      statusCode: json['StatusCode'] as int?,
+      statusCode: (json['StatusCode'] as num?)?.toInt(),
       $type: json['Status'] as String?,
     );
 
@@ -27,9 +27,9 @@ Map<String, dynamic> _$$SbpStatusCreatedImplToJson(
 _$SbpStatusPendingImpl _$$SbpStatusPendingImplFromJson(
         Map<String, dynamic> json) =>
     _$SbpStatusPendingImpl(
-      transactionId: json['TransactionId'] as int,
+      transactionId: (json['TransactionId'] as num).toInt(),
       providerQrId: json['ProviderQrId'] as String?,
-      statusCode: json['StatusCode'] as int?,
+      statusCode: (json['StatusCode'] as num?)?.toInt(),
       $type: json['Status'] as String?,
     );
 
@@ -45,9 +45,9 @@ Map<String, dynamic> _$$SbpStatusPendingImplToJson(
 _$SbpStatusCompletedImpl _$$SbpStatusCompletedImplFromJson(
         Map<String, dynamic> json) =>
     _$SbpStatusCompletedImpl(
-      transactionId: json['TransactionId'] as int,
+      transactionId: (json['TransactionId'] as num).toInt(),
       providerQrId: json['ProviderQrId'] as String?,
-      statusCode: json['StatusCode'] as int?,
+      statusCode: (json['StatusCode'] as num?)?.toInt(),
       $type: json['Status'] as String?,
     );
 
@@ -63,9 +63,9 @@ Map<String, dynamic> _$$SbpStatusCompletedImplToJson(
 _$SbpStatusDeclinedImpl _$$SbpStatusDeclinedImplFromJson(
         Map<String, dynamic> json) =>
     _$SbpStatusDeclinedImpl(
-      transactionId: json['TransactionId'] as int,
+      transactionId: (json['TransactionId'] as num).toInt(),
       providerQrId: json['ProviderQrId'] as String?,
-      statusCode: json['StatusCode'] as int?,
+      statusCode: (json['StatusCode'] as num?)?.toInt(),
       $type: json['Status'] as String?,
     );
 

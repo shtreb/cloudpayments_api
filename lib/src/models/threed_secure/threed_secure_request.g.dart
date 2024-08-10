@@ -9,7 +9,7 @@ part of 'threed_secure_request.dart';
 _$Three3DSecureRequestImpl _$$Three3DSecureRequestImplFromJson(
         Map<String, dynamic> json) =>
     _$Three3DSecureRequestImpl(
-      transactionId: json['TransactionId'] as int,
+      transactionId: (json['TransactionId'] as num).toInt(),
       paRes: json['PaRes'] as String,
     );
 

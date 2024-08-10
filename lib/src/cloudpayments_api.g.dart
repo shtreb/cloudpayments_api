@@ -6,7 +6,7 @@ part of 'cloudpayments_api.dart';
 // RetrofitGenerator
 // **************************************************************************
 
-// ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers
+// ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers,unused_element
 
 class _CloudPaymentsApi implements CloudPaymentsApi {
   _CloudPaymentsApi(
@@ -23,7 +23,7 @@ class _CloudPaymentsApi implements CloudPaymentsApi {
   @override
   Future<PaymentTransaction> chargeCryptogramPayment(
       CardPaymentRequest cardPaymentRequest) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -45,14 +45,14 @@ class _CloudPaymentsApi implements CloudPaymentsApi {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = PaymentTransaction.fromJson(_result.data!);
-    return value;
+    final _value = PaymentTransaction.fromJson(_result.data!);
+    return _value;
   }
 
   @override
   Future<PaymentTransaction> tokenCharge(
       TokenPaymenRequest tokenPaymenRequest) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -74,14 +74,113 @@ class _CloudPaymentsApi implements CloudPaymentsApi {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = PaymentTransaction.fromJson(_result.data!);
-    return value;
+    final _value = PaymentTransaction.fromJson(_result.data!);
+    return _value;
+  }
+
+  @override
+  Future<CloudPaymentResponse<TransactionInfo>> refund({
+    required String transactionId,
+    required num amount,
+    Map<String, Object?>? jsonData,
+  }) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    queryParameters.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
+    final _data = {
+      'TransactionId': transactionId,
+      'Amount': amount,
+      'JsonData': jsonData,
+    };
+    _data.removeWhere((k, v) => v == null);
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<CloudPaymentResponse<TransactionInfo>>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+      contentType: 'application/x-www-form-urlencoded',
+    )
+            .compose(
+              _dio.options,
+              '/payments/refund',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final _value = CloudPaymentResponse<TransactionInfo>.fromJson(
+      _result.data!,
+      (json) => TransactionInfo.fromJson(json as Map<String, dynamic>),
+    );
+    return _value;
+  }
+
+  @override
+  Future<PaymentTransaction> cardTopup(
+      CardPaymentRequest cardPaymentRequest) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(cardPaymentRequest.toJson());
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<PaymentTransaction>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/payments/cards/topup',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final _value = PaymentTransaction.fromJson(_result.data!);
+    return _value;
+  }
+
+  @override
+  Future<PaymentTransaction> tokenTopup(
+      TokenPaymenRequest tokenPaymenRequest) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(tokenPaymenRequest.toJson());
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<PaymentTransaction>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/payments/token/topup',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final _value = PaymentTransaction.fromJson(_result.data!);
+    return _value;
   }
 
   @override
   Future<PaymentTransaction> confirm3DSPayment(
       Three3DSecureRequest three3DSecureRequest) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -103,13 +202,13 @@ class _CloudPaymentsApi implements CloudPaymentsApi {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = PaymentTransaction.fromJson(_result.data!);
-    return value;
+    final _value = PaymentTransaction.fromJson(_result.data!);
+    return _value;
   }
 
   @override
   Future<PaymentTransaction> getPayment(String transactionId) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = {'TransactionId': transactionId};
@@ -131,14 +230,14 @@ class _CloudPaymentsApi implements CloudPaymentsApi {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = PaymentTransaction.fromJson(_result.data!);
-    return value;
+    final _value = PaymentTransaction.fromJson(_result.data!);
+    return _value;
   }
 
   @override
   Future<RecurrentPayment> createSubscription(
       RecurrentRequest recurrentRequest) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -160,18 +259,19 @@ class _CloudPaymentsApi implements CloudPaymentsApi {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = RecurrentPayment.fromJson(_result.data!);
-    return value;
+    final _value = RecurrentPayment.fromJson(_result.data!);
+    return _value;
   }
 
   @override
-  Future<SubscriptionCanceledResponse> cancelSubscription(String id) async {
-    const _extra = <String, dynamic>{};
+  Future<CloudPaymentResponse<RecurrentInfo?>> cancelSubscription(
+      String id) async {
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = {'Id': id};
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<SubscriptionCanceledResponse>(Options(
+        _setStreamType<CloudPaymentResponse<RecurrentInfo>>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
@@ -188,13 +288,84 @@ class _CloudPaymentsApi implements CloudPaymentsApi {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = SubscriptionCanceledResponse.fromJson(_result.data!);
-    return value;
+    final _value = CloudPaymentResponse<RecurrentInfo?>.fromJson(
+      _result.data!,
+      (json) => json == null
+          ? null
+          : RecurrentInfo.fromJson(json as Map<String, dynamic>),
+    );
+    return _value;
+  }
+
+  @override
+  Future<CloudPaymentResponse<RecurrentInfo?>> updateSubscription(
+      {required SubscriptionUpdateRequest updateRequest}) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(updateRequest.toJson());
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<CloudPaymentResponse<RecurrentInfo>>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+      contentType: 'application/x-www-form-urlencoded',
+    )
+            .compose(
+              _dio.options,
+              '/subscriptions/update',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final _value = CloudPaymentResponse<RecurrentInfo?>.fromJson(
+      _result.data!,
+      (json) => json == null
+          ? null
+          : RecurrentInfo.fromJson(json as Map<String, dynamic>),
+    );
+    return _value;
+  }
+
+  @override
+  Future<CloudPaymentResponse<RecurrentInfo>> getSubscription(String id) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = {'Id': id};
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<CloudPaymentResponse<RecurrentInfo>>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+      contentType: 'application/x-www-form-urlencoded',
+    )
+            .compose(
+              _dio.options,
+              '/subscriptions/get',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final _value = CloudPaymentResponse<RecurrentInfo>.fromJson(
+      _result.data!,
+      (json) => RecurrentInfo.fromJson(json as Map<String, dynamic>),
+    );
+    return _value;
   }
 
   @override
   Future<RecurrentsResponse> findSubscriptions(String accountId) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = {'accountId': accountId};
@@ -216,14 +387,14 @@ class _CloudPaymentsApi implements CloudPaymentsApi {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = RecurrentsResponse.fromJson(_result.data!);
-    return value;
+    final _value = RecurrentsResponse.fromJson(_result.data!);
+    return _value;
   }
 
   @override
   Future<CloudPaymentsResponse<SbpResponse>> sbpLinkCreate(
       SbpRequest sbpRequest) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -246,17 +417,17 @@ class _CloudPaymentsApi implements CloudPaymentsApi {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = CloudPaymentsResponse<SbpResponse>.fromJson(
+    final _value = CloudPaymentsResponse<SbpResponse>.fromJson(
       _result.data!,
       (json) => SbpResponse.fromJson(json as Map<String, dynamic>),
     );
-    return value;
+    return _value;
   }
 
   @override
   Future<CloudPaymentsResponse<SbpResponse>> sbpQrImageCreate(
       SbpRequest sbpRequest) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -279,17 +450,17 @@ class _CloudPaymentsApi implements CloudPaymentsApi {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = CloudPaymentsResponse<SbpResponse>.fromJson(
+    final _value = CloudPaymentsResponse<SbpResponse>.fromJson(
       _result.data!,
       (json) => SbpResponse.fromJson(json as Map<String, dynamic>),
     );
-    return value;
+    return _value;
   }
 
   @override
   Future<CloudPaymentsResponse<SbpStatus>> getSbpStatus(
       int transactionId) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = {'TransactionId': transactionId};
@@ -311,11 +482,11 @@ class _CloudPaymentsApi implements CloudPaymentsApi {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = CloudPaymentsResponse<SbpStatus>.fromJson(
+    final _value = CloudPaymentsResponse<SbpStatus>.fromJson(
       _result.data!,
       (json) => SbpStatus.fromJson(json as Map<String, dynamic>),
     );
-    return value;
+    return _value;
   }
 
   RequestOptions _setStreamType<T>(RequestOptions requestOptions) {

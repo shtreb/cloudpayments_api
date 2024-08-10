@@ -13,6 +13,7 @@ class RecurrentInfo with _$RecurrentInfo {
     required String id,
     required String accountId,
     required double amount,
+    required RecurrentStatus status,
     String? description,
     String? email,
     int? currencyCode,
@@ -26,7 +27,6 @@ class RecurrentInfo with _$RecurrentInfo {
     int? maxPeriods,
     String? cultureName,
     int? statusCode,
-    String? status,
     int? successfulTransactionsNumber,
     int? failedTransactionsNumber,
     String? lastTransactionDate,
@@ -40,4 +40,34 @@ class RecurrentInfo with _$RecurrentInfo {
   /// Converts a JSON [Map] into a [RecurrentInfo] instance
   factory RecurrentInfo.fromJson(Map<String, dynamic> json) =>
       _$RecurrentInfoFromJson(json);
+}
+
+@JsonEnum(fieldRename: FieldRename.pascal)
+
+/// Статус подписки
+enum RecurrentStatus {
+  /// Подписка активна
+  ///
+  /// После создания и очередной успешной оплаты
+  active,
+
+  /// Просрочена
+  ///
+  /// После одной или двух подряд неуспешных попыток оплаты
+  pastDue,
+
+  /// Отменена
+  ///
+  /// В случае отмены по запросу
+  cancelled,
+
+  /// Отклонена
+  ///
+  /// В случае трех неудачных попыток оплаты, идущих подряд
+  rejected,
+
+  /// Завершена
+  ///
+  /// В случае завершения максимального количества периодов (если были указаны)
+  expired
 }

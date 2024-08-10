@@ -12,7 +12,7 @@ part of 'recurrent.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 Recurrent _$RecurrentFromJson(Map<String, dynamic> json) {
   switch (json['runtimeType']) {
@@ -30,34 +30,47 @@ Recurrent _$RecurrentFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Recurrent {
   /// Интервал. Возможные значения: Day, Week, Month
-  String get interval => throw _privateConstructorUsedError;
+  ReccurentInterval get interval => throw _privateConstructorUsedError;
 
   /// Период. В комбинации с интервалом, 1 Month значит раз в месяц, а 2 Week — раз в две недели.
   ///
   /// Должен быть больше 0
   int get period => throw _privateConstructorUsedError;
+
+  /// Дата и время первого регулярного платежа.
+  ///
+  ///  По умолчанию запуск произойдет через указанный интервал и период, например через месяц.
+  ///
+  ///  Если указываете другую дату, то она должна стоять в будущем времени
+  DateTime? get startDate => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String interval, int period, int? maxPeriods,
+    TResult Function(ReccurentInterval interval, int period, int? maxPeriods,
             double? amount, DateTime? startDate, String? customerReceipt)
         $default, {
-    required TResult Function(String interval, int period) monthly,
+    required TResult Function(
+            ReccurentInterval interval, DateTime? startDate, int period)
+        monthly,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String interval, int period, int? maxPeriods,
+    TResult? Function(ReccurentInterval interval, int period, int? maxPeriods,
             double? amount, DateTime? startDate, String? customerReceipt)?
         $default, {
-    TResult? Function(String interval, int period)? monthly,
+    TResult? Function(
+            ReccurentInterval interval, DateTime? startDate, int period)?
+        monthly,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String interval, int period, int? maxPeriods,
+    TResult Function(ReccurentInterval interval, int period, int? maxPeriods,
             double? amount, DateTime? startDate, String? customerReceipt)?
         $default, {
-    TResult Function(String interval, int period)? monthly,
+    TResult Function(
+            ReccurentInterval interval, DateTime? startDate, int period)?
+        monthly,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -91,7 +104,7 @@ abstract class $RecurrentCopyWith<$Res> {
   factory $RecurrentCopyWith(Recurrent value, $Res Function(Recurrent) then) =
       _$RecurrentCopyWithImpl<$Res, Recurrent>;
   @useResult
-  $Res call({String interval, int period});
+  $Res call({ReccurentInterval interval, int period, DateTime? startDate});
 }
 
 /// @nodoc
@@ -109,16 +122,21 @@ class _$RecurrentCopyWithImpl<$Res, $Val extends Recurrent>
   $Res call({
     Object? interval = null,
     Object? period = null,
+    Object? startDate = freezed,
   }) {
     return _then(_value.copyWith(
       interval: null == interval
           ? _value.interval
           : interval // ignore: cast_nullable_to_non_nullable
-              as String,
+              as ReccurentInterval,
       period: null == period
           ? _value.period
           : period // ignore: cast_nullable_to_non_nullable
               as int,
+      startDate: freezed == startDate
+          ? _value.startDate
+          : startDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
     ) as $Val);
   }
 }
@@ -132,7 +150,7 @@ abstract class _$$RecurrentImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String interval,
+      {ReccurentInterval interval,
       int period,
       int? maxPeriods,
       double? amount,
@@ -162,7 +180,7 @@ class __$$RecurrentImplCopyWithImpl<$Res>
       interval: null == interval
           ? _value.interval
           : interval // ignore: cast_nullable_to_non_nullable
-              as String,
+              as ReccurentInterval,
       period: null == period
           ? _value.period
           : period // ignore: cast_nullable_to_non_nullable
@@ -206,7 +224,7 @@ class _$RecurrentImpl extends _Recurrent {
 
   /// Интервал. Возможные значения: Day, Week, Month
   @override
-  final String interval;
+  final ReccurentInterval interval;
 
   /// Период. В комбинации с интервалом, 1 Month значит раз в месяц, а 2 Week — раз в две недели.
   ///
@@ -247,7 +265,7 @@ class _$RecurrentImpl extends _Recurrent {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$RecurrentImpl &&
@@ -277,10 +295,12 @@ class _$RecurrentImpl extends _Recurrent {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String interval, int period, int? maxPeriods,
+    TResult Function(ReccurentInterval interval, int period, int? maxPeriods,
             double? amount, DateTime? startDate, String? customerReceipt)
         $default, {
-    required TResult Function(String interval, int period) monthly,
+    required TResult Function(
+            ReccurentInterval interval, DateTime? startDate, int period)
+        monthly,
   }) {
     return $default(
         interval, period, maxPeriods, amount, startDate, customerReceipt);
@@ -289,10 +309,12 @@ class _$RecurrentImpl extends _Recurrent {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String interval, int period, int? maxPeriods,
+    TResult? Function(ReccurentInterval interval, int period, int? maxPeriods,
             double? amount, DateTime? startDate, String? customerReceipt)?
         $default, {
-    TResult? Function(String interval, int period)? monthly,
+    TResult? Function(
+            ReccurentInterval interval, DateTime? startDate, int period)?
+        monthly,
   }) {
     return $default?.call(
         interval, period, maxPeriods, amount, startDate, customerReceipt);
@@ -301,10 +323,12 @@ class _$RecurrentImpl extends _Recurrent {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String interval, int period, int? maxPeriods,
+    TResult Function(ReccurentInterval interval, int period, int? maxPeriods,
             double? amount, DateTime? startDate, String? customerReceipt)?
         $default, {
-    TResult Function(String interval, int period)? monthly,
+    TResult Function(
+            ReccurentInterval interval, DateTime? startDate, int period)?
+        monthly,
     required TResult orElse(),
   }) {
     if ($default != null) {
@@ -355,7 +379,7 @@ class _$RecurrentImpl extends _Recurrent {
 
 abstract class _Recurrent extends Recurrent {
   const factory _Recurrent(
-      {required final String interval,
+      {required final ReccurentInterval interval,
       required final int period,
       final int? maxPeriods,
       final double? amount,
@@ -369,7 +393,7 @@ abstract class _Recurrent extends Recurrent {
   @override
 
   /// Интервал. Возможные значения: Day, Week, Month
-  String get interval;
+  ReccurentInterval get interval;
   @override
 
   /// Период. В комбинации с интервалом, 1 Month значит раз в месяц, а 2 Week — раз в две недели.
@@ -386,6 +410,7 @@ abstract class _Recurrent extends Recurrent {
   ///
   ///  Если указываете другую сумму, проверьте, чтобы она была больше 0
   double? get amount;
+  @override
 
   /// Дата и время первого регулярного платежа.
   ///
@@ -410,7 +435,7 @@ abstract class _$$MonthlyRecurrentImplCopyWith<$Res>
       __$$MonthlyRecurrentImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String interval, int period});
+  $Res call({ReccurentInterval interval, DateTime? startDate, int period});
 }
 
 /// @nodoc
@@ -425,13 +450,18 @@ class __$$MonthlyRecurrentImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? interval = null,
+    Object? startDate = freezed,
     Object? period = null,
   }) {
     return _then(_$MonthlyRecurrentImpl(
       interval: null == interval
           ? _value.interval
           : interval // ignore: cast_nullable_to_non_nullable
-              as String,
+              as ReccurentInterval,
+      startDate: freezed == startDate
+          ? _value.startDate
+          : startDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
       period: null == period
           ? _value.period
           : period // ignore: cast_nullable_to_non_nullable
@@ -444,7 +474,10 @@ class __$$MonthlyRecurrentImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$MonthlyRecurrentImpl extends _MonthlyRecurrent {
   const _$MonthlyRecurrentImpl(
-      {this.interval = 'Month', this.period = 1, final String? $type})
+      {this.interval = ReccurentInterval.month,
+      this.startDate,
+      this.period = 1,
+      final String? $type})
       : $type = $type ?? 'monthly',
         super._();
 
@@ -454,7 +487,15 @@ class _$MonthlyRecurrentImpl extends _MonthlyRecurrent {
   /// Интервал. Возможные значения: Day, Week, Month
   @override
   @JsonKey()
-  final String interval;
+  final ReccurentInterval interval;
+
+  /// Дата и время первого регулярного платежа.
+  ///
+  ///  По умолчанию запуск произойдет через указанный интервал и период, например через месяц.
+  ///
+  ///  Если указываете другую дату, то она должна стоять в будущем времени
+  @override
+  final DateTime? startDate;
 
   /// Период. В комбинации с интервалом, 1 Month значит раз в месяц, а 2 Week — раз в две недели.
   ///
@@ -468,22 +509,24 @@ class _$MonthlyRecurrentImpl extends _MonthlyRecurrent {
 
   @override
   String toString() {
-    return 'Recurrent.monthly(interval: $interval, period: $period)';
+    return 'Recurrent.monthly(interval: $interval, startDate: $startDate, period: $period)';
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MonthlyRecurrentImpl &&
             (identical(other.interval, interval) ||
                 other.interval == interval) &&
+            (identical(other.startDate, startDate) ||
+                other.startDate == startDate) &&
             (identical(other.period, period) || other.period == period));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, interval, period);
+  int get hashCode => Object.hash(runtimeType, interval, startDate, period);
 
   @JsonKey(ignore: true)
   @override
@@ -495,36 +538,42 @@ class _$MonthlyRecurrentImpl extends _MonthlyRecurrent {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String interval, int period, int? maxPeriods,
+    TResult Function(ReccurentInterval interval, int period, int? maxPeriods,
             double? amount, DateTime? startDate, String? customerReceipt)
         $default, {
-    required TResult Function(String interval, int period) monthly,
+    required TResult Function(
+            ReccurentInterval interval, DateTime? startDate, int period)
+        monthly,
   }) {
-    return monthly(interval, period);
+    return monthly(interval, startDate, period);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String interval, int period, int? maxPeriods,
+    TResult? Function(ReccurentInterval interval, int period, int? maxPeriods,
             double? amount, DateTime? startDate, String? customerReceipt)?
         $default, {
-    TResult? Function(String interval, int period)? monthly,
+    TResult? Function(
+            ReccurentInterval interval, DateTime? startDate, int period)?
+        monthly,
   }) {
-    return monthly?.call(interval, period);
+    return monthly?.call(interval, startDate, period);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String interval, int period, int? maxPeriods,
+    TResult Function(ReccurentInterval interval, int period, int? maxPeriods,
             double? amount, DateTime? startDate, String? customerReceipt)?
         $default, {
-    TResult Function(String interval, int period)? monthly,
+    TResult Function(
+            ReccurentInterval interval, DateTime? startDate, int period)?
+        monthly,
     required TResult orElse(),
   }) {
     if (monthly != null) {
-      return monthly(interval, period);
+      return monthly(interval, startDate, period);
     }
     return orElse();
   }
@@ -569,8 +618,10 @@ class _$MonthlyRecurrentImpl extends _MonthlyRecurrent {
 }
 
 abstract class _MonthlyRecurrent extends Recurrent {
-  const factory _MonthlyRecurrent({final String interval, final int period}) =
-      _$MonthlyRecurrentImpl;
+  const factory _MonthlyRecurrent(
+      {final ReccurentInterval interval,
+      final DateTime? startDate,
+      final int period}) = _$MonthlyRecurrentImpl;
   const _MonthlyRecurrent._() : super._();
 
   factory _MonthlyRecurrent.fromJson(Map<String, dynamic> json) =
@@ -579,7 +630,15 @@ abstract class _MonthlyRecurrent extends Recurrent {
   @override
 
   /// Интервал. Возможные значения: Day, Week, Month
-  String get interval;
+  ReccurentInterval get interval;
+  @override
+
+  /// Дата и время первого регулярного платежа.
+  ///
+  ///  По умолчанию запуск произойдет через указанный интервал и период, например через месяц.
+  ///
+  ///  Если указываете другую дату, то она должна стоять в будущем времени
+  DateTime? get startDate;
   @override
 
   /// Период. В комбинации с интервалом, 1 Month значит раз в месяц, а 2 Week — раз в две недели.

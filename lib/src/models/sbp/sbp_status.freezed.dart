@@ -12,7 +12,7 @@ part of 'sbp_status.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 SbpStatus _$SbpStatusFromJson(Map<String, dynamic> json) {
   switch (json['Status']) {
@@ -232,7 +232,7 @@ class _$SbpStatusCreatedImpl implements _SbpStatusCreated {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SbpStatusCreatedImpl &&
@@ -458,7 +458,7 @@ class _$SbpStatusPendingImpl implements _SbpStatusPending {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SbpStatusPendingImpl &&
@@ -684,7 +684,7 @@ class _$SbpStatusCompletedImpl implements _SbpStatusCompleted {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SbpStatusCompletedImpl &&
@@ -910,7 +910,7 @@ class _$SbpStatusDeclinedImpl implements _SbpStatusDeclined {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SbpStatusDeclinedImpl &&

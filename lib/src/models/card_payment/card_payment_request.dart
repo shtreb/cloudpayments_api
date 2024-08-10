@@ -17,8 +17,12 @@ class CardPaymentRequest with _$CardPaymentRequest {
     required int amount,
 
     /// IP-адрес плательщика
-    required String ipAddress, /// Криптограмма платежных данных
-    required String cardCryptogramPacket, /// Валюта: RUB/USD/EUR/GBP (см. [справочник](https://developers.cloudpayments.ru/#spisok-valyut)). Если параметр не передан, то по умолчанию принимает значение RUB
+    required String ipAddress,
+
+    /// Криптограмма платежных данных
+    required String cardCryptogramPacket,
+
+    /// Валюта: RUB/USD/EUR/GBP (см. [справочник](https://developers.cloudpayments.ru/#spisok-valyut)). Если параметр не передан, то по умолчанию принимает значение RUB
     @Default('RUB') String currency,
 
     ///Номер счета или заказа

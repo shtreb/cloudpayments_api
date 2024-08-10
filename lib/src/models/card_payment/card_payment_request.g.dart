@@ -8,7 +8,7 @@ part of 'card_payment_request.dart';
 
 _$CardPaymentImpl _$$CardPaymentImplFromJson(Map<String, dynamic> json) =>
     _$CardPaymentImpl(
-      amount: json['Amount'] as int,
+      amount: (json['Amount'] as num).toInt(),
       ipAddress: json['IpAddress'] as String,
       cardCryptogramPacket: json['CardCryptogramPacket'] as String,
       currency: json['Currency'] as String? ?? 'RUB',

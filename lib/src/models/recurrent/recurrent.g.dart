@@ -8,9 +8,9 @@ part of 'recurrent.dart';
 
 _$RecurrentImpl _$$RecurrentImplFromJson(Map<String, dynamic> json) =>
     _$RecurrentImpl(
-      interval: json['Interval'] as String,
-      period: json['Period'] as int,
-      maxPeriods: json['MaxPeriods'] as int?,
+      interval: $enumDecode(_$ReccurentIntervalEnumMap, json['Interval']),
+      period: (json['Period'] as num).toInt(),
+      maxPeriods: (json['MaxPeriods'] as num?)?.toInt(),
       amount: (json['Amount'] as num?)?.toDouble(),
       startDate: json['StartDate'] == null
           ? null
@@ -21,7 +21,7 @@ _$RecurrentImpl _$$RecurrentImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$RecurrentImplToJson(_$RecurrentImpl instance) =>
     <String, dynamic>{
-      'Interval': instance.interval,
+      'Interval': _$ReccurentIntervalEnumMap[instance.interval]!,
       'Period': instance.period,
       'MaxPeriods': instance.maxPeriods,
       'Amount': instance.amount,
@@ -30,18 +30,30 @@ Map<String, dynamic> _$$RecurrentImplToJson(_$RecurrentImpl instance) =>
       'runtimeType': instance.$type,
     };
 
+const _$ReccurentIntervalEnumMap = {
+  ReccurentInterval.day: 'Day',
+  ReccurentInterval.week: 'Week',
+  ReccurentInterval.month: 'Month',
+};
+
 _$MonthlyRecurrentImpl _$$MonthlyRecurrentImplFromJson(
         Map<String, dynamic> json) =>
     _$MonthlyRecurrentImpl(
-      interval: json['Interval'] as String? ?? 'Month',
-      period: json['Period'] as int? ?? 1,
+      interval:
+          $enumDecodeNullable(_$ReccurentIntervalEnumMap, json['Interval']) ??
+              ReccurentInterval.month,
+      startDate: json['StartDate'] == null
+          ? null
+          : DateTime.parse(json['StartDate'] as String),
+      period: (json['Period'] as num?)?.toInt() ?? 1,
       $type: json['runtimeType'] as String?,
     );
 
 Map<String, dynamic> _$$MonthlyRecurrentImplToJson(
         _$MonthlyRecurrentImpl instance) =>
     <String, dynamic>{
-      'Interval': instance.interval,
+      'Interval': _$ReccurentIntervalEnumMap[instance.interval]!,
+      'StartDate': instance.startDate?.toIso8601String(),
       'Period': instance.period,
       'runtimeType': instance.$type,
     };
