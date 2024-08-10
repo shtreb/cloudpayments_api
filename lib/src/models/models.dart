@@ -1,7 +1,6 @@
 export 'card_payment/card_payment_request.dart';
 export 'card_payment_transaction/payment_transaction.dart';
 export 'card_payment_transaction/transaction_info.dart';
-export 'cloud_payment_response.dart';
 export 'cloud_payments_response.dart';
 export 'credentials/cp_auth_credentials.dart';
 export 'payer/payer.dart';

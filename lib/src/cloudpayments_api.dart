@@ -47,7 +47,7 @@ abstract class CloudPaymentsApi {
   /// Возврат денег
   @POST(CloudpaymentsApiUrls.refund)
   @FormUrlEncoded()
-  Future<CloudPaymentResponse<TransactionInfo>> refund({
+  Future<CloudPaymentsResponse<TransactionInfo>> refund({
     /// Номер транзакции оплаты
     @Field('TransactionId') required String transactionId,
 
@@ -99,7 +99,7 @@ abstract class CloudPaymentsApi {
   /// В ответ на корректно сформированный запрос система возвращает сообщение об успешно выполненной операции.
   @POST(CloudpaymentsApiUrls.cancelSubscription)
   @FormUrlEncoded()
-  Future<CloudPaymentResponse<RecurrentInfo?>> cancelSubscription(
+  Future<CloudPaymentsResponse<RecurrentInfo?>> cancelSubscription(
     /// Идентификатор подписки
     @Field('Id') String id,
   );
@@ -107,7 +107,7 @@ abstract class CloudPaymentsApi {
   ///	Изменения ранее созданной подписки.
   @POST(CloudpaymentsApiUrls.updateSubscription)
   @FormUrlEncoded()
-  Future<CloudPaymentResponse<RecurrentInfo?>> updateSubscription({
+  Future<CloudPaymentsResponse<RecurrentInfo?>> updateSubscription({
     /// Идентификатор подписки
     @Body() required SubscriptionUpdateRequest updateRequest,
   });
@@ -117,7 +117,7 @@ abstract class CloudPaymentsApi {
   /// Метод получения информации о статусе подписки.
   @POST(CloudpaymentsApiUrls.getSubscription)
   @FormUrlEncoded()
-  Future<CloudPaymentResponse<RecurrentInfo>> getSubscription(
+  Future<CloudPaymentsResponse<RecurrentInfo>> getSubscription(
     /// Идентификатор подписки
     @Field('Id') String id,
   );
