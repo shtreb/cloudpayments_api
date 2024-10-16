@@ -17,22 +17,20 @@ dependencies:
 import 'package:cloudpayments_api/cloudpayments_api.dart';
 import 'package:dio/dio.dart';
 
-import 'const.dart';
-
 void main() async {
   final paymentRequest = CardPaymentRequest(
     amount: '100',
-    ipAddress: '$ipAddress',
-    cardCryptogramPacket: '$cardCryptogramPacket',
+    ipAddress: 'YOUR_IP_ADDRESS',
+    cardCryptogramPacket: 'cryptogram_packet',
   );
 
   final dio = Dio();
 
   final cloudPaymentsApi = CloudPaymentsApi(
     dio,
-    cpAuthCredentials: CpAuthCredentials(
-      publicID: '$id',
-      apiPassword: '$secretKey',
+    cpAuthCredentials: const CpAuthCredentials(
+      publicID: 'YOUR_PUBLIC_ID',
+      apiPassword: 'YOUR_API_PASSWORD',
     ),
   );
 
@@ -45,5 +43,4 @@ void main() async {
     error: (TransactionInfo info) {},
   );
 }
-
 ```

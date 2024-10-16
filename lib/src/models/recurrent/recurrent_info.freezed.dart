@@ -43,11 +43,15 @@ mixin _$RecurrentInfo {
   DateTime? get lastTransactionDateIso => throw _privateConstructorUsedError;
   String? get nextTransactionDate => throw _privateConstructorUsedError;
   DateTime? get nextTransactionDateIso => throw _privateConstructorUsedError;
-  String? get receipt => throw _privateConstructorUsedError;
+  Map<String, Object>? get receipt => throw _privateConstructorUsedError;
   String? get failoverSchemeId => throw _privateConstructorUsedError;
 
+  /// Serializes this RecurrentInfo to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of RecurrentInfo
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $RecurrentInfoCopyWith<RecurrentInfo> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -82,7 +86,7 @@ abstract class $RecurrentInfoCopyWith<$Res> {
       DateTime? lastTransactionDateIso,
       String? nextTransactionDate,
       DateTime? nextTransactionDateIso,
-      String? receipt,
+      Map<String, Object>? receipt,
       String? failoverSchemeId});
 }
 
@@ -96,6 +100,8 @@ class _$RecurrentInfoCopyWithImpl<$Res, $Val extends RecurrentInfo>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of RecurrentInfo
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -221,7 +227,7 @@ class _$RecurrentInfoCopyWithImpl<$Res, $Val extends RecurrentInfo>
       receipt: freezed == receipt
           ? _value.receipt
           : receipt // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as Map<String, Object>?,
       failoverSchemeId: freezed == failoverSchemeId
           ? _value.failoverSchemeId
           : failoverSchemeId // ignore: cast_nullable_to_non_nullable
@@ -262,7 +268,7 @@ abstract class _$$RecurrentInfoImplCopyWith<$Res>
       DateTime? lastTransactionDateIso,
       String? nextTransactionDate,
       DateTime? nextTransactionDateIso,
-      String? receipt,
+      Map<String, Object>? receipt,
       String? failoverSchemeId});
 }
 
@@ -274,6 +280,8 @@ class __$$RecurrentInfoImplCopyWithImpl<$Res>
       _$RecurrentInfoImpl _value, $Res Function(_$RecurrentInfoImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of RecurrentInfo
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -397,9 +405,9 @@ class __$$RecurrentInfoImplCopyWithImpl<$Res>
           : nextTransactionDateIso // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       receipt: freezed == receipt
-          ? _value.receipt
+          ? _value._receipt
           : receipt // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as Map<String, Object>?,
       failoverSchemeId: freezed == failoverSchemeId
           ? _value.failoverSchemeId
           : failoverSchemeId // ignore: cast_nullable_to_non_nullable
@@ -435,8 +443,9 @@ class _$RecurrentInfoImpl implements _RecurrentInfo {
       this.lastTransactionDateIso,
       this.nextTransactionDate,
       this.nextTransactionDateIso,
-      this.receipt,
-      this.failoverSchemeId});
+      final Map<String, Object>? receipt,
+      this.failoverSchemeId})
+      : _receipt = receipt;
 
   factory _$RecurrentInfoImpl.fromJson(Map<String, dynamic> json) =>
       _$$RecurrentInfoImplFromJson(json);
@@ -487,8 +496,16 @@ class _$RecurrentInfoImpl implements _RecurrentInfo {
   final String? nextTransactionDate;
   @override
   final DateTime? nextTransactionDateIso;
+  final Map<String, Object>? _receipt;
   @override
-  final String? receipt;
+  Map<String, Object>? get receipt {
+    final value = _receipt;
+    if (value == null) return null;
+    if (_receipt is EqualUnmodifiableMapView) return _receipt;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
   @override
   final String? failoverSchemeId;
 
@@ -546,12 +563,12 @@ class _$RecurrentInfoImpl implements _RecurrentInfo {
                 other.nextTransactionDate == nextTransactionDate) &&
             (identical(other.nextTransactionDateIso, nextTransactionDateIso) ||
                 other.nextTransactionDateIso == nextTransactionDateIso) &&
-            (identical(other.receipt, receipt) || other.receipt == receipt) &&
+            const DeepCollectionEquality().equals(other._receipt, _receipt) &&
             (identical(other.failoverSchemeId, failoverSchemeId) ||
                 other.failoverSchemeId == failoverSchemeId));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
@@ -578,11 +595,13 @@ class _$RecurrentInfoImpl implements _RecurrentInfo {
         lastTransactionDateIso,
         nextTransactionDate,
         nextTransactionDateIso,
-        receipt,
+        const DeepCollectionEquality().hash(_receipt),
         failoverSchemeId
       ]);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of RecurrentInfo
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$RecurrentInfoImplCopyWith<_$RecurrentInfoImpl> get copyWith =>
@@ -621,7 +640,7 @@ abstract class _RecurrentInfo implements RecurrentInfo {
       final DateTime? lastTransactionDateIso,
       final String? nextTransactionDate,
       final DateTime? nextTransactionDateIso,
-      final String? receipt,
+      final Map<String, Object>? receipt,
       final String? failoverSchemeId}) = _$RecurrentInfoImpl;
 
   factory _RecurrentInfo.fromJson(Map<String, dynamic> json) =
@@ -674,11 +693,14 @@ abstract class _RecurrentInfo implements RecurrentInfo {
   @override
   DateTime? get nextTransactionDateIso;
   @override
-  String? get receipt;
+  Map<String, Object>? get receipt;
   @override
   String? get failoverSchemeId;
+
+  /// Create a copy of RecurrentInfo
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$RecurrentInfoImplCopyWith<_$RecurrentInfoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -24,8 +24,12 @@ mixin _$SubscriptionCanceledResponse {
   String? get message => throw _privateConstructorUsedError;
   bool get success => throw _privateConstructorUsedError;
 
+  /// Serializes this SubscriptionCanceledResponse to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of SubscriptionCanceledResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SubscriptionCanceledResponseCopyWith<SubscriptionCanceledResponse>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -52,6 +56,8 @@ class _$SubscriptionCanceledResponseCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SubscriptionCanceledResponse
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -93,6 +99,8 @@ class __$$SubscriptionCanceledResponseImplCopyWithImpl<$Res>
       $Res Function(_$SubscriptionCanceledResponseImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SubscriptionCanceledResponse
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -142,11 +150,13 @@ class _$SubscriptionCanceledResponseImpl
             (identical(other.success, success) || other.success == success));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, message, success);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SubscriptionCanceledResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SubscriptionCanceledResponseImplCopyWith<
@@ -175,8 +185,11 @@ abstract class _SubscriptionCanceledResponse
   String? get message;
   @override
   bool get success;
+
+  /// Create a copy of SubscriptionCanceledResponse
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SubscriptionCanceledResponseImplCopyWith<
           _$SubscriptionCanceledResponseImpl>
       get copyWith => throw _privateConstructorUsedError;

@@ -18,9 +18,6 @@ class RecurrentCreateRequest with _$RecurrentCreateRequest {
     /// Обязательный идентификатор пользователя для создания подписки
     required String accountId,
 
-    /// E-mail плательщика
-    required String email,
-
     /// Назначение платежа в свободной форме
     required String description,
 
@@ -41,6 +38,9 @@ class RecurrentCreateRequest with _$RecurrentCreateRequest {
     ///
     /// Должен быть больше 0
     required int period,
+
+    /// E-mail плательщика
+    String? email,
 
     /// Если значение true — платежи будут выполняться по двухстадийной схеме
     ///

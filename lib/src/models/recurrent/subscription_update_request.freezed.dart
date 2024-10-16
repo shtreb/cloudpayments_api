@@ -70,8 +70,12 @@ mixin _$SubscriptionUpdateRequest {
   /// Язык уведомлений. Возможные значения: "ru-RU", "en-US". (см. справочник)
   String? get cultureName => throw _privateConstructorUsedError;
 
+  /// Serializes this SubscriptionUpdateRequest to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of SubscriptionUpdateRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SubscriptionUpdateRequestCopyWith<SubscriptionUpdateRequest> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -108,6 +112,8 @@ class _$SubscriptionUpdateRequestCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SubscriptionUpdateRequest
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -211,6 +217,8 @@ class __$$SubscriptionUpdateRequestImplCopyWithImpl<$Res>
       $Res Function(_$SubscriptionUpdateRequestImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SubscriptionUpdateRequest
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -404,7 +412,7 @@ class _$SubscriptionUpdateRequestImpl implements _SubscriptionUpdateRequest {
                 other.cultureName == cultureName));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -421,7 +429,9 @@ class _$SubscriptionUpdateRequestImpl implements _SubscriptionUpdateRequest {
       const DeepCollectionEquality().hash(_customerReceipt),
       cultureName);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SubscriptionUpdateRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SubscriptionUpdateRequestImplCopyWith<_$SubscriptionUpdateRequestImpl>
@@ -454,68 +464,70 @@ abstract class _SubscriptionUpdateRequest implements SubscriptionUpdateRequest {
   factory _SubscriptionUpdateRequest.fromJson(Map<String, dynamic> json) =
       _$SubscriptionUpdateRequestImpl.fromJson;
 
-  @override
-
   /// Сумма платежа. Должна быть больше 0
+  @override
   String get id;
-  @override
 
   /// Сумма платежа. Должна быть больше 0
-  num? get amount;
   @override
+  num? get amount;
 
   /// E-mail плательщика
-  String? get email;
   @override
+  String? get email;
 
   /// Назначение платежа в свободной форме
-  String? get description;
   @override
+  String? get description;
 
   /// Если значение true — платежи будут выполняться по двухстадийной схеме
   ///
   /// По умолчанию false
-  bool? get requireConfirmation;
   @override
+  bool? get requireConfirmation;
 
   /// Валюта: RUB/USD/EUR/GBP (см. [справочник](https://developers.cloudpayments.ru/#spisok-valyut)).
   ///
   ///  Если параметр не передан, то по умолчанию принимает значение RUB
-  String get currency;
   @override
+  String get currency;
 
   /// Дата и время первого платежа по плану во временной зоне UTC.
   ///
   ///  Значение должно быть в будущем
-  DateTime? get startDate;
   @override
+  DateTime? get startDate;
 
   /// Интервал. Возможные значения: `Day`, `Week`, `Month`
-  ReccurentInterval? get interval;
   @override
+  ReccurentInterval? get interval;
 
   /// Период. В комбинации с интервалом `interval`
   ///
   ///  1 Month значит раз в месяц, а 2 Week — раз в две недели.
   ///
   /// Должен быть больше 0
-  int? get period;
   @override
+  int? get period;
 
   /// Максимальное количество платежей в подписке.
   ///
   /// Если указан, должен быть больше 0
-  int? get maxPeriods;
   @override
+  int? get maxPeriods;
 
   /// Для изменения состава [онлайн-чека](https://developers.cloudpayments.ru/#format-peredachi-dannyh-dlya-onlayn-cheka)
-  Map<String, Object>? get customerReceipt;
   @override
+  Map<String, Object>? get customerReceipt;
 
   /// Язык уведомлений. Возможные значения: "ru-RU", "en-US". (см. справочник)
-  String? get cultureName;
   @override
-  @JsonKey(ignore: true)
+  String? get cultureName;
+
+  /// Create a copy of SubscriptionUpdateRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SubscriptionUpdateRequestImplCopyWith<_$SubscriptionUpdateRequestImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

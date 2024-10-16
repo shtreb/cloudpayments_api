@@ -26,8 +26,12 @@ mixin _$Three3DSecureRequest {
   /// Значение одноименного параметра
   String get paRes => throw _privateConstructorUsedError;
 
+  /// Serializes this Three3DSecureRequest to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Three3DSecureRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $Three3DSecureRequestCopyWith<Three3DSecureRequest> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -52,6 +56,8 @@ class _$Three3DSecureRequestCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Three3DSecureRequest
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -90,6 +96,8 @@ class __$$Three3DSecureRequestImplCopyWithImpl<$Res>
       $Res Function(_$Three3DSecureRequestImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Three3DSecureRequest
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -141,11 +149,13 @@ class _$Three3DSecureRequestImpl implements _Three3DSecureRequest {
             (identical(other.paRes, paRes) || other.paRes == paRes));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, transactionId, paRes);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Three3DSecureRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$Three3DSecureRequestImplCopyWith<_$Three3DSecureRequestImpl>
@@ -169,16 +179,18 @@ abstract class _Three3DSecureRequest implements Three3DSecureRequest {
   factory _Three3DSecureRequest.fromJson(Map<String, dynamic> json) =
       _$Three3DSecureRequestImpl.fromJson;
 
-  @override
-
   /// Значение параметра MD
-  int get transactionId;
   @override
+  int get transactionId;
 
   /// Значение одноименного параметра
-  String get paRes;
   @override
-  @JsonKey(ignore: true)
+  String get paRes;
+
+  /// Create a copy of Three3DSecureRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$Three3DSecureRequestImplCopyWith<_$Three3DSecureRequestImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

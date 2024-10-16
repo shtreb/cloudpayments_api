@@ -44,8 +44,12 @@ mixin _$SbpResponse {
   /// true - если терминал в режиме теста
   bool? get isTest => throw _privateConstructorUsedError;
 
+  /// Serializes this SbpResponse to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of SbpResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SbpResponseCopyWith<SbpResponse> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -77,6 +81,8 @@ class _$SbpResponseCopyWithImpl<$Res, $Val extends SbpResponse>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SbpResponse
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -153,6 +159,8 @@ class __$$SbpResponseImplCopyWithImpl<$Res>
       _$SbpResponseImpl _value, $Res Function(_$SbpResponseImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SbpResponse
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -273,12 +281,14 @@ class _$SbpResponseImpl implements _SbpResponse {
             (identical(other.isTest, isTest) || other.isTest == isTest));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, transactionId, amount, qrUrl,
       qrImage, merchantOrderId, providerQrId, message, isTest);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SbpResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SbpResponseImplCopyWith<_$SbpResponseImpl> get copyWith =>
@@ -306,40 +316,42 @@ abstract class _SbpResponse implements SbpResponse {
   factory _SbpResponse.fromJson(Map<String, dynamic> json) =
       _$SbpResponseImpl.fromJson;
 
-  @override
-
   /// Id транзакции
-  int get transactionId;
   @override
+  int get transactionId;
 
   /// Сумма
-  num get amount;
   @override
+  num get amount;
 
   /// Ссылка на изображение Qr-код (Web)
-  String? get qrUrl;
   @override
+  String? get qrUrl;
 
   /// Base64 или image
-  String? get qrImage;
   @override
+  String? get qrImage;
 
   /// Id заказа
-  String? get merchantOrderId;
   @override
+  String? get merchantOrderId;
 
   /// Id Qr от провайдера
-  String? get providerQrId;
   @override
+  String? get providerQrId;
 
   /// Сообщение описывающее статус
-  String? get message;
   @override
+  String? get message;
 
   /// true - если терминал в режиме теста
-  bool? get isTest;
   @override
-  @JsonKey(ignore: true)
+  bool? get isTest;
+
+  /// Create a copy of SbpResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SbpResponseImplCopyWith<_$SbpResponseImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

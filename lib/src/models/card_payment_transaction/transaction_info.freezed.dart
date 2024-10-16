@@ -86,8 +86,12 @@ mixin _$TransactionInfo {
   String? get walletType => throw _privateConstructorUsedError;
   double? get totalFee => throw _privateConstructorUsedError;
 
+  /// Serializes this TransactionInfo to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of TransactionInfo
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $TransactionInfoCopyWith<TransactionInfo> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -172,6 +176,8 @@ class _$TransactionInfoCopyWithImpl<$Res, $Val extends TransactionInfo>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of TransactionInfo
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -567,6 +573,8 @@ class __$$TransactionInfoImplCopyWithImpl<$Res>
       _$TransactionInfoImpl _value, $Res Function(_$TransactionInfoImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TransactionInfo
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1201,7 +1209,7 @@ class _$TransactionInfoImpl extends _TransactionInfo {
             (identical(other.totalFee, totalFee) || other.totalFee == totalFee));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
@@ -1268,7 +1276,9 @@ class _$TransactionInfoImpl extends _TransactionInfo {
         totalFee
       ]);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TransactionInfo
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$TransactionInfoImplCopyWith<_$TransactionInfoImpl> get copyWith =>
@@ -1351,13 +1361,12 @@ abstract class _TransactionInfo extends TransactionInfo {
   factory _TransactionInfo.fromJson(Map<String, dynamic> json) =
       _$TransactionInfoImpl.fromJson;
 
-  @override
-
   ///Код ошибки (см. [справочник](https://developers.cloudpayments.ru/#tipy-operatsiy))
-  int get reasonCode;
   @override
+  int get reasonCode;
 
   /// ID из личного кабинета
+  @override
   String? get publicId;
   @override
   String? get terminalUrl;
@@ -1477,8 +1486,11 @@ abstract class _TransactionInfo extends TransactionInfo {
   String? get walletType;
   @override
   double? get totalFee;
+
+  /// Create a copy of TransactionInfo
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$TransactionInfoImplCopyWith<_$TransactionInfoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

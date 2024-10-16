@@ -39,7 +39,9 @@ _$RecurrentInfoImpl _$$RecurrentInfoImplFromJson(Map<String, dynamic> json) =>
       nextTransactionDateIso: json['NextTransactionDateIso'] == null
           ? null
           : DateTime.parse(json['NextTransactionDateIso'] as String),
-      receipt: json['Receipt'] as String?,
+      receipt: (json['Receipt'] as Map<String, dynamic>?)?.map(
+        (k, e) => MapEntry(k, e as Object),
+      ),
       failoverSchemeId: json['FailoverSchemeId'] as String?,
     );
 

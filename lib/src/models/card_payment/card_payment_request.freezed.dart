@@ -53,8 +53,12 @@ mixin _$CardPaymentRequest {
   @PayloadConverter()
   PayloadData? get jsonData => throw _privateConstructorUsedError;
 
+  /// Serializes this CardPaymentRequest to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of CardPaymentRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $CardPaymentRequestCopyWith<CardPaymentRequest> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -91,6 +95,8 @@ class _$CardPaymentRequestCopyWithImpl<$Res, $Val extends CardPaymentRequest>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of CardPaymentRequest
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -149,6 +155,8 @@ class _$CardPaymentRequestCopyWithImpl<$Res, $Val extends CardPaymentRequest>
     ) as $Val);
   }
 
+  /// Create a copy of CardPaymentRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $TransactionEntityCopyWith<$Res>? get payer {
@@ -161,6 +169,8 @@ class _$CardPaymentRequestCopyWithImpl<$Res, $Val extends CardPaymentRequest>
     });
   }
 
+  /// Create a copy of CardPaymentRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $PayloadDataCopyWith<$Res>? get jsonData {
@@ -208,6 +218,8 @@ class __$$CardPaymentImplCopyWithImpl<$Res>
       _$CardPaymentImpl _value, $Res Function(_$CardPaymentImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CardPaymentRequest
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -358,7 +370,7 @@ class _$CardPaymentImpl implements _CardPayment {
                 other.jsonData == jsonData));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -373,7 +385,9 @@ class _$CardPaymentImpl implements _CardPayment {
       payer,
       jsonData);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CardPaymentRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$CardPaymentImplCopyWith<_$CardPaymentImpl> get copyWith =>
@@ -403,51 +417,53 @@ abstract class _CardPayment implements CardPaymentRequest {
   factory _CardPayment.fromJson(Map<String, dynamic> json) =
       _$CardPaymentImpl.fromJson;
 
-  @override
-
   /// Сумма платежа
-  String get amount;
   @override
+  String get amount;
 
   /// IP-адрес плательщика
-  String get ipAddress;
   @override
+  String get ipAddress;
 
   /// Криптограмма платежных данных
-  String get cardCryptogramPacket;
   @override
+  String get cardCryptogramPacket;
 
   /// Валюта: RUB/USD/EUR/GBP (см. [справочник](https://developers.cloudpayments.ru/#spisok-valyut)). Если параметр не передан, то по умолчанию принимает значение RUB
-  String get currency;
   @override
+  String get currency;
 
   ///Номер счета или заказа
-  String? get invoiceId;
   @override
+  String? get invoiceId;
 
   /// Описание оплаты в свободной форме
-  String? get description;
   @override
+  String? get description;
 
   /// Обязательный идентификатор пользователя для создания подписки и получения токена
-  String? get accountId;
   @override
+  String? get accountId;
 
   /// Имя держателя карты латиницей
-  String? get name;
   @override
+  String? get name;
 
   /// Доп. поле, куда передается информация о плательщике.
-  TransactionEntity? get payer;
   @override
+  TransactionEntity? get payer;
 
   /// Любые другие данные, которые будут связаны с транзакцией,
   ///
   /// в том числе инструкции для создания подписки или формирования онлайн-чека
+  @override
   @PayloadConverter()
   PayloadData? get jsonData;
+
+  /// Create a copy of CardPaymentRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CardPaymentImplCopyWith<_$CardPaymentImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

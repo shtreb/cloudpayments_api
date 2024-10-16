@@ -31,8 +31,12 @@ mixin _$TransactionEntity {
   String? get phone => throw _privateConstructorUsedError;
   String? get postcode => throw _privateConstructorUsedError;
 
+  /// Serializes this TransactionEntity to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of TransactionEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $TransactionEntityCopyWith<TransactionEntity> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -66,6 +70,8 @@ class _$TransactionEntityCopyWithImpl<$Res, $Val extends TransactionEntity>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of TransactionEntity
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -154,6 +160,8 @@ class __$$TransactionEntityImplCopyWithImpl<$Res>
       $Res Function(_$TransactionEntityImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TransactionEntity
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -278,12 +286,14 @@ class _$TransactionEntityImpl implements _TransactionEntity {
                 other.postcode == postcode));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, firstName, lastName, middleName,
       birth, address, street, city, country, phone, postcode);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TransactionEntity
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$TransactionEntityImplCopyWith<_$TransactionEntityImpl> get copyWith =>
@@ -334,8 +344,11 @@ abstract class _TransactionEntity implements TransactionEntity {
   String? get phone;
   @override
   String? get postcode;
+
+  /// Create a copy of TransactionEntity
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$TransactionEntityImplCopyWith<_$TransactionEntityImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

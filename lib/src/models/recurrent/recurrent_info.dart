@@ -33,7 +33,7 @@ class RecurrentInfo with _$RecurrentInfo {
     DateTime? lastTransactionDateIso,
     String? nextTransactionDate,
     DateTime? nextTransactionDateIso,
-    String? receipt,
+    Map<String, Object>? receipt,
     String? failoverSchemeId,
   }) = _RecurrentInfo;
 

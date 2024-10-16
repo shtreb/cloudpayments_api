@@ -12,6 +12,7 @@ class _CloudPaymentsApi implements CloudPaymentsApi {
   _CloudPaymentsApi(
     this._dio, {
     this.baseUrl,
+    this.errorLogger,
   }) {
     baseUrl ??= 'https://api.cloudpayments.ru';
   }
@@ -19,6 +20,8 @@ class _CloudPaymentsApi implements CloudPaymentsApi {
   final Dio _dio;
 
   String? baseUrl;
+
+  final ParseErrorLogger? errorLogger;
 
   @override
   Future<PaymentTransaction> chargeCryptogramPayment(
@@ -28,24 +31,30 @@ class _CloudPaymentsApi implements CloudPaymentsApi {
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(cardPaymentRequest.toJson());
-    final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<PaymentTransaction>(Options(
+    final _options = _setStreamType<PaymentTransaction>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
     )
-            .compose(
-              _dio.options,
-              '/payments/cards/charge',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    final _value = PaymentTransaction.fromJson(_result.data!);
+        .compose(
+          _dio.options,
+          '/payments/cards/charge',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late PaymentTransaction _value;
+    try {
+      _value = PaymentTransaction.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
     return _value;
   }
 
@@ -57,24 +66,30 @@ class _CloudPaymentsApi implements CloudPaymentsApi {
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(tokenPaymenRequest.toJson());
-    final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<PaymentTransaction>(Options(
+    final _options = _setStreamType<PaymentTransaction>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
     )
-            .compose(
-              _dio.options,
-              '/payments/tokens/charge',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    final _value = PaymentTransaction.fromJson(_result.data!);
+        .compose(
+          _dio.options,
+          '/payments/tokens/charge',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late PaymentTransaction _value;
+    try {
+      _value = PaymentTransaction.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
     return _value;
   }
 
@@ -94,7 +109,7 @@ class _CloudPaymentsApi implements CloudPaymentsApi {
       'JsonData': jsonData,
     };
     _data.removeWhere((k, v) => v == null);
-    final _result = await _dio.fetch<Map<String, dynamic>>(
+    final _options =
         _setStreamType<CloudPaymentsResponse<TransactionInfo>>(Options(
       method: 'POST',
       headers: _headers,
@@ -111,11 +126,18 @@ class _CloudPaymentsApi implements CloudPaymentsApi {
                 baseUrl: _combineBaseUrls(
               _dio.options.baseUrl,
               baseUrl,
-            ))));
-    final _value = CloudPaymentsResponse<TransactionInfo>.fromJson(
-      _result.data!,
-      (json) => TransactionInfo.fromJson(json as Map<String, dynamic>),
-    );
+            )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late CloudPaymentsResponse<TransactionInfo> _value;
+    try {
+      _value = CloudPaymentsResponse<TransactionInfo>.fromJson(
+        _result.data!,
+        (json) => TransactionInfo.fromJson(json as Map<String, dynamic>),
+      );
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
     return _value;
   }
 
@@ -127,24 +149,30 @@ class _CloudPaymentsApi implements CloudPaymentsApi {
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(cardPaymentRequest.toJson());
-    final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<PaymentTransaction>(Options(
+    final _options = _setStreamType<PaymentTransaction>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
     )
-            .compose(
-              _dio.options,
-              '/payments/cards/topup',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    final _value = PaymentTransaction.fromJson(_result.data!);
+        .compose(
+          _dio.options,
+          '/payments/cards/topup',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late PaymentTransaction _value;
+    try {
+      _value = PaymentTransaction.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
     return _value;
   }
 
@@ -156,24 +184,30 @@ class _CloudPaymentsApi implements CloudPaymentsApi {
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(tokenPaymenRequest.toJson());
-    final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<PaymentTransaction>(Options(
+    final _options = _setStreamType<PaymentTransaction>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
     )
-            .compose(
-              _dio.options,
-              '/payments/token/topup',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    final _value = PaymentTransaction.fromJson(_result.data!);
+        .compose(
+          _dio.options,
+          '/payments/token/topup',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late PaymentTransaction _value;
+    try {
+      _value = PaymentTransaction.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
     return _value;
   }
 
@@ -185,24 +219,30 @@ class _CloudPaymentsApi implements CloudPaymentsApi {
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(three3DSecureRequest.toJson());
-    final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<PaymentTransaction>(Options(
+    final _options = _setStreamType<PaymentTransaction>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
     )
-            .compose(
-              _dio.options,
-              '/payments/cards/post3ds',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    final _value = PaymentTransaction.fromJson(_result.data!);
+        .compose(
+          _dio.options,
+          '/payments/cards/post3ds',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late PaymentTransaction _value;
+    try {
+      _value = PaymentTransaction.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
     return _value;
   }
 
@@ -212,25 +252,31 @@ class _CloudPaymentsApi implements CloudPaymentsApi {
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = {'TransactionId': transactionId};
-    final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<PaymentTransaction>(Options(
+    final _options = _setStreamType<PaymentTransaction>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
       contentType: 'application/x-www-form-urlencoded',
     )
-            .compose(
-              _dio.options,
-              '/payments/get',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    final _value = PaymentTransaction.fromJson(_result.data!);
+        .compose(
+          _dio.options,
+          '/payments/get',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late PaymentTransaction _value;
+    try {
+      _value = PaymentTransaction.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
     return _value;
   }
 
@@ -242,24 +288,30 @@ class _CloudPaymentsApi implements CloudPaymentsApi {
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(recurrentRequest.toJson());
-    final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<RecurrentPayment>(Options(
+    final _options = _setStreamType<RecurrentPayment>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
     )
-            .compose(
-              _dio.options,
-              '/subscriptions/create',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    final _value = RecurrentPayment.fromJson(_result.data!);
+        .compose(
+          _dio.options,
+          '/subscriptions/create',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late RecurrentPayment _value;
+    try {
+      _value = RecurrentPayment.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
     return _value;
   }
 
@@ -270,7 +322,7 @@ class _CloudPaymentsApi implements CloudPaymentsApi {
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = {'Id': id};
-    final _result = await _dio.fetch<Map<String, dynamic>>(
+    final _options =
         _setStreamType<CloudPaymentsResponse<RecurrentInfo>>(Options(
       method: 'POST',
       headers: _headers,
@@ -287,13 +339,20 @@ class _CloudPaymentsApi implements CloudPaymentsApi {
                 baseUrl: _combineBaseUrls(
               _dio.options.baseUrl,
               baseUrl,
-            ))));
-    final _value = CloudPaymentsResponse<RecurrentInfo?>.fromJson(
-      _result.data!,
-      (json) => json == null
-          ? null
-          : RecurrentInfo.fromJson(json as Map<String, dynamic>),
-    );
+            )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late CloudPaymentsResponse<RecurrentInfo?> _value;
+    try {
+      _value = CloudPaymentsResponse<RecurrentInfo?>.fromJson(
+        _result.data!,
+        (json) => json == null
+            ? null
+            : RecurrentInfo.fromJson(json as Map<String, dynamic>),
+      );
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
     return _value;
   }
 
@@ -305,7 +364,7 @@ class _CloudPaymentsApi implements CloudPaymentsApi {
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(updateRequest.toJson());
-    final _result = await _dio.fetch<Map<String, dynamic>>(
+    final _options =
         _setStreamType<CloudPaymentsResponse<RecurrentInfo>>(Options(
       method: 'POST',
       headers: _headers,
@@ -322,13 +381,20 @@ class _CloudPaymentsApi implements CloudPaymentsApi {
                 baseUrl: _combineBaseUrls(
               _dio.options.baseUrl,
               baseUrl,
-            ))));
-    final _value = CloudPaymentsResponse<RecurrentInfo?>.fromJson(
-      _result.data!,
-      (json) => json == null
-          ? null
-          : RecurrentInfo.fromJson(json as Map<String, dynamic>),
-    );
+            )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late CloudPaymentsResponse<RecurrentInfo?> _value;
+    try {
+      _value = CloudPaymentsResponse<RecurrentInfo?>.fromJson(
+        _result.data!,
+        (json) => json == null
+            ? null
+            : RecurrentInfo.fromJson(json as Map<String, dynamic>),
+      );
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
     return _value;
   }
 
@@ -339,7 +405,7 @@ class _CloudPaymentsApi implements CloudPaymentsApi {
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = {'Id': id};
-    final _result = await _dio.fetch<Map<String, dynamic>>(
+    final _options =
         _setStreamType<CloudPaymentsResponse<RecurrentInfo>>(Options(
       method: 'POST',
       headers: _headers,
@@ -356,11 +422,18 @@ class _CloudPaymentsApi implements CloudPaymentsApi {
                 baseUrl: _combineBaseUrls(
               _dio.options.baseUrl,
               baseUrl,
-            ))));
-    final _value = CloudPaymentsResponse<RecurrentInfo>.fromJson(
-      _result.data!,
-      (json) => RecurrentInfo.fromJson(json as Map<String, dynamic>),
-    );
+            )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late CloudPaymentsResponse<RecurrentInfo> _value;
+    try {
+      _value = CloudPaymentsResponse<RecurrentInfo>.fromJson(
+        _result.data!,
+        (json) => RecurrentInfo.fromJson(json as Map<String, dynamic>),
+      );
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
     return _value;
   }
 
@@ -371,7 +444,7 @@ class _CloudPaymentsApi implements CloudPaymentsApi {
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = {'accountId': accountId};
-    final _result = await _dio.fetch<Map<String, dynamic>>(
+    final _options =
         _setStreamType<CloudPaymentsResponse<List<RecurrentInfo>>>(Options(
       method: 'POST',
       headers: _headers,
@@ -388,16 +461,23 @@ class _CloudPaymentsApi implements CloudPaymentsApi {
                 baseUrl: _combineBaseUrls(
               _dio.options.baseUrl,
               baseUrl,
-            ))));
-    final _value = CloudPaymentsResponse<List<RecurrentInfo>>.fromJson(
-      _result.data!,
-      (json) => json is List<dynamic>
-          ? json
-              .map<RecurrentInfo>(
-                  (i) => RecurrentInfo.fromJson(i as Map<String, dynamic>))
-              .toList()
-          : List.empty(),
-    );
+            )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late CloudPaymentsResponse<List<RecurrentInfo>?> _value;
+    try {
+      _value = CloudPaymentsResponse<List<RecurrentInfo>>.fromJson(
+        _result.data!,
+        (json) => json is List<dynamic>
+            ? json
+                .map<RecurrentInfo>(
+                    (i) => RecurrentInfo.fromJson(i as Map<String, dynamic>))
+                .toList()
+            : List.empty(),
+      );
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
     return _value;
   }
 
@@ -409,28 +489,34 @@ class _CloudPaymentsApi implements CloudPaymentsApi {
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(sbpRequest.toJson());
-    final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<CloudPaymentsResponse<SbpResponse>>(Options(
+    final _options = _setStreamType<CloudPaymentsResponse<SbpResponse>>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
       contentType: 'application/x-www-form-urlencoded',
     )
-            .compose(
-              _dio.options,
-              '/payments/qr/sbp/link',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    final _value = CloudPaymentsResponse<SbpResponse>.fromJson(
-      _result.data!,
-      (json) => SbpResponse.fromJson(json as Map<String, dynamic>),
-    );
+        .compose(
+          _dio.options,
+          '/payments/qr/sbp/link',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late CloudPaymentsResponse<SbpResponse> _value;
+    try {
+      _value = CloudPaymentsResponse<SbpResponse>.fromJson(
+        _result.data!,
+        (json) => SbpResponse.fromJson(json as Map<String, dynamic>),
+      );
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
     return _value;
   }
 
@@ -442,28 +528,34 @@ class _CloudPaymentsApi implements CloudPaymentsApi {
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(sbpRequest.toJson());
-    final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<CloudPaymentsResponse<SbpResponse>>(Options(
+    final _options = _setStreamType<CloudPaymentsResponse<SbpResponse>>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
       contentType: 'application/x-www-form-urlencoded',
     )
-            .compose(
-              _dio.options,
-              '/payments/qr/sbp/image',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    final _value = CloudPaymentsResponse<SbpResponse>.fromJson(
-      _result.data!,
-      (json) => SbpResponse.fromJson(json as Map<String, dynamic>),
-    );
+        .compose(
+          _dio.options,
+          '/payments/qr/sbp/image',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late CloudPaymentsResponse<SbpResponse> _value;
+    try {
+      _value = CloudPaymentsResponse<SbpResponse>.fromJson(
+        _result.data!,
+        (json) => SbpResponse.fromJson(json as Map<String, dynamic>),
+      );
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
     return _value;
   }
 
@@ -474,28 +566,34 @@ class _CloudPaymentsApi implements CloudPaymentsApi {
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = {'TransactionId': transactionId};
-    final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<CloudPaymentsResponse<SbpStatus>>(Options(
+    final _options = _setStreamType<CloudPaymentsResponse<SbpStatus>>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
       contentType: 'application/x-www-form-urlencoded',
     )
-            .compose(
-              _dio.options,
-              '/payments/qr/status/get',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            ))));
-    final _value = CloudPaymentsResponse<SbpStatus>.fromJson(
-      _result.data!,
-      (json) => SbpStatus.fromJson(json as Map<String, dynamic>),
-    );
+        .compose(
+          _dio.options,
+          '/payments/qr/status/get',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late CloudPaymentsResponse<SbpStatus> _value;
+    try {
+      _value = CloudPaymentsResponse<SbpStatus>.fromJson(
+        _result.data!,
+        (json) => SbpStatus.fromJson(json as Map<String, dynamic>),
+      );
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
     return _value;
   }
 

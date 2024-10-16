@@ -90,6 +90,9 @@ class _$PaymentTransactionCopyWithImpl<$Res, $Val extends PaymentTransaction>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of PaymentTransaction
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -114,6 +117,8 @@ class __$$PaymentTransactionSuccessImplCopyWithImpl<$Res>
       $Res Function(_$PaymentTransactionSuccessImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of PaymentTransaction
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -127,6 +132,8 @@ class __$$PaymentTransactionSuccessImplCopyWithImpl<$Res>
     ));
   }
 
+  /// Create a copy of PaymentTransaction
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $TransactionInfoCopyWith<$Res> get info {
@@ -160,7 +167,9 @@ class _$PaymentTransactionSuccessImpl implements _PaymentTransactionSuccess {
   @override
   int get hashCode => Object.hash(runtimeType, info);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of PaymentTransaction
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$PaymentTransactionSuccessImplCopyWith<_$PaymentTransactionSuccessImpl>
@@ -253,7 +262,10 @@ abstract class _PaymentTransactionSuccess implements PaymentTransaction {
       _$PaymentTransactionSuccessImpl;
 
   TransactionInfo get info;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of PaymentTransaction
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PaymentTransactionSuccessImplCopyWith<_$PaymentTransactionSuccessImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -278,6 +290,8 @@ class __$$PaymentTransactionIncorrectlyRequestImplCopyWithImpl<$Res>
       $Res Function(_$PaymentTransactionIncorrectlyRequestImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of PaymentTransaction
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -317,7 +331,9 @@ class _$PaymentTransactionIncorrectlyRequestImpl
   @override
   int get hashCode => Object.hash(runtimeType, message);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of PaymentTransaction
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$PaymentTransactionIncorrectlyRequestImplCopyWith<
@@ -412,7 +428,10 @@ abstract class _PaymentTransactionIncorrectlyRequest
       _$PaymentTransactionIncorrectlyRequestImpl;
 
   String? get message;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of PaymentTransaction
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PaymentTransactionIncorrectlyRequestImplCopyWith<
           _$PaymentTransactionIncorrectlyRequestImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -440,6 +459,8 @@ class __$$PaymentTransactionRequired3dSecureImplCopyWithImpl<$Res>
       $Res Function(_$PaymentTransactionRequired3dSecureImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of PaymentTransaction
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -453,6 +474,8 @@ class __$$PaymentTransactionRequired3dSecureImplCopyWithImpl<$Res>
     ));
   }
 
+  /// Create a copy of PaymentTransaction
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $Three3DSecureResponseCopyWith<$Res> get response {
@@ -488,7 +511,9 @@ class _$PaymentTransactionRequired3dSecureImpl
   @override
   int get hashCode => Object.hash(runtimeType, response);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of PaymentTransaction
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$PaymentTransactionRequired3dSecureImplCopyWith<
@@ -584,7 +609,10 @@ abstract class _PaymentTransactionRequired3dSecure
       _$PaymentTransactionRequired3dSecureImpl;
 
   Three3DSecureResponse get response;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of PaymentTransaction
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PaymentTransactionRequired3dSecureImplCopyWith<
           _$PaymentTransactionRequired3dSecureImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -612,6 +640,8 @@ class __$$PaymentTransactionErrorImplCopyWithImpl<$Res>
       $Res Function(_$PaymentTransactionErrorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of PaymentTransaction
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -625,6 +655,8 @@ class __$$PaymentTransactionErrorImplCopyWithImpl<$Res>
     ));
   }
 
+  /// Create a copy of PaymentTransaction
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $TransactionInfoCopyWith<$Res> get info {
@@ -658,7 +690,9 @@ class _$PaymentTransactionErrorImpl implements _PaymentTransactionError {
   @override
   int get hashCode => Object.hash(runtimeType, info);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of PaymentTransaction
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$PaymentTransactionErrorImplCopyWith<_$PaymentTransactionErrorImpl>
@@ -751,7 +785,10 @@ abstract class _PaymentTransactionError implements PaymentTransaction {
       _$PaymentTransactionErrorImpl;
 
   TransactionInfo get info;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of PaymentTransaction
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PaymentTransactionErrorImplCopyWith<_$PaymentTransactionErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

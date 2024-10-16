@@ -23,8 +23,12 @@ mixin _$PayloadData {
   Recurrent? get recurrent => throw _privateConstructorUsedError;
   Map<String, dynamic>? get data => throw _privateConstructorUsedError;
 
+  /// Serializes this PayloadData to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of PayloadData
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $PayloadDataCopyWith<PayloadData> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -50,6 +54,8 @@ class _$PayloadDataCopyWithImpl<$Res, $Val extends PayloadData>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of PayloadData
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -68,6 +74,8 @@ class _$PayloadDataCopyWithImpl<$Res, $Val extends PayloadData>
     ) as $Val);
   }
 
+  /// Create a copy of PayloadData
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $RecurrentCopyWith<$Res>? get recurrent {
@@ -103,6 +111,8 @@ class __$$PayloadDataImplCopyWithImpl<$Res>
       _$PayloadDataImpl _value, $Res Function(_$PayloadDataImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of PayloadData
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -159,12 +169,14 @@ class _$PayloadDataImpl extends _PayloadData {
             const DeepCollectionEquality().equals(other._data, _data));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, recurrent, const DeepCollectionEquality().hash(_data));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of PayloadData
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$PayloadDataImplCopyWith<_$PayloadDataImpl> get copyWith =>
@@ -191,8 +203,11 @@ abstract class _PayloadData extends PayloadData {
   Recurrent? get recurrent;
   @override
   Map<String, dynamic>? get data;
+
+  /// Create a copy of PayloadData
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PayloadDataImplCopyWith<_$PayloadDataImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

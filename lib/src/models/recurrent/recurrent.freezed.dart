@@ -93,8 +93,13 @@ mixin _$Recurrent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
+  /// Serializes this Recurrent to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Recurrent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $RecurrentCopyWith<Recurrent> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -117,6 +122,8 @@ class _$RecurrentCopyWithImpl<$Res, $Val extends Recurrent>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Recurrent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -166,6 +173,8 @@ class __$$RecurrentImplCopyWithImpl<$Res>
       _$RecurrentImpl _value, $Res Function(_$RecurrentImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Recurrent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -281,12 +290,14 @@ class _$RecurrentImpl extends _Recurrent {
                 other.customerReceipt == customerReceipt));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, interval, period, maxPeriods,
       amount, startDate, customerReceipt);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Recurrent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$RecurrentImplCopyWith<_$RecurrentImpl> get copyWith =>
@@ -390,15 +401,14 @@ abstract class _Recurrent extends Recurrent {
   factory _Recurrent.fromJson(Map<String, dynamic> json) =
       _$RecurrentImpl.fromJson;
 
-  @override
-
   /// Интервал. Возможные значения: Day, Week, Month
-  ReccurentInterval get interval;
   @override
+  ReccurentInterval get interval;
 
   /// Период. В комбинации с интервалом, 1 Month значит раз в месяц, а 2 Week — раз в две недели.
   ///
   /// Должен быть больше 0
+  @override
   int get period;
 
   /// Максимальное количество платежей в подписке. По умолчанию стоит без ограничений.
@@ -410,19 +420,22 @@ abstract class _Recurrent extends Recurrent {
   ///
   ///  Если указываете другую сумму, проверьте, чтобы она была больше 0
   num? get amount;
-  @override
 
   /// Дата и время первого регулярного платежа.
   ///
   ///  По умолчанию запуск произойдет через указанный интервал и период, например через месяц.
   ///
   ///  Если указываете другую дату, то она должна стоять в будущем времени
+  @override
   DateTime? get startDate;
 
   /// Данные для формирования онлайн-чека в регулярных платежах
   String? get customerReceipt;
+
+  /// Create a copy of Recurrent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$RecurrentImplCopyWith<_$RecurrentImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -446,6 +459,8 @@ class __$$MonthlyRecurrentImplCopyWithImpl<$Res>
       $Res Function(_$MonthlyRecurrentImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Recurrent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -524,11 +539,13 @@ class _$MonthlyRecurrentImpl extends _MonthlyRecurrent {
             (identical(other.period, period) || other.period == period));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, interval, startDate, period);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Recurrent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$MonthlyRecurrentImplCopyWith<_$MonthlyRecurrentImpl> get copyWith =>
@@ -627,26 +644,28 @@ abstract class _MonthlyRecurrent extends Recurrent {
   factory _MonthlyRecurrent.fromJson(Map<String, dynamic> json) =
       _$MonthlyRecurrentImpl.fromJson;
 
-  @override
-
   /// Интервал. Возможные значения: Day, Week, Month
-  ReccurentInterval get interval;
   @override
+  ReccurentInterval get interval;
 
   /// Дата и время первого регулярного платежа.
   ///
   ///  По умолчанию запуск произойдет через указанный интервал и период, например через месяц.
   ///
   ///  Если указываете другую дату, то она должна стоять в будущем времени
-  DateTime? get startDate;
   @override
+  DateTime? get startDate;
 
   /// Период. В комбинации с интервалом, 1 Month значит раз в месяц, а 2 Week — раз в две недели.
   ///
   /// Должен быть больше 0
-  int get period;
   @override
-  @JsonKey(ignore: true)
+  int get period;
+
+  /// Create a copy of Recurrent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$MonthlyRecurrentImplCopyWith<_$MonthlyRecurrentImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

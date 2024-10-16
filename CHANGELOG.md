@@ -12,4 +12,4 @@
 
 ## 1.0.3
 
-- Change reccurrent logic
+- Change subscription models

@@ -107,8 +107,13 @@ mixin _$SbpStatus {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
+  /// Serializes this SbpStatus to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of SbpStatus
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SbpStatusCopyWith<SbpStatus> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -131,6 +136,8 @@ class _$SbpStatusCopyWithImpl<$Res, $Val extends SbpStatus>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SbpStatus
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -174,6 +181,8 @@ class __$$SbpStatusCreatedImplCopyWithImpl<$Res>
       $Res Function(_$SbpStatusCreatedImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SbpStatus
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -244,12 +253,14 @@ class _$SbpStatusCreatedImpl implements _SbpStatusCreated {
                 other.statusCode == statusCode));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, transactionId, providerQrId, statusCode);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SbpStatus
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SbpStatusCreatedImplCopyWith<_$SbpStatusCreatedImpl> get copyWith =>
@@ -363,20 +374,22 @@ abstract class _SbpStatusCreated implements SbpStatus {
   factory _SbpStatusCreated.fromJson(Map<String, dynamic> json) =
       _$SbpStatusCreatedImpl.fromJson;
 
-  @override
-
   /// Id транзакции
-  int get transactionId;
   @override
+  int get transactionId;
 
   /// Id Qr от провайдера
-  String? get providerQrId;
   @override
+  String? get providerQrId;
 
   /// Значение статуса
-  int? get statusCode;
   @override
-  @JsonKey(ignore: true)
+  int? get statusCode;
+
+  /// Create a copy of SbpStatus
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SbpStatusCreatedImplCopyWith<_$SbpStatusCreatedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -400,6 +413,8 @@ class __$$SbpStatusPendingImplCopyWithImpl<$Res>
       $Res Function(_$SbpStatusPendingImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SbpStatus
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -470,12 +485,14 @@ class _$SbpStatusPendingImpl implements _SbpStatusPending {
                 other.statusCode == statusCode));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, transactionId, providerQrId, statusCode);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SbpStatus
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SbpStatusPendingImplCopyWith<_$SbpStatusPendingImpl> get copyWith =>
@@ -589,20 +606,22 @@ abstract class _SbpStatusPending implements SbpStatus {
   factory _SbpStatusPending.fromJson(Map<String, dynamic> json) =
       _$SbpStatusPendingImpl.fromJson;
 
-  @override
-
   /// Id транзакции
-  int get transactionId;
   @override
+  int get transactionId;
 
   /// Id Qr от провайдера
-  String? get providerQrId;
   @override
+  String? get providerQrId;
 
   /// Значение статуса
-  int? get statusCode;
   @override
-  @JsonKey(ignore: true)
+  int? get statusCode;
+
+  /// Create a copy of SbpStatus
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SbpStatusPendingImplCopyWith<_$SbpStatusPendingImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -626,6 +645,8 @@ class __$$SbpStatusCompletedImplCopyWithImpl<$Res>
       $Res Function(_$SbpStatusCompletedImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SbpStatus
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -696,12 +717,14 @@ class _$SbpStatusCompletedImpl implements _SbpStatusCompleted {
                 other.statusCode == statusCode));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, transactionId, providerQrId, statusCode);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SbpStatus
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SbpStatusCompletedImplCopyWith<_$SbpStatusCompletedImpl> get copyWith =>
@@ -815,20 +838,22 @@ abstract class _SbpStatusCompleted implements SbpStatus {
   factory _SbpStatusCompleted.fromJson(Map<String, dynamic> json) =
       _$SbpStatusCompletedImpl.fromJson;
 
-  @override
-
   /// Id транзакции
-  int get transactionId;
   @override
+  int get transactionId;
 
   /// Id Qr от провайдера
-  String? get providerQrId;
   @override
+  String? get providerQrId;
 
   /// Значение статуса
-  int? get statusCode;
   @override
-  @JsonKey(ignore: true)
+  int? get statusCode;
+
+  /// Create a copy of SbpStatus
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SbpStatusCompletedImplCopyWith<_$SbpStatusCompletedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -852,6 +877,8 @@ class __$$SbpStatusDeclinedImplCopyWithImpl<$Res>
       $Res Function(_$SbpStatusDeclinedImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SbpStatus
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -922,12 +949,14 @@ class _$SbpStatusDeclinedImpl implements _SbpStatusDeclined {
                 other.statusCode == statusCode));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, transactionId, providerQrId, statusCode);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SbpStatus
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SbpStatusDeclinedImplCopyWith<_$SbpStatusDeclinedImpl> get copyWith =>
@@ -1041,20 +1070,22 @@ abstract class _SbpStatusDeclined implements SbpStatus {
   factory _SbpStatusDeclined.fromJson(Map<String, dynamic> json) =
       _$SbpStatusDeclinedImpl.fromJson;
 
-  @override
-
   /// Id транзакции
-  int get transactionId;
   @override
+  int get transactionId;
 
   /// Id Qr от провайдера
-  String? get providerQrId;
   @override
+  String? get providerQrId;
 
   /// Значение статуса
-  int? get statusCode;
   @override
-  @JsonKey(ignore: true)
+  int? get statusCode;
+
+  /// Create a copy of SbpStatus
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SbpStatusDeclinedImplCopyWith<_$SbpStatusDeclinedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -72,6 +72,9 @@ class _$RecurrentPaymentCopyWithImpl<$Res, $Val extends RecurrentPayment>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of RecurrentPayment
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -95,6 +98,8 @@ class __$$RecurrentPaymentSuccessImplCopyWithImpl<$Res>
       $Res Function(_$RecurrentPaymentSuccessImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of RecurrentPayment
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -108,6 +113,8 @@ class __$$RecurrentPaymentSuccessImplCopyWithImpl<$Res>
     ));
   }
 
+  /// Create a copy of RecurrentPayment
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $RecurrentInfoCopyWith<$Res> get info {
@@ -141,7 +148,9 @@ class _$RecurrentPaymentSuccessImpl implements _RecurrentPaymentSuccess {
   @override
   int get hashCode => Object.hash(runtimeType, info);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of RecurrentPayment
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$RecurrentPaymentSuccessImplCopyWith<_$RecurrentPaymentSuccessImpl>
@@ -216,7 +225,10 @@ abstract class _RecurrentPaymentSuccess implements RecurrentPayment {
       _$RecurrentPaymentSuccessImpl;
 
   RecurrentInfo get info;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of RecurrentPayment
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$RecurrentPaymentSuccessImplCopyWith<_$RecurrentPaymentSuccessImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -241,6 +253,8 @@ class __$$RecurrentPaymentIncorrectlyRequestImplCopyWithImpl<$Res>
       $Res Function(_$RecurrentPaymentIncorrectlyRequestImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of RecurrentPayment
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -280,7 +294,9 @@ class _$RecurrentPaymentIncorrectlyRequestImpl
   @override
   int get hashCode => Object.hash(runtimeType, message);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of RecurrentPayment
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$RecurrentPaymentIncorrectlyRequestImplCopyWith<
@@ -356,7 +372,10 @@ abstract class _RecurrentPaymentIncorrectlyRequest implements RecurrentPayment {
       _$RecurrentPaymentIncorrectlyRequestImpl;
 
   String? get message;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of RecurrentPayment
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$RecurrentPaymentIncorrectlyRequestImplCopyWith<
           _$RecurrentPaymentIncorrectlyRequestImpl>
       get copyWith => throw _privateConstructorUsedError;

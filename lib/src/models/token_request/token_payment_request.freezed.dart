@@ -58,8 +58,12 @@ mixin _$TokenPaymenRequest {
   @PayloadConverter()
   PayloadData? get jsonData => throw _privateConstructorUsedError;
 
+  /// Serializes this TokenPaymenRequest to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of TokenPaymenRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $TokenPaymenRequestCopyWith<TokenPaymenRequest> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -95,6 +99,8 @@ class _$TokenPaymenRequestCopyWithImpl<$Res, $Val extends TokenPaymenRequest>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of TokenPaymenRequest
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -153,6 +159,8 @@ class _$TokenPaymenRequestCopyWithImpl<$Res, $Val extends TokenPaymenRequest>
     ) as $Val);
   }
 
+  /// Create a copy of TokenPaymenRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $PayloadDataCopyWith<$Res>? get jsonData {
@@ -198,6 +206,8 @@ class __$$TokenPaymenRequestImplCopyWithImpl<$Res>
       $Res Function(_$TokenPaymenRequestImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TokenPaymenRequest
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -353,7 +363,7 @@ class _$TokenPaymenRequestImpl implements _TokenPaymenRequest {
                 other.jsonData == jsonData));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -368,7 +378,9 @@ class _$TokenPaymenRequestImpl implements _TokenPaymenRequest {
       email,
       jsonData);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TokenPaymenRequest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$TokenPaymenRequestImplCopyWith<_$TokenPaymenRequestImpl> get copyWith =>
@@ -400,19 +412,17 @@ abstract class _TokenPaymenRequest implements TokenPaymenRequest {
   factory _TokenPaymenRequest.fromJson(Map<String, dynamic> json) =
       _$TokenPaymenRequestImpl.fromJson;
 
-  @override
-
   /// Сумма платежа
-  String get amount;
   @override
+  String get amount;
 
   /// Токен карты, выданный системой после первого платежа
-  String get token;
   @override
+  String get token;
 
   /// Обязательный идентификатор пользователя
-  String? get accountId;
   @override
+  String? get accountId;
 
   /// Признак инициатора списания денежных средств.
   /// Возможные значения:
@@ -420,36 +430,40 @@ abstract class _TokenPaymenRequest implements TokenPaymenRequest {
   /// `0` - транзакция инициирована ТСП на основе ранее сохраненных учетных данных;
   ///
   /// `1` - транзакция инициирована держателем карты (клиентом) на основе ранее сохраненных учетных данных.
-  int get trInitiatorCode;
   @override
+  int get trInitiatorCode;
 
   /// Валюта: RUB/USD/EUR/GBP (см. [справочник](https://developers.cloudpayments.ru/#spisok-valyut)). Если параметр не передан, то по умолчанию принимает значение RUB
-  String get currency;
   @override
+  String get currency;
 
   ///Номер счета или заказа
-  String? get invoiceId;
   @override
+  String? get invoiceId;
 
   /// IP-адрес плательщика
-  String? get ipAddress;
   @override
+  String? get ipAddress;
 
   /// Описание оплаты в свободной форме
-  String? get description;
   @override
+  String? get description;
 
   /// E-mail плательщика, на который будет отправлена квитанция об оплате
-  String? get email;
   @override
+  String? get email;
 
   /// Любые другие данные, которые будут связаны с транзакцией,
   ///
   /// в том числе инструкции для создания подписки или формирования онлайн-чека
+  @override
   @PayloadConverter()
   PayloadData? get jsonData;
+
+  /// Create a copy of TokenPaymenRequest
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$TokenPaymenRequestImplCopyWith<_$TokenPaymenRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

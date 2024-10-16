@@ -27,8 +27,12 @@ mixin _$Three3DSecureResponse {
   bool? get iFrameIsAllowed => throw _privateConstructorUsedError;
   String? get threeDsCallbackId => throw _privateConstructorUsedError;
 
+  /// Serializes this Three3DSecureResponse to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Three3DSecureResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $Three3DSecureResponseCopyWith<Three3DSecureResponse> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -58,6 +62,8 @@ class _$Three3DSecureResponseCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Three3DSecureResponse
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -118,6 +124,8 @@ class __$$Three3DSecureResponseImplCopyWithImpl<$Res>
       $Res Function(_$Three3DSecureResponseImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Three3DSecureResponse
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -196,12 +204,14 @@ class _$Three3DSecureResponseImpl implements _Three3DSecureResponse {
                 other.threeDsCallbackId == threeDsCallbackId));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, transactionId, paReq, acsUrl,
       iFrameIsAllowed, threeDsCallbackId);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Three3DSecureResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$Three3DSecureResponseImplCopyWith<_$Three3DSecureResponseImpl>
@@ -237,8 +247,11 @@ abstract class _Three3DSecureResponse implements Three3DSecureResponse {
   bool? get iFrameIsAllowed;
   @override
   String? get threeDsCallbackId;
+
+  /// Create a copy of Three3DSecureResponse
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$Three3DSecureResponseImplCopyWith<_$Three3DSecureResponseImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
