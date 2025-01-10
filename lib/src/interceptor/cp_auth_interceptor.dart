@@ -1,17 +1,19 @@
-// ignore_for_file: public_member_api_docs
-
 import 'dart:convert';
 import 'dart:io';
 
 import 'package:cloudpayments_api/src/models/credentials/cp_auth_credentials.dart';
 import 'package:dio/dio.dart';
 
-/// Авторизация в CloudPayments
+/// {@template cp_auth_interceptor}
+/// Interceptor для авторизации запросов
+/// {@endtemplate}
 class CpAuthInterceptor extends Interceptor {
+  /// {@macro cp_auth_interceptor}
   CpAuthInterceptor({
     required this.cloudPaymentsCredentials,
   });
 
+  /// Данные для авторизации
   final CpAuthCredentials cloudPaymentsCredentials;
 
   @override

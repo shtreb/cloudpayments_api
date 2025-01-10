@@ -4,11 +4,11 @@ Dart REST client for [CloudPayments API](https://developers.cloudpayments.ru/#ap
 
 ## Get started
 
-### Add dependency
+Add the following dependency to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  cloudpayments_api: ^1.0.3
+  cloudpayments_api: <version>
 ```
 
 ### Simple to use

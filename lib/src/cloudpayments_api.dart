@@ -9,7 +9,7 @@ part 'cloudpayments_api.g.dart';
 @RestApi(baseUrl: CloudpaymentsApiUrls.base)
 
 /// {@template cloudpayments_api}
-/// Dart REST API for CloudPayments
+/// Dart REST client for CloudPayments API
 /// {@endtemplate}
 abstract class CloudPaymentsApi {
   /// {@macro cloudpayments_api}

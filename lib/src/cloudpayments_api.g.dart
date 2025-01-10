@@ -6,7 +6,7 @@ part of 'cloudpayments_api.dart';
 // RetrofitGenerator
 // **************************************************************************
 
-// ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers,unused_element
+// ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers,unused_element,unnecessary_string_interpolations
 
 class _CloudPaymentsApi implements CloudPaymentsApi {
   _CloudPaymentsApi(
@@ -323,7 +323,7 @@ class _CloudPaymentsApi implements CloudPaymentsApi {
     final _headers = <String, dynamic>{};
     final _data = {'Id': id};
     final _options =
-        _setStreamType<CloudPaymentsResponse<RecurrentInfo>>(Options(
+        _setStreamType<CloudPaymentsResponse<RecurrentInfo?>>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
@@ -365,7 +365,7 @@ class _CloudPaymentsApi implements CloudPaymentsApi {
     final _data = <String, dynamic>{};
     _data.addAll(updateRequest.toJson());
     final _options =
-        _setStreamType<CloudPaymentsResponse<RecurrentInfo>>(Options(
+        _setStreamType<CloudPaymentsResponse<RecurrentInfo?>>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
@@ -445,7 +445,7 @@ class _CloudPaymentsApi implements CloudPaymentsApi {
     final _headers = <String, dynamic>{};
     final _data = {'accountId': accountId};
     final _options =
-        _setStreamType<CloudPaymentsResponse<List<RecurrentInfo>>>(Options(
+        _setStreamType<CloudPaymentsResponse<List<RecurrentInfo>?>>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
@@ -465,7 +465,7 @@ class _CloudPaymentsApi implements CloudPaymentsApi {
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late CloudPaymentsResponse<List<RecurrentInfo>?> _value;
     try {
-      _value = CloudPaymentsResponse<List<RecurrentInfo>>.fromJson(
+      _value = CloudPaymentsResponse<List<RecurrentInfo>?>.fromJson(
         _result.data!,
         (json) => json is List<dynamic>
             ? json

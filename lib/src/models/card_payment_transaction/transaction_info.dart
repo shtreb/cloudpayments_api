@@ -80,35 +80,5 @@ class TransactionInfo with _$TransactionInfo {
   /// Converts a JSON [Map] into a [TransactionInfo] instance
   factory TransactionInfo.fromJson(Map<String, dynamic> json) =>
       _$TransactionInfoFromJson(json);
-// ignore: unused_element
   const TransactionInfo._();
 }
-
-// /// Cтатус транзакций
-// @JsonEnum(fieldRename: FieldRename.pascal)
-// enum TransactionStatus {
-//   /// Ожидает аутентификации
-//   ///
-//   /// После перехода плательщика на сайт эмитента в ожидании результатов 3-D Secure
-//   awaitingAuthentication,
-
-//   /// Авторизована
-//   ///
-//   /// После получения авторизации
-//   authorized,
-
-//   /// Завершена
-//   ///
-//   /// После подтверждения операции
-//   completed,
-
-//   /// Отменена
-//   ///
-//   /// В случае отмены операции
-//   cancelled,
-
-//   /// Отклонена
-//   ///
-//   /// В случае невозможности провести операцию (нет денег на счете карты и т.п.)
-//   declined
-// }

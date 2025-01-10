@@ -1,5 +1,3 @@
-// ignore_for_file: avoid_positional_boolean_parameters
-
 import 'package:cloudpayments_api/src/models/models.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 

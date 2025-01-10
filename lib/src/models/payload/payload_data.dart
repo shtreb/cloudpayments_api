@@ -1,5 +1,3 @@
-// ignore_for_file: invalid_annotation_target
-
 import 'package:cloudpayments_api/cloudpayments_api.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -18,18 +16,17 @@ class PayloadData with _$PayloadData {
     Recurrent? recurrent,
     Map<String, dynamic>? data,
   }) = _PayloadData;
-  // ignore: unused_element
   const PayloadData._();
 
-  /// Generate PayloadData class from Map<String, Object?>
-  factory PayloadData.fromJson(Map<String, Object?> json) =>
+  /// Converts a JSON [Map] into a [PayloadData] instance
+  factory PayloadData.fromJson(Map<String, dynamic> json) =>
       _$PayloadDataFromJson(json);
 }
 
-/// Конвертер
+/// Конвертер для [PayloadData]
 class PayloadConverter
     implements JsonConverter<PayloadData?, Map<String, dynamic>> {
-  // ignore: public_member_api_docs
+  ///
   const PayloadConverter();
 
   @override

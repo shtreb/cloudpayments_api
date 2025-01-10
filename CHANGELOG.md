@@ -1,15 +1,19 @@
-## 1.0.0
+## 1.0.4
 
-- Initial version.
+- Update dependencies and docs
 
-## 1.0.1
+## 1.0.3
 
-- Fix README.md and chore
+- Change subscription models
 
 ## 1.0.2
 
 - Change amount type to String
 
-## 1.0.3
+## 1.0.1
 
-- Change subscription models
+- Fix README.md and chore
+
+## 1.0.0
+
+- Initial version.

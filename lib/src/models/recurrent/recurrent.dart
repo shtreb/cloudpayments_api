@@ -59,7 +59,6 @@ class Recurrent with _$Recurrent {
     @Default(1) int period,
   }) = _MonthlyRecurrent;
 
-  // ignore: unused_element
   const Recurrent._();
 
   /// Converts a JSON [Map] into a [Recurrent] instance
