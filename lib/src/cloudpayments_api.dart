@@ -6,11 +6,10 @@ import 'package:retrofit/retrofit.dart';
 
 part 'cloudpayments_api.g.dart';
 
-@RestApi(baseUrl: CloudpaymentsApiUrls.base)
-
 /// {@template cloudpayments_api}
 /// Dart REST client for CloudPayments API
 /// {@endtemplate}
+@RestApi(baseUrl: CloudpaymentsApiUrls.baseUrl)
 abstract class CloudPaymentsApi {
   /// {@macro cloudpayments_api}
   factory CloudPaymentsApi(
@@ -45,8 +44,8 @@ abstract class CloudPaymentsApi {
   );
 
   /// Возврат денег
-  @POST(CloudpaymentsApiUrls.refund)
   @FormUrlEncoded()
+  @POST(CloudpaymentsApiUrls.refund)
   Future<CloudPaymentsResponse<TransactionInfo>> refund({
     /// Номер транзакции оплаты
     @Field('TransactionId') required String transactionId,
@@ -79,8 +78,8 @@ abstract class CloudPaymentsApi {
   );
 
   ///	Метод получения детализации по транзакции.
-  @POST(CloudpaymentsApiUrls.getPayment)
   @FormUrlEncoded()
+  @POST(CloudpaymentsApiUrls.getPayment)
   Future<PaymentTransaction> getPayment(
     /// Номер транзакции
     @Field('TransactionId') String transactionId,
@@ -97,16 +96,16 @@ abstract class CloudPaymentsApi {
   ///	Отмена подписки на рекуррентные платежи
   ///
   /// В ответ на корректно сформированный запрос система возвращает сообщение об успешно выполненной операции.
-  @POST(CloudpaymentsApiUrls.cancelSubscription)
   @FormUrlEncoded()
+  @POST(CloudpaymentsApiUrls.cancelSubscription)
   Future<CloudPaymentsResponse<RecurrentInfo?>> cancelSubscription(
     /// Идентификатор подписки
     @Field('Id') String id,
   );
 
   ///	Изменения ранее созданной подписки.
-  @POST(CloudpaymentsApiUrls.updateSubscription)
   @FormUrlEncoded()
+  @POST(CloudpaymentsApiUrls.updateSubscription)
   Future<CloudPaymentsResponse<RecurrentInfo?>> updateSubscription({
     /// Идентификатор подписки
     @Body() required SubscriptionUpdateRequest updateRequest,
@@ -115,40 +114,41 @@ abstract class CloudPaymentsApi {
   ///	Запрос информации о подписке
   ///
   /// Метод получения информации о статусе подписки.
-  @POST(CloudpaymentsApiUrls.getSubscription)
   @FormUrlEncoded()
+  @POST(CloudpaymentsApiUrls.getSubscription)
   Future<CloudPaymentsResponse<RecurrentInfo>> getSubscription(
     /// Идентификатор подписки
     @Field('Id') String id,
   );
 
   ///	Получение списка подписок для определенного аккаунта.
-  @POST(CloudpaymentsApiUrls.findSubscriptions)
   @FormUrlEncoded()
+  @POST(CloudpaymentsApiUrls.findSubscriptions)
   Future<CloudPaymentsResponse<List<RecurrentInfo>?>> findSubscriptions(
     /// Идентификатор пользователя
     @Field('accountId') String accountId,
   );
 
-  ///	Генерация платежной ссылки СБП
-  @POST(CloudpaymentsApiUrls.sbpLink)
+  ///	Генерация платежной ссылки
   @FormUrlEncoded()
-  Future<CloudPaymentsResponse<SbpResponse>> sbpLinkCreate(
-    @Body() SbpRequest sbpRequest,
-  );
+  @POST(CloudpaymentsApiUrls.qrLink)
+  Future<CloudPaymentsResponse<QrResponse>> qrLinkCreate({
+    @Path('qrType') required String qrType,
+    @Body() required QrRequest qrRequest,
+  });
 
   /// Генерация QR-кода СБП
-  @POST(CloudpaymentsApiUrls.sbpImage)
   @FormUrlEncoded()
-  Future<CloudPaymentsResponse<SbpResponse>> sbpQrImageCreate(
-    @Body() SbpRequest sbpRequest,
-  );
+  @POST(CloudpaymentsApiUrls.qrImage)
+  Future<CloudPaymentsResponse<QrResponse>> qrImageCreate({
+    @Path('qrType') required String qrType,
+    @Body() required QrRequest sbpRequest,
+  });
 
   /// Получение статуса по Qr транзакции
-  @POST(CloudpaymentsApiUrls.sbpStatus)
   @FormUrlEncoded()
-  Future<CloudPaymentsResponse<SbpStatus>> getSbpStatus(
-    /// Id транзакции
+  @POST(CloudpaymentsApiUrls.qrStatus)
+  Future<CloudPaymentsResponse<QrStatus>> getQrStatus(
     @Field('TransactionId') int transactionId,
   );
 }

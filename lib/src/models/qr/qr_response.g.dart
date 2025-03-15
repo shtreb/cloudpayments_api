@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'sbp_response.dart';
+part of 'qr_response.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$SbpResponseImpl _$$SbpResponseImplFromJson(Map<String, dynamic> json) =>
-    _$SbpResponseImpl(
+_$QrResponseImpl _$$QrResponseImplFromJson(Map<String, dynamic> json) =>
+    _$QrResponseImpl(
       transactionId: (json['TransactionId'] as num).toInt(),
       amount: json['Amount'] as num,
       qrUrl: json['QrUrl'] as String?,
@@ -18,7 +18,7 @@ _$SbpResponseImpl _$$SbpResponseImplFromJson(Map<String, dynamic> json) =>
       isTest: json['IsTest'] as bool?,
     );
 
-Map<String, dynamic> _$$SbpResponseImplToJson(_$SbpResponseImpl instance) =>
+Map<String, dynamic> _$$QrResponseImplToJson(_$QrResponseImpl instance) =>
     <String, dynamic>{
       'TransactionId': instance.transactionId,
       'Amount': instance.amount,

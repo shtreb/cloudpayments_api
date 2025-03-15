@@ -28,7 +28,7 @@
 .pub/
 /build/
 pubspec.lock
-
+/lib/src/models/sbp/*.dart
 
 # Code generation
 # **/*.g.dart

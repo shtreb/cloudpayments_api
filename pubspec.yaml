@@ -1,7 +1,7 @@
 name: cloudpayments_api
 description: This package allows implementing payment acceptance into mobile, web, desktop apps and works as an extension to the CloudPayments API
 
-version: 1.0.4
+version: 1.1.0
 
 homepage: https://github.com/glin94/cloudpayments_api
 
@@ -12,6 +12,9 @@ issue_tracker: https://github.com/glin94/cloudpayments_api/issues
 topics:
   - payments
   - cloudpayments
+  - card
+  - bank
+  - sberpay
 
 platforms:
   android:

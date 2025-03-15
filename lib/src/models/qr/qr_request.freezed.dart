@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'sbp_request.dart';
+part of 'qr_request.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,12 +14,12 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-SbpRequest _$SbpRequestFromJson(Map<String, dynamic> json) {
-  return _SbpRequest.fromJson(json);
+QrRequest _$QrRequestFromJson(Map<String, dynamic> json) {
+  return _QrRequest.fromJson(json);
 }
 
 /// @nodoc
-mixin _$SbpRequest {
+mixin _$QrRequest {
   /// Сумма платежа
   String get amount => throw _privateConstructorUsedError;
 
@@ -31,6 +31,11 @@ mixin _$SbpRequest {
 
   /// Валюта: RUB/USD/EUR/GBP (см. [справочник](https://developers.cloudpayments.ru/#spisok-valyut)). Если параметр не передан, то по умолчанию принимает значение RUB
   String get currency => throw _privateConstructorUsedError;
+
+  /// Признак открытия браузера в режиме webview.
+  ///
+  /// Возможные значения: true - для оплат через webview false - для оплат без webview
+  bool get webview => throw _privateConstructorUsedError;
 
   /// Номер счета или заказа в системе мерчанта
   String? get invoiceId => throw _privateConstructorUsedError;
@@ -59,7 +64,7 @@ mixin _$SbpRequest {
   /// Название браузера клиента на основании userAgent браузера.
   ///
   /// Пример значения: Chrome, Firefox, MIUI Browser, Opera
-  String? get browser => throw _privateConstructorUsedError;
+  String get browser => throw _privateConstructorUsedError;
 
   /// Время, в течение которого будет доступна оплата по QR-коду / ссылке на оплату.
   /// Минимальное допустимое значение - "1". Максимальное допустимое значение - "129 600" (90 дней).
@@ -67,13 +72,10 @@ mixin _$SbpRequest {
   int? get ttlMinutes => throw _privateConstructorUsedError;
 
   /// Признак устройства плательщика.
-  CloudPaymentsDevice? get device => throw _privateConstructorUsedError;
+  CloudPaymentsDevice get device => throw _privateConstructorUsedError;
 
   /// Операционная система устройства плательщика.
   CloudPaymentsDeviceOS? get os => throw _privateConstructorUsedError;
-
-  /// Признак открытия браузера в режиме webview.
-  bool? get webview => throw _privateConstructorUsedError;
 
   /// Флаг тестового режима оплаты
   bool? get isTest => throw _privateConstructorUsedError;
@@ -82,27 +84,27 @@ mixin _$SbpRequest {
   @PayloadConverter()
   PayloadData? get jsonData => throw _privateConstructorUsedError;
 
-  /// Serializes this SbpRequest to a JSON map.
+  /// Serializes this QrRequest to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-  /// Create a copy of SbpRequest
+  /// Create a copy of QrRequest
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $SbpRequestCopyWith<SbpRequest> get copyWith =>
+  $QrRequestCopyWith<QrRequest> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $SbpRequestCopyWith<$Res> {
-  factory $SbpRequestCopyWith(
-          SbpRequest value, $Res Function(SbpRequest) then) =
-      _$SbpRequestCopyWithImpl<$Res, SbpRequest>;
+abstract class $QrRequestCopyWith<$Res> {
+  factory $QrRequestCopyWith(QrRequest value, $Res Function(QrRequest) then) =
+      _$QrRequestCopyWithImpl<$Res, QrRequest>;
   @useResult
   $Res call(
       {String amount,
       String publicId,
       CloudPaymentsScheme scheme,
       String currency,
+      bool webview,
       String? invoiceId,
       Uri? successRedirectUrl,
       String? ipAddress,
@@ -110,11 +112,10 @@ abstract class $SbpRequestCopyWith<$Res> {
       String? email,
       String? accountId,
       bool? saveCard,
-      String? browser,
+      String browser,
       int? ttlMinutes,
-      CloudPaymentsDevice? device,
+      CloudPaymentsDevice device,
       CloudPaymentsDeviceOS? os,
-      bool? webview,
       bool? isTest,
       @PayloadConverter() PayloadData? jsonData});
 
@@ -122,16 +123,16 @@ abstract class $SbpRequestCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$SbpRequestCopyWithImpl<$Res, $Val extends SbpRequest>
-    implements $SbpRequestCopyWith<$Res> {
-  _$SbpRequestCopyWithImpl(this._value, this._then);
+class _$QrRequestCopyWithImpl<$Res, $Val extends QrRequest>
+    implements $QrRequestCopyWith<$Res> {
+  _$QrRequestCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of SbpRequest
+  /// Create a copy of QrRequest
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -140,6 +141,7 @@ class _$SbpRequestCopyWithImpl<$Res, $Val extends SbpRequest>
     Object? publicId = null,
     Object? scheme = null,
     Object? currency = null,
+    Object? webview = null,
     Object? invoiceId = freezed,
     Object? successRedirectUrl = freezed,
     Object? ipAddress = freezed,
@@ -147,11 +149,10 @@ class _$SbpRequestCopyWithImpl<$Res, $Val extends SbpRequest>
     Object? email = freezed,
     Object? accountId = freezed,
     Object? saveCard = freezed,
-    Object? browser = freezed,
+    Object? browser = null,
     Object? ttlMinutes = freezed,
-    Object? device = freezed,
+    Object? device = null,
     Object? os = freezed,
-    Object? webview = freezed,
     Object? isTest = freezed,
     Object? jsonData = freezed,
   }) {
@@ -172,6 +173,10 @@ class _$SbpRequestCopyWithImpl<$Res, $Val extends SbpRequest>
           ? _value.currency
           : currency // ignore: cast_nullable_to_non_nullable
               as String,
+      webview: null == webview
+          ? _value.webview
+          : webview // ignore: cast_nullable_to_non_nullable
+              as bool,
       invoiceId: freezed == invoiceId
           ? _value.invoiceId
           : invoiceId // ignore: cast_nullable_to_non_nullable
@@ -200,26 +205,22 @@ class _$SbpRequestCopyWithImpl<$Res, $Val extends SbpRequest>
           ? _value.saveCard
           : saveCard // ignore: cast_nullable_to_non_nullable
               as bool?,
-      browser: freezed == browser
+      browser: null == browser
           ? _value.browser
           : browser // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       ttlMinutes: freezed == ttlMinutes
           ? _value.ttlMinutes
           : ttlMinutes // ignore: cast_nullable_to_non_nullable
               as int?,
-      device: freezed == device
+      device: null == device
           ? _value.device
           : device // ignore: cast_nullable_to_non_nullable
-              as CloudPaymentsDevice?,
+              as CloudPaymentsDevice,
       os: freezed == os
           ? _value.os
           : os // ignore: cast_nullable_to_non_nullable
               as CloudPaymentsDeviceOS?,
-      webview: freezed == webview
-          ? _value.webview
-          : webview // ignore: cast_nullable_to_non_nullable
-              as bool?,
       isTest: freezed == isTest
           ? _value.isTest
           : isTest // ignore: cast_nullable_to_non_nullable
@@ -231,7 +232,7 @@ class _$SbpRequestCopyWithImpl<$Res, $Val extends SbpRequest>
     ) as $Val);
   }
 
-  /// Create a copy of SbpRequest
+  /// Create a copy of QrRequest
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
@@ -247,11 +248,11 @@ class _$SbpRequestCopyWithImpl<$Res, $Val extends SbpRequest>
 }
 
 /// @nodoc
-abstract class _$$SbpRequestImplCopyWith<$Res>
-    implements $SbpRequestCopyWith<$Res> {
-  factory _$$SbpRequestImplCopyWith(
-          _$SbpRequestImpl value, $Res Function(_$SbpRequestImpl) then) =
-      __$$SbpRequestImplCopyWithImpl<$Res>;
+abstract class _$$QrRequestImplCopyWith<$Res>
+    implements $QrRequestCopyWith<$Res> {
+  factory _$$QrRequestImplCopyWith(
+          _$QrRequestImpl value, $Res Function(_$QrRequestImpl) then) =
+      __$$QrRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -259,6 +260,7 @@ abstract class _$$SbpRequestImplCopyWith<$Res>
       String publicId,
       CloudPaymentsScheme scheme,
       String currency,
+      bool webview,
       String? invoiceId,
       Uri? successRedirectUrl,
       String? ipAddress,
@@ -266,11 +268,10 @@ abstract class _$$SbpRequestImplCopyWith<$Res>
       String? email,
       String? accountId,
       bool? saveCard,
-      String? browser,
+      String browser,
       int? ttlMinutes,
-      CloudPaymentsDevice? device,
+      CloudPaymentsDevice device,
       CloudPaymentsDeviceOS? os,
-      bool? webview,
       bool? isTest,
       @PayloadConverter() PayloadData? jsonData});
 
@@ -279,14 +280,14 @@ abstract class _$$SbpRequestImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$SbpRequestImplCopyWithImpl<$Res>
-    extends _$SbpRequestCopyWithImpl<$Res, _$SbpRequestImpl>
-    implements _$$SbpRequestImplCopyWith<$Res> {
-  __$$SbpRequestImplCopyWithImpl(
-      _$SbpRequestImpl _value, $Res Function(_$SbpRequestImpl) _then)
+class __$$QrRequestImplCopyWithImpl<$Res>
+    extends _$QrRequestCopyWithImpl<$Res, _$QrRequestImpl>
+    implements _$$QrRequestImplCopyWith<$Res> {
+  __$$QrRequestImplCopyWithImpl(
+      _$QrRequestImpl _value, $Res Function(_$QrRequestImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of SbpRequest
+  /// Create a copy of QrRequest
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -295,6 +296,7 @@ class __$$SbpRequestImplCopyWithImpl<$Res>
     Object? publicId = null,
     Object? scheme = null,
     Object? currency = null,
+    Object? webview = null,
     Object? invoiceId = freezed,
     Object? successRedirectUrl = freezed,
     Object? ipAddress = freezed,
@@ -302,15 +304,14 @@ class __$$SbpRequestImplCopyWithImpl<$Res>
     Object? email = freezed,
     Object? accountId = freezed,
     Object? saveCard = freezed,
-    Object? browser = freezed,
+    Object? browser = null,
     Object? ttlMinutes = freezed,
-    Object? device = freezed,
+    Object? device = null,
     Object? os = freezed,
-    Object? webview = freezed,
     Object? isTest = freezed,
     Object? jsonData = freezed,
   }) {
-    return _then(_$SbpRequestImpl(
+    return _then(_$QrRequestImpl(
       amount: null == amount
           ? _value.amount
           : amount // ignore: cast_nullable_to_non_nullable
@@ -327,6 +328,10 @@ class __$$SbpRequestImplCopyWithImpl<$Res>
           ? _value.currency
           : currency // ignore: cast_nullable_to_non_nullable
               as String,
+      webview: null == webview
+          ? _value.webview
+          : webview // ignore: cast_nullable_to_non_nullable
+              as bool,
       invoiceId: freezed == invoiceId
           ? _value.invoiceId
           : invoiceId // ignore: cast_nullable_to_non_nullable
@@ -355,26 +360,22 @@ class __$$SbpRequestImplCopyWithImpl<$Res>
           ? _value.saveCard
           : saveCard // ignore: cast_nullable_to_non_nullable
               as bool?,
-      browser: freezed == browser
+      browser: null == browser
           ? _value.browser
           : browser // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       ttlMinutes: freezed == ttlMinutes
           ? _value.ttlMinutes
           : ttlMinutes // ignore: cast_nullable_to_non_nullable
               as int?,
-      device: freezed == device
+      device: null == device
           ? _value.device
           : device // ignore: cast_nullable_to_non_nullable
-              as CloudPaymentsDevice?,
+              as CloudPaymentsDevice,
       os: freezed == os
           ? _value.os
           : os // ignore: cast_nullable_to_non_nullable
               as CloudPaymentsDeviceOS?,
-      webview: freezed == webview
-          ? _value.webview
-          : webview // ignore: cast_nullable_to_non_nullable
-              as bool?,
       isTest: freezed == isTest
           ? _value.isTest
           : isTest // ignore: cast_nullable_to_non_nullable
@@ -389,12 +390,13 @@ class __$$SbpRequestImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$SbpRequestImpl implements _SbpRequest {
-  _$SbpRequestImpl(
+class _$QrRequestImpl implements _QrRequest {
+  _$QrRequestImpl(
       {required this.amount,
       required this.publicId,
       this.scheme = CloudPaymentsScheme.charge,
       this.currency = 'RUB',
+      this.webview = false,
       this.invoiceId,
       this.successRedirectUrl,
       this.ipAddress,
@@ -402,16 +404,15 @@ class _$SbpRequestImpl implements _SbpRequest {
       this.email,
       this.accountId,
       this.saveCard,
-      this.browser,
+      this.browser = 'Chrome',
       this.ttlMinutes,
-      this.device,
+      this.device = CloudPaymentsDevice.mobile,
       this.os,
-      this.webview,
       this.isTest,
       @PayloadConverter() this.jsonData});
 
-  factory _$SbpRequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$SbpRequestImplFromJson(json);
+  factory _$QrRequestImpl.fromJson(Map<String, dynamic> json) =>
+      _$$QrRequestImplFromJson(json);
 
   /// Сумма платежа
   @override
@@ -430,6 +431,13 @@ class _$SbpRequestImpl implements _SbpRequest {
   @override
   @JsonKey()
   final String currency;
+
+  /// Признак открытия браузера в режиме webview.
+  ///
+  /// Возможные значения: true - для оплат через webview false - для оплат без webview
+  @override
+  @JsonKey()
+  final bool webview;
 
   /// Номер счета или заказа в системе мерчанта
   @override
@@ -466,7 +474,8 @@ class _$SbpRequestImpl implements _SbpRequest {
   ///
   /// Пример значения: Chrome, Firefox, MIUI Browser, Opera
   @override
-  final String? browser;
+  @JsonKey()
+  final String browser;
 
   /// Время, в течение которого будет доступна оплата по QR-коду / ссылке на оплату.
   /// Минимальное допустимое значение - "1". Максимальное допустимое значение - "129 600" (90 дней).
@@ -476,15 +485,12 @@ class _$SbpRequestImpl implements _SbpRequest {
 
   /// Признак устройства плательщика.
   @override
-  final CloudPaymentsDevice? device;
+  @JsonKey()
+  final CloudPaymentsDevice device;
 
   /// Операционная система устройства плательщика.
   @override
   final CloudPaymentsDeviceOS? os;
-
-  /// Признак открытия браузера в режиме webview.
-  @override
-  final bool? webview;
 
   /// Флаг тестового режима оплаты
   @override
@@ -497,20 +503,21 @@ class _$SbpRequestImpl implements _SbpRequest {
 
   @override
   String toString() {
-    return 'SbpRequest(amount: $amount, publicId: $publicId, scheme: $scheme, currency: $currency, invoiceId: $invoiceId, successRedirectUrl: $successRedirectUrl, ipAddress: $ipAddress, description: $description, email: $email, accountId: $accountId, saveCard: $saveCard, browser: $browser, ttlMinutes: $ttlMinutes, device: $device, os: $os, webview: $webview, isTest: $isTest, jsonData: $jsonData)';
+    return 'QrRequest(amount: $amount, publicId: $publicId, scheme: $scheme, currency: $currency, webview: $webview, invoiceId: $invoiceId, successRedirectUrl: $successRedirectUrl, ipAddress: $ipAddress, description: $description, email: $email, accountId: $accountId, saveCard: $saveCard, browser: $browser, ttlMinutes: $ttlMinutes, device: $device, os: $os, isTest: $isTest, jsonData: $jsonData)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SbpRequestImpl &&
+            other is _$QrRequestImpl &&
             (identical(other.amount, amount) || other.amount == amount) &&
             (identical(other.publicId, publicId) ||
                 other.publicId == publicId) &&
             (identical(other.scheme, scheme) || other.scheme == scheme) &&
             (identical(other.currency, currency) ||
                 other.currency == currency) &&
+            (identical(other.webview, webview) || other.webview == webview) &&
             (identical(other.invoiceId, invoiceId) ||
                 other.invoiceId == invoiceId) &&
             (identical(other.successRedirectUrl, successRedirectUrl) ||
@@ -529,7 +536,6 @@ class _$SbpRequestImpl implements _SbpRequest {
                 other.ttlMinutes == ttlMinutes) &&
             (identical(other.device, device) || other.device == device) &&
             (identical(other.os, os) || other.os == os) &&
-            (identical(other.webview, webview) || other.webview == webview) &&
             (identical(other.isTest, isTest) || other.isTest == isTest) &&
             (identical(other.jsonData, jsonData) ||
                 other.jsonData == jsonData));
@@ -543,6 +549,7 @@ class _$SbpRequestImpl implements _SbpRequest {
       publicId,
       scheme,
       currency,
+      webview,
       invoiceId,
       successRedirectUrl,
       ipAddress,
@@ -554,32 +561,32 @@ class _$SbpRequestImpl implements _SbpRequest {
       ttlMinutes,
       device,
       os,
-      webview,
       isTest,
       jsonData);
 
-  /// Create a copy of SbpRequest
+  /// Create a copy of QrRequest
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$SbpRequestImplCopyWith<_$SbpRequestImpl> get copyWith =>
-      __$$SbpRequestImplCopyWithImpl<_$SbpRequestImpl>(this, _$identity);
+  _$$QrRequestImplCopyWith<_$QrRequestImpl> get copyWith =>
+      __$$QrRequestImplCopyWithImpl<_$QrRequestImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$SbpRequestImplToJson(
+    return _$$QrRequestImplToJson(
       this,
     );
   }
 }
 
-abstract class _SbpRequest implements SbpRequest {
-  factory _SbpRequest(
+abstract class _QrRequest implements QrRequest {
+  factory _QrRequest(
       {required final String amount,
       required final String publicId,
       final CloudPaymentsScheme scheme,
       final String currency,
+      final bool webview,
       final String? invoiceId,
       final Uri? successRedirectUrl,
       final String? ipAddress,
@@ -587,16 +594,15 @@ abstract class _SbpRequest implements SbpRequest {
       final String? email,
       final String? accountId,
       final bool? saveCard,
-      final String? browser,
+      final String browser,
       final int? ttlMinutes,
-      final CloudPaymentsDevice? device,
+      final CloudPaymentsDevice device,
       final CloudPaymentsDeviceOS? os,
-      final bool? webview,
       final bool? isTest,
-      @PayloadConverter() final PayloadData? jsonData}) = _$SbpRequestImpl;
+      @PayloadConverter() final PayloadData? jsonData}) = _$QrRequestImpl;
 
-  factory _SbpRequest.fromJson(Map<String, dynamic> json) =
-      _$SbpRequestImpl.fromJson;
+  factory _QrRequest.fromJson(Map<String, dynamic> json) =
+      _$QrRequestImpl.fromJson;
 
   /// Сумма платежа
   @override
@@ -613,6 +619,12 @@ abstract class _SbpRequest implements SbpRequest {
   /// Валюта: RUB/USD/EUR/GBP (см. [справочник](https://developers.cloudpayments.ru/#spisok-valyut)). Если параметр не передан, то по умолчанию принимает значение RUB
   @override
   String get currency;
+
+  /// Признак открытия браузера в режиме webview.
+  ///
+  /// Возможные значения: true - для оплат через webview false - для оплат без webview
+  @override
+  bool get webview;
 
   /// Номер счета или заказа в системе мерчанта
   @override
@@ -649,7 +661,7 @@ abstract class _SbpRequest implements SbpRequest {
   ///
   /// Пример значения: Chrome, Firefox, MIUI Browser, Opera
   @override
-  String? get browser;
+  String get browser;
 
   /// Время, в течение которого будет доступна оплата по QR-коду / ссылке на оплату.
   /// Минимальное допустимое значение - "1". Максимальное допустимое значение - "129 600" (90 дней).
@@ -659,15 +671,11 @@ abstract class _SbpRequest implements SbpRequest {
 
   /// Признак устройства плательщика.
   @override
-  CloudPaymentsDevice? get device;
+  CloudPaymentsDevice get device;
 
   /// Операционная система устройства плательщика.
   @override
   CloudPaymentsDeviceOS? get os;
-
-  /// Признак открытия браузера в режиме webview.
-  @override
-  bool? get webview;
 
   /// Флаг тестового режима оплаты
   @override
@@ -678,10 +686,10 @@ abstract class _SbpRequest implements SbpRequest {
   @PayloadConverter()
   PayloadData? get jsonData;
 
-  /// Create a copy of SbpRequest
+  /// Create a copy of QrRequest
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$SbpRequestImplCopyWith<_$SbpRequestImpl> get copyWith =>
+  _$$QrRequestImplCopyWith<_$QrRequestImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

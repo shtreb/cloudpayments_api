@@ -1,16 +1,16 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'sbp_response.freezed.dart';
-part 'sbp_response.g.dart';
+part 'qr_response.freezed.dart';
+part 'qr_response.g.dart';
 
-/// {@template sbp_response}
-/// Информация о платеже СБП
+/// {@template qr_response}
+/// Информация о платеже при генерации Qr оплаты
 /// {@endtemplate}
 @freezed
-class SbpResponse with _$SbpResponse {
-  /// {@macro sbp_response}
+class QrResponse with _$QrResponse {
+  /// {@macro qr_response}
 
-  factory SbpResponse({
+  factory QrResponse({
     /// Id транзакции
     required int transactionId,
 
@@ -34,9 +34,9 @@ class SbpResponse with _$SbpResponse {
 
     /// true - если терминал в режиме теста
     bool? isTest,
-  }) = _SbpResponse;
+  }) = _QrResponse;
 
-  /// Converts a JSON [Map] into a [SbpResponse] instance
-  factory SbpResponse.fromJson(Map<String, dynamic> json) =>
-      _$SbpResponseFromJson(json);
+  /// Converts a JSON [Map] into a [QrResponse] instance
+  factory QrResponse.fromJson(Map<String, dynamic> json) =>
+      _$QrResponseFromJson(json);
 }

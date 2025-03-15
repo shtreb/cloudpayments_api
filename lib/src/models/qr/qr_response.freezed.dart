@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'sbp_response.dart';
+part of 'qr_response.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,12 +14,12 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-SbpResponse _$SbpResponseFromJson(Map<String, dynamic> json) {
-  return _SbpResponse.fromJson(json);
+QrResponse _$QrResponseFromJson(Map<String, dynamic> json) {
+  return _QrResponse.fromJson(json);
 }
 
 /// @nodoc
-mixin _$SbpResponse {
+mixin _$QrResponse {
   /// Id транзакции
   int get transactionId => throw _privateConstructorUsedError;
 
@@ -44,21 +44,21 @@ mixin _$SbpResponse {
   /// true - если терминал в режиме теста
   bool? get isTest => throw _privateConstructorUsedError;
 
-  /// Serializes this SbpResponse to a JSON map.
+  /// Serializes this QrResponse to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-  /// Create a copy of SbpResponse
+  /// Create a copy of QrResponse
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $SbpResponseCopyWith<SbpResponse> get copyWith =>
+  $QrResponseCopyWith<QrResponse> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $SbpResponseCopyWith<$Res> {
-  factory $SbpResponseCopyWith(
-          SbpResponse value, $Res Function(SbpResponse) then) =
-      _$SbpResponseCopyWithImpl<$Res, SbpResponse>;
+abstract class $QrResponseCopyWith<$Res> {
+  factory $QrResponseCopyWith(
+          QrResponse value, $Res Function(QrResponse) then) =
+      _$QrResponseCopyWithImpl<$Res, QrResponse>;
   @useResult
   $Res call(
       {int transactionId,
@@ -72,16 +72,16 @@ abstract class $SbpResponseCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$SbpResponseCopyWithImpl<$Res, $Val extends SbpResponse>
-    implements $SbpResponseCopyWith<$Res> {
-  _$SbpResponseCopyWithImpl(this._value, this._then);
+class _$QrResponseCopyWithImpl<$Res, $Val extends QrResponse>
+    implements $QrResponseCopyWith<$Res> {
+  _$QrResponseCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of SbpResponse
+  /// Create a copy of QrResponse
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -133,11 +133,11 @@ class _$SbpResponseCopyWithImpl<$Res, $Val extends SbpResponse>
 }
 
 /// @nodoc
-abstract class _$$SbpResponseImplCopyWith<$Res>
-    implements $SbpResponseCopyWith<$Res> {
-  factory _$$SbpResponseImplCopyWith(
-          _$SbpResponseImpl value, $Res Function(_$SbpResponseImpl) then) =
-      __$$SbpResponseImplCopyWithImpl<$Res>;
+abstract class _$$QrResponseImplCopyWith<$Res>
+    implements $QrResponseCopyWith<$Res> {
+  factory _$$QrResponseImplCopyWith(
+          _$QrResponseImpl value, $Res Function(_$QrResponseImpl) then) =
+      __$$QrResponseImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -152,14 +152,14 @@ abstract class _$$SbpResponseImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$SbpResponseImplCopyWithImpl<$Res>
-    extends _$SbpResponseCopyWithImpl<$Res, _$SbpResponseImpl>
-    implements _$$SbpResponseImplCopyWith<$Res> {
-  __$$SbpResponseImplCopyWithImpl(
-      _$SbpResponseImpl _value, $Res Function(_$SbpResponseImpl) _then)
+class __$$QrResponseImplCopyWithImpl<$Res>
+    extends _$QrResponseCopyWithImpl<$Res, _$QrResponseImpl>
+    implements _$$QrResponseImplCopyWith<$Res> {
+  __$$QrResponseImplCopyWithImpl(
+      _$QrResponseImpl _value, $Res Function(_$QrResponseImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of SbpResponse
+  /// Create a copy of QrResponse
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -173,7 +173,7 @@ class __$$SbpResponseImplCopyWithImpl<$Res>
     Object? message = freezed,
     Object? isTest = freezed,
   }) {
-    return _then(_$SbpResponseImpl(
+    return _then(_$QrResponseImpl(
       transactionId: null == transactionId
           ? _value.transactionId
           : transactionId // ignore: cast_nullable_to_non_nullable
@@ -212,8 +212,8 @@ class __$$SbpResponseImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$SbpResponseImpl implements _SbpResponse {
-  _$SbpResponseImpl(
+class _$QrResponseImpl implements _QrResponse {
+  _$QrResponseImpl(
       {required this.transactionId,
       required this.amount,
       this.qrUrl,
@@ -223,8 +223,8 @@ class _$SbpResponseImpl implements _SbpResponse {
       this.message,
       this.isTest});
 
-  factory _$SbpResponseImpl.fromJson(Map<String, dynamic> json) =>
-      _$$SbpResponseImplFromJson(json);
+  factory _$QrResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$QrResponseImplFromJson(json);
 
   /// Id транзакции
   @override
@@ -260,14 +260,14 @@ class _$SbpResponseImpl implements _SbpResponse {
 
   @override
   String toString() {
-    return 'SbpResponse(transactionId: $transactionId, amount: $amount, qrUrl: $qrUrl, qrImage: $qrImage, merchantOrderId: $merchantOrderId, providerQrId: $providerQrId, message: $message, isTest: $isTest)';
+    return 'QrResponse(transactionId: $transactionId, amount: $amount, qrUrl: $qrUrl, qrImage: $qrImage, merchantOrderId: $merchantOrderId, providerQrId: $providerQrId, message: $message, isTest: $isTest)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SbpResponseImpl &&
+            other is _$QrResponseImpl &&
             (identical(other.transactionId, transactionId) ||
                 other.transactionId == transactionId) &&
             (identical(other.amount, amount) || other.amount == amount) &&
@@ -286,24 +286,24 @@ class _$SbpResponseImpl implements _SbpResponse {
   int get hashCode => Object.hash(runtimeType, transactionId, amount, qrUrl,
       qrImage, merchantOrderId, providerQrId, message, isTest);
 
-  /// Create a copy of SbpResponse
+  /// Create a copy of QrResponse
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$SbpResponseImplCopyWith<_$SbpResponseImpl> get copyWith =>
-      __$$SbpResponseImplCopyWithImpl<_$SbpResponseImpl>(this, _$identity);
+  _$$QrResponseImplCopyWith<_$QrResponseImpl> get copyWith =>
+      __$$QrResponseImplCopyWithImpl<_$QrResponseImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$SbpResponseImplToJson(
+    return _$$QrResponseImplToJson(
       this,
     );
   }
 }
 
-abstract class _SbpResponse implements SbpResponse {
-  factory _SbpResponse(
+abstract class _QrResponse implements QrResponse {
+  factory _QrResponse(
       {required final int transactionId,
       required final num amount,
       final String? qrUrl,
@@ -311,10 +311,10 @@ abstract class _SbpResponse implements SbpResponse {
       final String? merchantOrderId,
       final String? providerQrId,
       final String? message,
-      final bool? isTest}) = _$SbpResponseImpl;
+      final bool? isTest}) = _$QrResponseImpl;
 
-  factory _SbpResponse.fromJson(Map<String, dynamic> json) =
-      _$SbpResponseImpl.fromJson;
+  factory _QrResponse.fromJson(Map<String, dynamic> json) =
+      _$QrResponseImpl.fromJson;
 
   /// Id транзакции
   @override
@@ -348,10 +348,10 @@ abstract class _SbpResponse implements SbpResponse {
   @override
   bool? get isTest;
 
-  /// Create a copy of SbpResponse
+  /// Create a copy of QrResponse
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$SbpResponseImplCopyWith<_$SbpResponseImpl> get copyWith =>
+  _$$QrResponseImplCopyWith<_$QrResponseImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

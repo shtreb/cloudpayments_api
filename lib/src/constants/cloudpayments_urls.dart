@@ -3,7 +3,7 @@ class CloudpaymentsApiUrls {
   CloudpaymentsApiUrls._();
 
   /// Основная
-  static const String base = 'https://api.cloudpayments.ru';
+  static const String baseUrl = 'https://api.cloudpayments.ru';
 
   /// Тест
   static const String test = '/test';
@@ -29,14 +29,14 @@ class CloudpaymentsApiUrls {
   /// Двухстадийная оплата по токену
   static const String tokensAuth = '/payments/tokens/auth';
 
-  /// Генерация платежной ссылки СБП
-  static const String sbpLink = '/payments/qr/sbp/link';
+  /// Генерация платежной ссылки
+  static const String qrLink = '/payments/qr/{qrType}/link';
 
   /// Генерация изображения платежного QR-кода
-  static const String sbpImage = '/payments/qr/sbp/image';
+  static const String qrImage = '/payments/qr/{qrType}/image';
 
-  /// Получение статуса по Qr транзакции (синхронный)
-  static const String sbpStatus = '/payments/qr/status/get';
+  /// Получение статуса по Qr транзакции (синхронный) СБП
+  static const String qrStatus = '/payments/qr/status/get';
 
   /// Выплата по токену
   static const String tokenPopup = '/payments/token/topup';

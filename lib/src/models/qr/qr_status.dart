@@ -1,20 +1,20 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'sbp_status.freezed.dart';
-part 'sbp_status.g.dart';
+part 'qr_status.freezed.dart';
+part 'qr_status.g.dart';
 
-/// {@template sbp_status}
-/// Статус СБП платежа
+/// {@template qr_status}
+/// Статус QR платежа
 /// {@endtemplate}
 @Freezed(unionKey: 'Status', unionValueCase: FreezedUnionCase.pascal)
-class SbpStatus with _$SbpStatus {
-  /// {@macro sbp_status}
+class QrStatus with _$QrStatus {
+  /// {@macro qr_status}
 
   /// Запрошен QR или Link
   ///
   /// Получена ссылка для оплаты, операция оплаты не инициирована
   @FreezedUnionValue('Created')
-  factory SbpStatus.created({
+  factory QrStatus.created({
     /// Id транзакции
     required int transactionId,
 
@@ -23,13 +23,14 @@ class SbpStatus with _$SbpStatus {
 
     /// Значение статуса
     int? statusCode,
-  }) = _SbpStatusCreated;
+  }) = _QrStatusCreated;
 
   /// В обработке
   ///
-  /// Операция оплаты инициирована, Операция в обработке на стороне провайдера (НСПК)
+  /// Операция оплаты инициирована
+  /// и в обработке на стороне провайдера
   @FreezedUnionValue('Pending')
-  factory SbpStatus.pending({
+  factory QrStatus.pending({
     /// Id транзакции
     required int transactionId,
 
@@ -38,11 +39,11 @@ class SbpStatus with _$SbpStatus {
 
     /// Значение статуса
     int? statusCode,
-  }) = _SbpStatusPending;
+  }) = _QrStatusPending;
 
   /// Операция успешно завершена
   @FreezedUnionValue('Completed')
-  factory SbpStatus.completed({
+  factory QrStatus.completed({
     /// Id транзакции
     required int transactionId,
 
@@ -51,13 +52,13 @@ class SbpStatus with _$SbpStatus {
 
     /// Значение статуса
     int? statusCode,
-  }) = _SbpStatusCompleted;
+  }) = _QrStatusCompleted;
 
   /// Отменена
   ///
   /// В случае невозможности проведения операции (нет денег на счете и т.п.)
   @FreezedUnionValue('Declined')
-  factory SbpStatus.declined({
+  factory QrStatus.declined({
     /// Id транзакции
     required int transactionId,
 
@@ -66,9 +67,9 @@ class SbpStatus with _$SbpStatus {
 
     /// Значение статуса
     int? statusCode,
-  }) = _SbpStatusDeclined;
+  }) = _QrStatusDeclined;
 
-  /// Converts a JSON [Map] into a [SbpStatus] instance
-  factory SbpStatus.fromJson(Map<String, dynamic> json) =>
-      _$SbpStatusFromJson(json);
+  /// Converts a JSON [Map] into a [QrStatus] instance
+  factory QrStatus.fromJson(Map<String, dynamic> json) =>
+      _$QrStatusFromJson(json);
 }

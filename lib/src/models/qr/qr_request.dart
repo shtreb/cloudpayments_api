@@ -1,17 +1,27 @@
 import 'package:cloudpayments_api/cloudpayments_api.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'sbp_request.freezed.dart';
-part 'sbp_request.g.dart';
+part 'qr_request.freezed.dart';
+part 'qr_request.g.dart';
 
-/// {@template sbp_request}
-/// Информация о запросе для генерации ссыли оплаты по СБП
+/// Тип Qr оплаты
+@JsonEnum()
+enum QrType {
+  /// SberPay
+  sberpay,
+
+  /// Система быстрых платежей
+  sbp,
+}
+
+/// {@template qr_request}
+/// Информация о запросе для генерации Qr оплаты
 /// {@endtemplate}
 @freezed
-class SbpRequest with _$SbpRequest {
-  /// {@macro sbp_request}
+class QrRequest with _$QrRequest {
+  /// {@macro qr_request}
 
-  factory SbpRequest({
+  factory QrRequest({
     /// Сумма платежа
     required String amount,
 
@@ -23,6 +33,11 @@ class SbpRequest with _$SbpRequest {
 
     /// Валюта: RUB/USD/EUR/GBP (см. [справочник](https://developers.cloudpayments.ru/#spisok-valyut)). Если параметр не передан, то по умолчанию принимает значение RUB
     @Default('RUB') String currency,
+
+    /// Признак открытия браузера в режиме webview.
+    ///
+    /// Возможные значения: true - для оплат через webview false - для оплат без webview
+    @Default(false) bool webview,
 
     /// Номер счета или заказа в системе мерчанта
     String? invoiceId,
@@ -51,7 +66,7 @@ class SbpRequest with _$SbpRequest {
     /// Название браузера клиента на основании userAgent браузера.
     ///
     /// Пример значения: Chrome, Firefox, MIUI Browser, Opera
-    String? browser,
+    @Default('Chrome') String browser,
 
     /// Время, в течение которого будет доступна оплата по QR-коду / ссылке на оплату.
     /// Минимальное допустимое значение - "1". Максимальное допустимое значение - "129 600" (90 дней).
@@ -59,24 +74,21 @@ class SbpRequest with _$SbpRequest {
     int? ttlMinutes,
 
     /// Признак устройства плательщика.
-    CloudPaymentsDevice? device,
+    @Default(CloudPaymentsDevice.mobile) CloudPaymentsDevice device,
 
     /// Операционная система устройства плательщика.
     CloudPaymentsDeviceOS? os,
-
-    /// Признак открытия браузера в режиме webview.
-    bool? webview,
 
     /// Флаг тестового режима оплаты
     bool? isTest,
 
     /// Данные для формирования онлайн-чека.
     @PayloadConverter() PayloadData? jsonData,
-  }) = _SbpRequest;
+  }) = _QrRequest;
 
-  /// Converts a JSON [Map] into a [SbpRequest] instance
-  factory SbpRequest.fromJson(Map<String, dynamic> json) =>
-      _$SbpRequestFromJson(json);
+  /// Converts a JSON [Map] into a [QrRequest] instance
+  factory QrRequest.fromJson(Map<String, dynamic> json) =>
+      _$QrRequestFromJson(json);
 }
 
 /// {@template cloud_payments_device}
@@ -123,9 +135,14 @@ enum CloudPaymentsDeviceOS {
 /// Схема проведения платежа.
 ///
 /// Возможные значения: `charge` - одностадийная оплата
+///
+/// `auth` - двухстадийная оплата
 /// {@endtemplate}
 enum CloudPaymentsScheme {
   /// {@macro cloud_payments_scheme}
   /// Одностадийная оплата
   charge,
+
+  /// двухстадийная оплата
+  auth
 }

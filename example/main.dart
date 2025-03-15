@@ -5,7 +5,7 @@ void main() async {
   final paymentRequest = CardPaymentRequest(
     amount: '100',
     ipAddress: 'YOUR_IP_ADDRESS',
-    cardCryptogramPacket: 'cryptogram_packet',
+    cardCryptogramPacket: 'CARD_CRYPTOGRAM_PACKET',
   );
 
   final dio = Dio();

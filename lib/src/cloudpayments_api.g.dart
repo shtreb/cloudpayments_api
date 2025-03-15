@@ -482,14 +482,16 @@ class _CloudPaymentsApi implements CloudPaymentsApi {
   }
 
   @override
-  Future<CloudPaymentsResponse<SbpResponse>> sbpLinkCreate(
-      SbpRequest sbpRequest) async {
+  Future<CloudPaymentsResponse<QrResponse>> qrLinkCreate({
+    required String qrType,
+    required QrRequest qrRequest,
+  }) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
-    _data.addAll(sbpRequest.toJson());
-    final _options = _setStreamType<CloudPaymentsResponse<SbpResponse>>(Options(
+    _data.addAll(qrRequest.toJson());
+    final _options = _setStreamType<CloudPaymentsResponse<QrResponse>>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
@@ -497,7 +499,7 @@ class _CloudPaymentsApi implements CloudPaymentsApi {
     )
         .compose(
           _dio.options,
-          '/payments/qr/sbp/link',
+          '/payments/qr/${qrType}/link',
           queryParameters: queryParameters,
           data: _data,
         )
@@ -507,11 +509,11 @@ class _CloudPaymentsApi implements CloudPaymentsApi {
           baseUrl,
         )));
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late CloudPaymentsResponse<SbpResponse> _value;
+    late CloudPaymentsResponse<QrResponse> _value;
     try {
-      _value = CloudPaymentsResponse<SbpResponse>.fromJson(
+      _value = CloudPaymentsResponse<QrResponse>.fromJson(
         _result.data!,
-        (json) => SbpResponse.fromJson(json as Map<String, dynamic>),
+        (json) => QrResponse.fromJson(json as Map<String, dynamic>),
       );
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
@@ -521,14 +523,16 @@ class _CloudPaymentsApi implements CloudPaymentsApi {
   }
 
   @override
-  Future<CloudPaymentsResponse<SbpResponse>> sbpQrImageCreate(
-      SbpRequest sbpRequest) async {
+  Future<CloudPaymentsResponse<QrResponse>> qrImageCreate({
+    required String qrType,
+    required QrRequest sbpRequest,
+  }) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(sbpRequest.toJson());
-    final _options = _setStreamType<CloudPaymentsResponse<SbpResponse>>(Options(
+    final _options = _setStreamType<CloudPaymentsResponse<QrResponse>>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
@@ -536,7 +540,7 @@ class _CloudPaymentsApi implements CloudPaymentsApi {
     )
         .compose(
           _dio.options,
-          '/payments/qr/sbp/image',
+          '/payments/qr/${qrType}/image',
           queryParameters: queryParameters,
           data: _data,
         )
@@ -546,11 +550,11 @@ class _CloudPaymentsApi implements CloudPaymentsApi {
           baseUrl,
         )));
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late CloudPaymentsResponse<SbpResponse> _value;
+    late CloudPaymentsResponse<QrResponse> _value;
     try {
-      _value = CloudPaymentsResponse<SbpResponse>.fromJson(
+      _value = CloudPaymentsResponse<QrResponse>.fromJson(
         _result.data!,
-        (json) => SbpResponse.fromJson(json as Map<String, dynamic>),
+        (json) => QrResponse.fromJson(json as Map<String, dynamic>),
       );
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
@@ -560,13 +564,12 @@ class _CloudPaymentsApi implements CloudPaymentsApi {
   }
 
   @override
-  Future<CloudPaymentsResponse<SbpStatus>> getSbpStatus(
-      int transactionId) async {
+  Future<CloudPaymentsResponse<QrStatus>> getQrStatus(int transactionId) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = {'TransactionId': transactionId};
-    final _options = _setStreamType<CloudPaymentsResponse<SbpStatus>>(Options(
+    final _options = _setStreamType<CloudPaymentsResponse<QrStatus>>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
@@ -584,11 +587,11 @@ class _CloudPaymentsApi implements CloudPaymentsApi {
           baseUrl,
         )));
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late CloudPaymentsResponse<SbpStatus> _value;
+    late CloudPaymentsResponse<QrStatus> _value;
     try {
-      _value = CloudPaymentsResponse<SbpStatus>.fromJson(
+      _value = CloudPaymentsResponse<QrStatus>.fromJson(
         _result.data!,
-        (json) => SbpStatus.fromJson(json as Map<String, dynamic>),
+        (json) => QrStatus.fromJson(json as Map<String, dynamic>),
       );
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);

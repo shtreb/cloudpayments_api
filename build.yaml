@@ -5,6 +5,7 @@ targets:
         options:
           explicit_to_json: true
           field_rename: pascal
+
 global_options:
   freezed:
     runs_before:

@@ -1,19 +1,20 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'sbp_request.dart';
+part of 'qr_request.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$SbpRequestImpl _$$SbpRequestImplFromJson(Map<String, dynamic> json) =>
-    _$SbpRequestImpl(
+_$QrRequestImpl _$$QrRequestImplFromJson(Map<String, dynamic> json) =>
+    _$QrRequestImpl(
       amount: json['Amount'] as String,
       publicId: json['PublicId'] as String,
       scheme:
           $enumDecodeNullable(_$CloudPaymentsSchemeEnumMap, json['Scheme']) ??
               CloudPaymentsScheme.charge,
       currency: json['Currency'] as String? ?? 'RUB',
+      webview: json['Webview'] as bool? ?? false,
       invoiceId: json['InvoiceId'] as String?,
       successRedirectUrl: json['SuccessRedirectUrl'] == null
           ? null
@@ -23,22 +24,24 @@ _$SbpRequestImpl _$$SbpRequestImplFromJson(Map<String, dynamic> json) =>
       email: json['Email'] as String?,
       accountId: json['AccountId'] as String?,
       saveCard: json['SaveCard'] as bool?,
-      browser: json['Browser'] as String?,
+      browser: json['Browser'] as String? ?? 'Chrome',
       ttlMinutes: (json['TtlMinutes'] as num?)?.toInt(),
-      device: $enumDecodeNullable(_$CloudPaymentsDeviceEnumMap, json['Device']),
+      device:
+          $enumDecodeNullable(_$CloudPaymentsDeviceEnumMap, json['Device']) ??
+              CloudPaymentsDevice.mobile,
       os: $enumDecodeNullable(_$CloudPaymentsDeviceOSEnumMap, json['Os']),
-      webview: json['Webview'] as bool?,
       isTest: json['IsTest'] as bool?,
       jsonData: _$JsonConverterFromJson<Map<String, dynamic>, PayloadData?>(
           json['JsonData'], const PayloadConverter().fromJson),
     );
 
-Map<String, dynamic> _$$SbpRequestImplToJson(_$SbpRequestImpl instance) =>
+Map<String, dynamic> _$$QrRequestImplToJson(_$QrRequestImpl instance) =>
     <String, dynamic>{
       'Amount': instance.amount,
       'PublicId': instance.publicId,
       'Scheme': _$CloudPaymentsSchemeEnumMap[instance.scheme]!,
       'Currency': instance.currency,
+      'Webview': instance.webview,
       'InvoiceId': instance.invoiceId,
       'SuccessRedirectUrl': instance.successRedirectUrl?.toString(),
       'IpAddress': instance.ipAddress,
@@ -48,15 +51,15 @@ Map<String, dynamic> _$$SbpRequestImplToJson(_$SbpRequestImpl instance) =>
       'SaveCard': instance.saveCard,
       'Browser': instance.browser,
       'TtlMinutes': instance.ttlMinutes,
-      'Device': _$CloudPaymentsDeviceEnumMap[instance.device],
+      'Device': _$CloudPaymentsDeviceEnumMap[instance.device]!,
       'Os': _$CloudPaymentsDeviceOSEnumMap[instance.os],
-      'Webview': instance.webview,
       'IsTest': instance.isTest,
       'JsonData': const PayloadConverter().toJson(instance.jsonData),
     };
 
 const _$CloudPaymentsSchemeEnumMap = {
   CloudPaymentsScheme.charge: 'charge',
+  CloudPaymentsScheme.auth: 'auth',
 };
 
 const _$CloudPaymentsDeviceEnumMap = {
