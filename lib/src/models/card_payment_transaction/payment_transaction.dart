@@ -9,22 +9,22 @@ class PaymentTransaction with _$PaymentTransaction {
   /// Транзакция успешно прошла
   const factory PaymentTransaction.success(
     TransactionInfo info,
-  ) = _PaymentTransactionSuccess;
+  ) = PaymentTransactionSuccess;
 
   /// Некорректно сформирован запрос
   const factory PaymentTransaction.incorrectlyRequest(
     String? message,
-  ) = _PaymentTransactionIncorrectlyRequest;
+  ) = PaymentTransactionIncorrectlyRequest;
 
   /// Требуется 3-D Secure аутентификация
   const factory PaymentTransaction.required3dsecure(
     Three3DSecureResponse response,
-  ) = _PaymentTransactionRequired3dSecure;
+  ) = PaymentTransactionRequired3dSecure;
 
   /// Транзакция отклонена
   const factory PaymentTransaction.error(
     TransactionInfo info,
-  ) = _PaymentTransactionError;
+  ) = PaymentTransactionError;
 
   /// Converts a JSON [Map] into a [PaymentTransaction] instance
   factory PaymentTransaction.fromJson(Map<String, Object?> json) {

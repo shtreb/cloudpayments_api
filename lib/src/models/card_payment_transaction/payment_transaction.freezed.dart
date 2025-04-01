@@ -45,8 +45,8 @@ $PaymentTransactionCopyWith(PaymentTransaction _, $Res Function(PaymentTransacti
 /// @nodoc
 
 
-class _PaymentTransactionSuccess implements PaymentTransaction {
-  const _PaymentTransactionSuccess(this.info);
+class PaymentTransactionSuccess implements PaymentTransaction {
+  const PaymentTransactionSuccess(this.info);
   
 
  final  TransactionInfo info;
@@ -55,13 +55,13 @@ class _PaymentTransactionSuccess implements PaymentTransaction {
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$PaymentTransactionSuccessCopyWith<_PaymentTransactionSuccess> get copyWith => __$PaymentTransactionSuccessCopyWithImpl<_PaymentTransactionSuccess>(this, _$identity);
+$PaymentTransactionSuccessCopyWith<PaymentTransactionSuccess> get copyWith => _$PaymentTransactionSuccessCopyWithImpl<PaymentTransactionSuccess>(this, _$identity);
 
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PaymentTransactionSuccess&&(identical(other.info, info) || other.info == info));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is PaymentTransactionSuccess&&(identical(other.info, info) || other.info == info));
 }
 
 
@@ -77,8 +77,8 @@ String toString() {
 }
 
 /// @nodoc
-abstract mixin class _$PaymentTransactionSuccessCopyWith<$Res> implements $PaymentTransactionCopyWith<$Res> {
-  factory _$PaymentTransactionSuccessCopyWith(_PaymentTransactionSuccess value, $Res Function(_PaymentTransactionSuccess) _then) = __$PaymentTransactionSuccessCopyWithImpl;
+abstract mixin class $PaymentTransactionSuccessCopyWith<$Res> implements $PaymentTransactionCopyWith<$Res> {
+  factory $PaymentTransactionSuccessCopyWith(PaymentTransactionSuccess value, $Res Function(PaymentTransactionSuccess) _then) = _$PaymentTransactionSuccessCopyWithImpl;
 @useResult
 $Res call({
  TransactionInfo info
@@ -89,17 +89,17 @@ $TransactionInfoCopyWith<$Res> get info;
 
 }
 /// @nodoc
-class __$PaymentTransactionSuccessCopyWithImpl<$Res>
-    implements _$PaymentTransactionSuccessCopyWith<$Res> {
-  __$PaymentTransactionSuccessCopyWithImpl(this._self, this._then);
+class _$PaymentTransactionSuccessCopyWithImpl<$Res>
+    implements $PaymentTransactionSuccessCopyWith<$Res> {
+  _$PaymentTransactionSuccessCopyWithImpl(this._self, this._then);
 
-  final _PaymentTransactionSuccess _self;
-  final $Res Function(_PaymentTransactionSuccess) _then;
+  final PaymentTransactionSuccess _self;
+  final $Res Function(PaymentTransactionSuccess) _then;
 
 /// Create a copy of PaymentTransaction
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') $Res call({Object? info = null,}) {
-  return _then(_PaymentTransactionSuccess(
+  return _then(PaymentTransactionSuccess(
 null == info ? _self.info : info // ignore: cast_nullable_to_non_nullable
 as TransactionInfo,
   ));
@@ -120,8 +120,8 @@ $TransactionInfoCopyWith<$Res> get info {
 /// @nodoc
 
 
-class _PaymentTransactionIncorrectlyRequest implements PaymentTransaction {
-  const _PaymentTransactionIncorrectlyRequest(this.message);
+class PaymentTransactionIncorrectlyRequest implements PaymentTransaction {
+  const PaymentTransactionIncorrectlyRequest(this.message);
   
 
  final  String? message;
@@ -130,13 +130,13 @@ class _PaymentTransactionIncorrectlyRequest implements PaymentTransaction {
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$PaymentTransactionIncorrectlyRequestCopyWith<_PaymentTransactionIncorrectlyRequest> get copyWith => __$PaymentTransactionIncorrectlyRequestCopyWithImpl<_PaymentTransactionIncorrectlyRequest>(this, _$identity);
+$PaymentTransactionIncorrectlyRequestCopyWith<PaymentTransactionIncorrectlyRequest> get copyWith => _$PaymentTransactionIncorrectlyRequestCopyWithImpl<PaymentTransactionIncorrectlyRequest>(this, _$identity);
 
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PaymentTransactionIncorrectlyRequest&&(identical(other.message, message) || other.message == message));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is PaymentTransactionIncorrectlyRequest&&(identical(other.message, message) || other.message == message));
 }
 
 
@@ -152,8 +152,8 @@ String toString() {
 }
 
 /// @nodoc
-abstract mixin class _$PaymentTransactionIncorrectlyRequestCopyWith<$Res> implements $PaymentTransactionCopyWith<$Res> {
-  factory _$PaymentTransactionIncorrectlyRequestCopyWith(_PaymentTransactionIncorrectlyRequest value, $Res Function(_PaymentTransactionIncorrectlyRequest) _then) = __$PaymentTransactionIncorrectlyRequestCopyWithImpl;
+abstract mixin class $PaymentTransactionIncorrectlyRequestCopyWith<$Res> implements $PaymentTransactionCopyWith<$Res> {
+  factory $PaymentTransactionIncorrectlyRequestCopyWith(PaymentTransactionIncorrectlyRequest value, $Res Function(PaymentTransactionIncorrectlyRequest) _then) = _$PaymentTransactionIncorrectlyRequestCopyWithImpl;
 @useResult
 $Res call({
  String? message
@@ -164,17 +164,17 @@ $Res call({
 
 }
 /// @nodoc
-class __$PaymentTransactionIncorrectlyRequestCopyWithImpl<$Res>
-    implements _$PaymentTransactionIncorrectlyRequestCopyWith<$Res> {
-  __$PaymentTransactionIncorrectlyRequestCopyWithImpl(this._self, this._then);
+class _$PaymentTransactionIncorrectlyRequestCopyWithImpl<$Res>
+    implements $PaymentTransactionIncorrectlyRequestCopyWith<$Res> {
+  _$PaymentTransactionIncorrectlyRequestCopyWithImpl(this._self, this._then);
 
-  final _PaymentTransactionIncorrectlyRequest _self;
-  final $Res Function(_PaymentTransactionIncorrectlyRequest) _then;
+  final PaymentTransactionIncorrectlyRequest _self;
+  final $Res Function(PaymentTransactionIncorrectlyRequest) _then;
 
 /// Create a copy of PaymentTransaction
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') $Res call({Object? message = freezed,}) {
-  return _then(_PaymentTransactionIncorrectlyRequest(
+  return _then(PaymentTransactionIncorrectlyRequest(
 freezed == message ? _self.message : message // ignore: cast_nullable_to_non_nullable
 as String?,
   ));
@@ -186,8 +186,8 @@ as String?,
 /// @nodoc
 
 
-class _PaymentTransactionRequired3dSecure implements PaymentTransaction {
-  const _PaymentTransactionRequired3dSecure(this.response);
+class PaymentTransactionRequired3dSecure implements PaymentTransaction {
+  const PaymentTransactionRequired3dSecure(this.response);
   
 
  final  Three3DSecureResponse response;
@@ -196,13 +196,13 @@ class _PaymentTransactionRequired3dSecure implements PaymentTransaction {
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$PaymentTransactionRequired3dSecureCopyWith<_PaymentTransactionRequired3dSecure> get copyWith => __$PaymentTransactionRequired3dSecureCopyWithImpl<_PaymentTransactionRequired3dSecure>(this, _$identity);
+$PaymentTransactionRequired3dSecureCopyWith<PaymentTransactionRequired3dSecure> get copyWith => _$PaymentTransactionRequired3dSecureCopyWithImpl<PaymentTransactionRequired3dSecure>(this, _$identity);
 
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PaymentTransactionRequired3dSecure&&(identical(other.response, response) || other.response == response));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is PaymentTransactionRequired3dSecure&&(identical(other.response, response) || other.response == response));
 }
 
 
@@ -218,8 +218,8 @@ String toString() {
 }
 
 /// @nodoc
-abstract mixin class _$PaymentTransactionRequired3dSecureCopyWith<$Res> implements $PaymentTransactionCopyWith<$Res> {
-  factory _$PaymentTransactionRequired3dSecureCopyWith(_PaymentTransactionRequired3dSecure value, $Res Function(_PaymentTransactionRequired3dSecure) _then) = __$PaymentTransactionRequired3dSecureCopyWithImpl;
+abstract mixin class $PaymentTransactionRequired3dSecureCopyWith<$Res> implements $PaymentTransactionCopyWith<$Res> {
+  factory $PaymentTransactionRequired3dSecureCopyWith(PaymentTransactionRequired3dSecure value, $Res Function(PaymentTransactionRequired3dSecure) _then) = _$PaymentTransactionRequired3dSecureCopyWithImpl;
 @useResult
 $Res call({
  Three3DSecureResponse response
@@ -230,17 +230,17 @@ $Three3DSecureResponseCopyWith<$Res> get response;
 
 }
 /// @nodoc
-class __$PaymentTransactionRequired3dSecureCopyWithImpl<$Res>
-    implements _$PaymentTransactionRequired3dSecureCopyWith<$Res> {
-  __$PaymentTransactionRequired3dSecureCopyWithImpl(this._self, this._then);
+class _$PaymentTransactionRequired3dSecureCopyWithImpl<$Res>
+    implements $PaymentTransactionRequired3dSecureCopyWith<$Res> {
+  _$PaymentTransactionRequired3dSecureCopyWithImpl(this._self, this._then);
 
-  final _PaymentTransactionRequired3dSecure _self;
-  final $Res Function(_PaymentTransactionRequired3dSecure) _then;
+  final PaymentTransactionRequired3dSecure _self;
+  final $Res Function(PaymentTransactionRequired3dSecure) _then;
 
 /// Create a copy of PaymentTransaction
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') $Res call({Object? response = null,}) {
-  return _then(_PaymentTransactionRequired3dSecure(
+  return _then(PaymentTransactionRequired3dSecure(
 null == response ? _self.response : response // ignore: cast_nullable_to_non_nullable
 as Three3DSecureResponse,
   ));
@@ -261,8 +261,8 @@ $Three3DSecureResponseCopyWith<$Res> get response {
 /// @nodoc
 
 
-class _PaymentTransactionError implements PaymentTransaction {
-  const _PaymentTransactionError(this.info);
+class PaymentTransactionError implements PaymentTransaction {
+  const PaymentTransactionError(this.info);
   
 
  final  TransactionInfo info;
@@ -271,13 +271,13 @@ class _PaymentTransactionError implements PaymentTransaction {
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$PaymentTransactionErrorCopyWith<_PaymentTransactionError> get copyWith => __$PaymentTransactionErrorCopyWithImpl<_PaymentTransactionError>(this, _$identity);
+$PaymentTransactionErrorCopyWith<PaymentTransactionError> get copyWith => _$PaymentTransactionErrorCopyWithImpl<PaymentTransactionError>(this, _$identity);
 
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PaymentTransactionError&&(identical(other.info, info) || other.info == info));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is PaymentTransactionError&&(identical(other.info, info) || other.info == info));
 }
 
 
@@ -293,8 +293,8 @@ String toString() {
 }
 
 /// @nodoc
-abstract mixin class _$PaymentTransactionErrorCopyWith<$Res> implements $PaymentTransactionCopyWith<$Res> {
-  factory _$PaymentTransactionErrorCopyWith(_PaymentTransactionError value, $Res Function(_PaymentTransactionError) _then) = __$PaymentTransactionErrorCopyWithImpl;
+abstract mixin class $PaymentTransactionErrorCopyWith<$Res> implements $PaymentTransactionCopyWith<$Res> {
+  factory $PaymentTransactionErrorCopyWith(PaymentTransactionError value, $Res Function(PaymentTransactionError) _then) = _$PaymentTransactionErrorCopyWithImpl;
 @useResult
 $Res call({
  TransactionInfo info
@@ -305,17 +305,17 @@ $TransactionInfoCopyWith<$Res> get info;
 
 }
 /// @nodoc
-class __$PaymentTransactionErrorCopyWithImpl<$Res>
-    implements _$PaymentTransactionErrorCopyWith<$Res> {
-  __$PaymentTransactionErrorCopyWithImpl(this._self, this._then);
+class _$PaymentTransactionErrorCopyWithImpl<$Res>
+    implements $PaymentTransactionErrorCopyWith<$Res> {
+  _$PaymentTransactionErrorCopyWithImpl(this._self, this._then);
 
-  final _PaymentTransactionError _self;
-  final $Res Function(_PaymentTransactionError) _then;
+  final PaymentTransactionError _self;
+  final $Res Function(PaymentTransactionError) _then;
 
 /// Create a copy of PaymentTransaction
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') $Res call({Object? info = null,}) {
-  return _then(_PaymentTransactionError(
+  return _then(PaymentTransactionError(
 null == info ? _self.info : info // ignore: cast_nullable_to_non_nullable
 as TransactionInfo,
   ));
