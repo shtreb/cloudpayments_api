@@ -5,7 +5,7 @@ part 'threed_secure_request.g.dart';
 
 /// Запрос на подтвержение оплаты через 3d-secure
 @freezed
-class Three3DSecureRequest with _$Three3DSecureRequest {
+sealed class Three3DSecureRequest with _$Three3DSecureRequest {
   ///
   factory Three3DSecureRequest({
     /// Значение параметра MD

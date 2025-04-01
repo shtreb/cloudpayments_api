@@ -6,9 +6,8 @@ part of 'transaction_entity.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$TransactionEntityImpl _$$TransactionEntityImplFromJson(
-        Map<String, dynamic> json) =>
-    _$TransactionEntityImpl(
+_TransactionEntity _$TransactionEntityFromJson(Map<String, dynamic> json) =>
+    _TransactionEntity(
       firstName: json['FirstName'] as String?,
       lastName: json['LastName'] as String?,
       middleName: json['MiddleName'] as String?,
@@ -21,8 +20,7 @@ _$TransactionEntityImpl _$$TransactionEntityImplFromJson(
       postcode: json['Postcode'] as String?,
     );
 
-Map<String, dynamic> _$$TransactionEntityImplToJson(
-        _$TransactionEntityImpl instance) =>
+Map<String, dynamic> _$TransactionEntityToJson(_TransactionEntity instance) =>
     <String, dynamic>{
       'FirstName': instance.firstName,
       'LastName': instance.lastName,

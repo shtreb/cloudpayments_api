@@ -7,7 +7,7 @@ part 'cloud_payments_response.g.dart';
 /// Базовый ответ от сервера
 /// {@endtemplate}
 @Freezed(genericArgumentFactories: true)
-class CloudPaymentsResponse<T> with _$CloudPaymentsResponse<T> {
+sealed class CloudPaymentsResponse<T> with _$CloudPaymentsResponse<T> {
   /// {@macro cloud_payments_response}
   factory CloudPaymentsResponse({
     T? model,

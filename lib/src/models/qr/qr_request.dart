@@ -18,7 +18,7 @@ enum QrType {
 /// Информация о запросе для генерации Qr оплаты
 /// {@endtemplate}
 @freezed
-class QrRequest with _$QrRequest {
+sealed class QrRequest with _$QrRequest {
   /// {@macro qr_request}
 
   factory QrRequest({

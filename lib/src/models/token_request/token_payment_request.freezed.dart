@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,461 +10,224 @@ part of 'token_payment_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-TokenPaymenRequest _$TokenPaymenRequestFromJson(Map<String, dynamic> json) {
-  return _TokenPaymenRequest.fromJson(json);
-}
 
 /// @nodoc
 mixin _$TokenPaymenRequest {
-  /// Сумма платежа
-  String get amount => throw _privateConstructorUsedError;
 
-  /// Токен карты, выданный системой после первого платежа
-  String get token => throw _privateConstructorUsedError;
-
-  /// Обязательный идентификатор пользователя
-  String? get accountId => throw _privateConstructorUsedError;
-
-  /// Признак инициатора списания денежных средств.
-  /// Возможные значения:
-  ///
-  /// `0` - транзакция инициирована ТСП на основе ранее сохраненных учетных данных;
-  ///
-  /// `1` - транзакция инициирована держателем карты (клиентом) на основе ранее сохраненных учетных данных.
-  int get trInitiatorCode => throw _privateConstructorUsedError;
-
-  /// Валюта: RUB/USD/EUR/GBP (см. [справочник](https://developers.cloudpayments.ru/#spisok-valyut)). Если параметр не передан, то по умолчанию принимает значение RUB
-  String get currency => throw _privateConstructorUsedError;
-
-  ///Номер счета или заказа
-  String? get invoiceId => throw _privateConstructorUsedError;
-
-  /// IP-адрес плательщика
-  String? get ipAddress => throw _privateConstructorUsedError;
-
-  /// Описание оплаты в свободной форме
-  String? get description => throw _privateConstructorUsedError;
-
-  /// E-mail плательщика, на который будет отправлена квитанция об оплате
-  String? get email => throw _privateConstructorUsedError;
-
-  /// Любые другие данные, которые будут связаны с транзакцией,
-  ///
-  /// в том числе инструкции для создания подписки или формирования онлайн-чека
-  @PayloadConverter()
-  PayloadData? get jsonData => throw _privateConstructorUsedError;
+/// Сумма платежа
+ String get amount;/// Токен карты, выданный системой после первого платежа
+ String get token;/// Обязательный идентификатор пользователя
+ String? get accountId;/// Признак инициатора списания денежных средств.
+/// Возможные значения:
+///
+/// `0` - транзакция инициирована ТСП на основе ранее сохраненных учетных данных;
+///
+/// `1` - транзакция инициирована держателем карты (клиентом) на основе ранее сохраненных учетных данных.
+ int get trInitiatorCode;/// Валюта: RUB/USD/EUR/GBP (см. [справочник](https://developers.cloudpayments.ru/#spisok-valyut)). Если параметр не передан, то по умолчанию принимает значение RUB
+ String get currency;///Номер счета или заказа
+ String? get invoiceId;/// IP-адрес плательщика
+ String? get ipAddress;/// Описание оплаты в свободной форме
+ String? get description;/// E-mail плательщика, на который будет отправлена квитанция об оплате
+ String? get email;/// Любые другие данные, которые будут связаны с транзакцией,
+///
+/// в том числе инструкции для создания подписки или формирования онлайн-чека
+@PayloadConverter() PayloadData? get jsonData;
+/// Create a copy of TokenPaymenRequest
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$TokenPaymenRequestCopyWith<TokenPaymenRequest> get copyWith => _$TokenPaymenRequestCopyWithImpl<TokenPaymenRequest>(this as TokenPaymenRequest, _$identity);
 
   /// Serializes this TokenPaymenRequest to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson();
 
-  /// Create a copy of TokenPaymenRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $TokenPaymenRequestCopyWith<TokenPaymenRequest> get copyWith =>
-      throw _privateConstructorUsedError;
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is TokenPaymenRequest&&(identical(other.amount, amount) || other.amount == amount)&&(identical(other.token, token) || other.token == token)&&(identical(other.accountId, accountId) || other.accountId == accountId)&&(identical(other.trInitiatorCode, trInitiatorCode) || other.trInitiatorCode == trInitiatorCode)&&(identical(other.currency, currency) || other.currency == currency)&&(identical(other.invoiceId, invoiceId) || other.invoiceId == invoiceId)&&(identical(other.ipAddress, ipAddress) || other.ipAddress == ipAddress)&&(identical(other.description, description) || other.description == description)&&(identical(other.email, email) || other.email == email)&&(identical(other.jsonData, jsonData) || other.jsonData == jsonData));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,amount,token,accountId,trInitiatorCode,currency,invoiceId,ipAddress,description,email,jsonData);
+
+@override
+String toString() {
+  return 'TokenPaymenRequest(amount: $amount, token: $token, accountId: $accountId, trInitiatorCode: $trInitiatorCode, currency: $currency, invoiceId: $invoiceId, ipAddress: $ipAddress, description: $description, email: $email, jsonData: $jsonData)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $TokenPaymenRequestCopyWith<$Res> {
-  factory $TokenPaymenRequestCopyWith(
-          TokenPaymenRequest value, $Res Function(TokenPaymenRequest) then) =
-      _$TokenPaymenRequestCopyWithImpl<$Res, TokenPaymenRequest>;
-  @useResult
-  $Res call(
-      {String amount,
-      String token,
-      String? accountId,
-      int trInitiatorCode,
-      String currency,
-      String? invoiceId,
-      String? ipAddress,
-      String? description,
-      String? email,
-      @PayloadConverter() PayloadData? jsonData});
+abstract mixin class $TokenPaymenRequestCopyWith<$Res>  {
+  factory $TokenPaymenRequestCopyWith(TokenPaymenRequest value, $Res Function(TokenPaymenRequest) _then) = _$TokenPaymenRequestCopyWithImpl;
+@useResult
+$Res call({
+ String amount, String token, String? accountId, int trInitiatorCode, String currency, String? invoiceId, String? ipAddress, String? description, String? email,@PayloadConverter() PayloadData? jsonData
+});
 
-  $PayloadDataCopyWith<$Res>? get jsonData;
+
+$PayloadDataCopyWith<$Res>? get jsonData;
+
 }
-
 /// @nodoc
-class _$TokenPaymenRequestCopyWithImpl<$Res, $Val extends TokenPaymenRequest>
+class _$TokenPaymenRequestCopyWithImpl<$Res>
     implements $TokenPaymenRequestCopyWith<$Res> {
-  _$TokenPaymenRequestCopyWithImpl(this._value, this._then);
+  _$TokenPaymenRequestCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final TokenPaymenRequest _self;
+  final $Res Function(TokenPaymenRequest) _then;
 
-  /// Create a copy of TokenPaymenRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? amount = null,
-    Object? token = null,
-    Object? accountId = freezed,
-    Object? trInitiatorCode = null,
-    Object? currency = null,
-    Object? invoiceId = freezed,
-    Object? ipAddress = freezed,
-    Object? description = freezed,
-    Object? email = freezed,
-    Object? jsonData = freezed,
-  }) {
-    return _then(_value.copyWith(
-      amount: null == amount
-          ? _value.amount
-          : amount // ignore: cast_nullable_to_non_nullable
-              as String,
-      token: null == token
-          ? _value.token
-          : token // ignore: cast_nullable_to_non_nullable
-              as String,
-      accountId: freezed == accountId
-          ? _value.accountId
-          : accountId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      trInitiatorCode: null == trInitiatorCode
-          ? _value.trInitiatorCode
-          : trInitiatorCode // ignore: cast_nullable_to_non_nullable
-              as int,
-      currency: null == currency
-          ? _value.currency
-          : currency // ignore: cast_nullable_to_non_nullable
-              as String,
-      invoiceId: freezed == invoiceId
-          ? _value.invoiceId
-          : invoiceId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      ipAddress: freezed == ipAddress
-          ? _value.ipAddress
-          : ipAddress // ignore: cast_nullable_to_non_nullable
-              as String?,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      email: freezed == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      jsonData: freezed == jsonData
-          ? _value.jsonData
-          : jsonData // ignore: cast_nullable_to_non_nullable
-              as PayloadData?,
-    ) as $Val);
+/// Create a copy of TokenPaymenRequest
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? amount = null,Object? token = null,Object? accountId = freezed,Object? trInitiatorCode = null,Object? currency = null,Object? invoiceId = freezed,Object? ipAddress = freezed,Object? description = freezed,Object? email = freezed,Object? jsonData = freezed,}) {
+  return _then(_self.copyWith(
+amount: null == amount ? _self.amount : amount // ignore: cast_nullable_to_non_nullable
+as String,token: null == token ? _self.token : token // ignore: cast_nullable_to_non_nullable
+as String,accountId: freezed == accountId ? _self.accountId : accountId // ignore: cast_nullable_to_non_nullable
+as String?,trInitiatorCode: null == trInitiatorCode ? _self.trInitiatorCode : trInitiatorCode // ignore: cast_nullable_to_non_nullable
+as int,currency: null == currency ? _self.currency : currency // ignore: cast_nullable_to_non_nullable
+as String,invoiceId: freezed == invoiceId ? _self.invoiceId : invoiceId // ignore: cast_nullable_to_non_nullable
+as String?,ipAddress: freezed == ipAddress ? _self.ipAddress : ipAddress // ignore: cast_nullable_to_non_nullable
+as String?,description: freezed == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
+as String?,email: freezed == email ? _self.email : email // ignore: cast_nullable_to_non_nullable
+as String?,jsonData: freezed == jsonData ? _self.jsonData : jsonData // ignore: cast_nullable_to_non_nullable
+as PayloadData?,
+  ));
+}
+/// Create a copy of TokenPaymenRequest
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$PayloadDataCopyWith<$Res>? get jsonData {
+    if (_self.jsonData == null) {
+    return null;
   }
 
-  /// Create a copy of TokenPaymenRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $PayloadDataCopyWith<$Res>? get jsonData {
-    if (_value.jsonData == null) {
-      return null;
-    }
-
-    return $PayloadDataCopyWith<$Res>(_value.jsonData!, (value) {
-      return _then(_value.copyWith(jsonData: value) as $Val);
-    });
-  }
+  return $PayloadDataCopyWith<$Res>(_self.jsonData!, (value) {
+    return _then(_self.copyWith(jsonData: value));
+  });
+}
 }
 
-/// @nodoc
-abstract class _$$TokenPaymenRequestImplCopyWith<$Res>
-    implements $TokenPaymenRequestCopyWith<$Res> {
-  factory _$$TokenPaymenRequestImplCopyWith(_$TokenPaymenRequestImpl value,
-          $Res Function(_$TokenPaymenRequestImpl) then) =
-      __$$TokenPaymenRequestImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String amount,
-      String token,
-      String? accountId,
-      int trInitiatorCode,
-      String currency,
-      String? invoiceId,
-      String? ipAddress,
-      String? description,
-      String? email,
-      @PayloadConverter() PayloadData? jsonData});
-
-  @override
-  $PayloadDataCopyWith<$Res>? get jsonData;
-}
-
-/// @nodoc
-class __$$TokenPaymenRequestImplCopyWithImpl<$Res>
-    extends _$TokenPaymenRequestCopyWithImpl<$Res, _$TokenPaymenRequestImpl>
-    implements _$$TokenPaymenRequestImplCopyWith<$Res> {
-  __$$TokenPaymenRequestImplCopyWithImpl(_$TokenPaymenRequestImpl _value,
-      $Res Function(_$TokenPaymenRequestImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of TokenPaymenRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? amount = null,
-    Object? token = null,
-    Object? accountId = freezed,
-    Object? trInitiatorCode = null,
-    Object? currency = null,
-    Object? invoiceId = freezed,
-    Object? ipAddress = freezed,
-    Object? description = freezed,
-    Object? email = freezed,
-    Object? jsonData = freezed,
-  }) {
-    return _then(_$TokenPaymenRequestImpl(
-      amount: null == amount
-          ? _value.amount
-          : amount // ignore: cast_nullable_to_non_nullable
-              as String,
-      token: null == token
-          ? _value.token
-          : token // ignore: cast_nullable_to_non_nullable
-              as String,
-      accountId: freezed == accountId
-          ? _value.accountId
-          : accountId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      trInitiatorCode: null == trInitiatorCode
-          ? _value.trInitiatorCode
-          : trInitiatorCode // ignore: cast_nullable_to_non_nullable
-              as int,
-      currency: null == currency
-          ? _value.currency
-          : currency // ignore: cast_nullable_to_non_nullable
-              as String,
-      invoiceId: freezed == invoiceId
-          ? _value.invoiceId
-          : invoiceId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      ipAddress: freezed == ipAddress
-          ? _value.ipAddress
-          : ipAddress // ignore: cast_nullable_to_non_nullable
-              as String?,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      email: freezed == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      jsonData: freezed == jsonData
-          ? _value.jsonData
-          : jsonData // ignore: cast_nullable_to_non_nullable
-              as PayloadData?,
-    ));
-  }
-}
 
 /// @nodoc
 @JsonSerializable()
-class _$TokenPaymenRequestImpl implements _TokenPaymenRequest {
-  _$TokenPaymenRequestImpl(
-      {required this.amount,
-      required this.token,
-      required this.accountId,
-      required this.trInitiatorCode,
-      this.currency = 'RUB',
-      this.invoiceId,
-      this.ipAddress,
-      this.description,
-      this.email,
-      @PayloadConverter() this.jsonData});
 
-  factory _$TokenPaymenRequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$TokenPaymenRequestImplFromJson(json);
+class _TokenPaymenRequest implements TokenPaymenRequest {
+   _TokenPaymenRequest({required this.amount, required this.token, required this.accountId, required this.trInitiatorCode, this.currency = 'RUB', this.invoiceId, this.ipAddress, this.description, this.email, @PayloadConverter() this.jsonData});
+  factory _TokenPaymenRequest.fromJson(Map<String, dynamic> json) => _$TokenPaymenRequestFromJson(json);
 
-  /// Сумма платежа
-  @override
-  final String amount;
+/// Сумма платежа
+@override final  String amount;
+/// Токен карты, выданный системой после первого платежа
+@override final  String token;
+/// Обязательный идентификатор пользователя
+@override final  String? accountId;
+/// Признак инициатора списания денежных средств.
+/// Возможные значения:
+///
+/// `0` - транзакция инициирована ТСП на основе ранее сохраненных учетных данных;
+///
+/// `1` - транзакция инициирована держателем карты (клиентом) на основе ранее сохраненных учетных данных.
+@override final  int trInitiatorCode;
+/// Валюта: RUB/USD/EUR/GBP (см. [справочник](https://developers.cloudpayments.ru/#spisok-valyut)). Если параметр не передан, то по умолчанию принимает значение RUB
+@override@JsonKey() final  String currency;
+///Номер счета или заказа
+@override final  String? invoiceId;
+/// IP-адрес плательщика
+@override final  String? ipAddress;
+/// Описание оплаты в свободной форме
+@override final  String? description;
+/// E-mail плательщика, на который будет отправлена квитанция об оплате
+@override final  String? email;
+/// Любые другие данные, которые будут связаны с транзакцией,
+///
+/// в том числе инструкции для создания подписки или формирования онлайн-чека
+@override@PayloadConverter() final  PayloadData? jsonData;
 
-  /// Токен карты, выданный системой после первого платежа
-  @override
-  final String token;
+/// Create a copy of TokenPaymenRequest
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$TokenPaymenRequestCopyWith<_TokenPaymenRequest> get copyWith => __$TokenPaymenRequestCopyWithImpl<_TokenPaymenRequest>(this, _$identity);
 
-  /// Обязательный идентификатор пользователя
-  @override
-  final String? accountId;
-
-  /// Признак инициатора списания денежных средств.
-  /// Возможные значения:
-  ///
-  /// `0` - транзакция инициирована ТСП на основе ранее сохраненных учетных данных;
-  ///
-  /// `1` - транзакция инициирована держателем карты (клиентом) на основе ранее сохраненных учетных данных.
-  @override
-  final int trInitiatorCode;
-
-  /// Валюта: RUB/USD/EUR/GBP (см. [справочник](https://developers.cloudpayments.ru/#spisok-valyut)). Если параметр не передан, то по умолчанию принимает значение RUB
-  @override
-  @JsonKey()
-  final String currency;
-
-  ///Номер счета или заказа
-  @override
-  final String? invoiceId;
-
-  /// IP-адрес плательщика
-  @override
-  final String? ipAddress;
-
-  /// Описание оплаты в свободной форме
-  @override
-  final String? description;
-
-  /// E-mail плательщика, на который будет отправлена квитанция об оплате
-  @override
-  final String? email;
-
-  /// Любые другие данные, которые будут связаны с транзакцией,
-  ///
-  /// в том числе инструкции для создания подписки или формирования онлайн-чека
-  @override
-  @PayloadConverter()
-  final PayloadData? jsonData;
-
-  @override
-  String toString() {
-    return 'TokenPaymenRequest(amount: $amount, token: $token, accountId: $accountId, trInitiatorCode: $trInitiatorCode, currency: $currency, invoiceId: $invoiceId, ipAddress: $ipAddress, description: $description, email: $email, jsonData: $jsonData)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$TokenPaymenRequestImpl &&
-            (identical(other.amount, amount) || other.amount == amount) &&
-            (identical(other.token, token) || other.token == token) &&
-            (identical(other.accountId, accountId) ||
-                other.accountId == accountId) &&
-            (identical(other.trInitiatorCode, trInitiatorCode) ||
-                other.trInitiatorCode == trInitiatorCode) &&
-            (identical(other.currency, currency) ||
-                other.currency == currency) &&
-            (identical(other.invoiceId, invoiceId) ||
-                other.invoiceId == invoiceId) &&
-            (identical(other.ipAddress, ipAddress) ||
-                other.ipAddress == ipAddress) &&
-            (identical(other.description, description) ||
-                other.description == description) &&
-            (identical(other.email, email) || other.email == email) &&
-            (identical(other.jsonData, jsonData) ||
-                other.jsonData == jsonData));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      amount,
-      token,
-      accountId,
-      trInitiatorCode,
-      currency,
-      invoiceId,
-      ipAddress,
-      description,
-      email,
-      jsonData);
-
-  /// Create a copy of TokenPaymenRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$TokenPaymenRequestImplCopyWith<_$TokenPaymenRequestImpl> get copyWith =>
-      __$$TokenPaymenRequestImplCopyWithImpl<_$TokenPaymenRequestImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$TokenPaymenRequestImplToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$TokenPaymenRequestToJson(this, );
 }
 
-abstract class _TokenPaymenRequest implements TokenPaymenRequest {
-  factory _TokenPaymenRequest(
-          {required final String amount,
-          required final String token,
-          required final String? accountId,
-          required final int trInitiatorCode,
-          final String currency,
-          final String? invoiceId,
-          final String? ipAddress,
-          final String? description,
-          final String? email,
-          @PayloadConverter() final PayloadData? jsonData}) =
-      _$TokenPaymenRequestImpl;
-
-  factory _TokenPaymenRequest.fromJson(Map<String, dynamic> json) =
-      _$TokenPaymenRequestImpl.fromJson;
-
-  /// Сумма платежа
-  @override
-  String get amount;
-
-  /// Токен карты, выданный системой после первого платежа
-  @override
-  String get token;
-
-  /// Обязательный идентификатор пользователя
-  @override
-  String? get accountId;
-
-  /// Признак инициатора списания денежных средств.
-  /// Возможные значения:
-  ///
-  /// `0` - транзакция инициирована ТСП на основе ранее сохраненных учетных данных;
-  ///
-  /// `1` - транзакция инициирована держателем карты (клиентом) на основе ранее сохраненных учетных данных.
-  @override
-  int get trInitiatorCode;
-
-  /// Валюта: RUB/USD/EUR/GBP (см. [справочник](https://developers.cloudpayments.ru/#spisok-valyut)). Если параметр не передан, то по умолчанию принимает значение RUB
-  @override
-  String get currency;
-
-  ///Номер счета или заказа
-  @override
-  String? get invoiceId;
-
-  /// IP-адрес плательщика
-  @override
-  String? get ipAddress;
-
-  /// Описание оплаты в свободной форме
-  @override
-  String? get description;
-
-  /// E-mail плательщика, на который будет отправлена квитанция об оплате
-  @override
-  String? get email;
-
-  /// Любые другие данные, которые будут связаны с транзакцией,
-  ///
-  /// в том числе инструкции для создания подписки или формирования онлайн-чека
-  @override
-  @PayloadConverter()
-  PayloadData? get jsonData;
-
-  /// Create a copy of TokenPaymenRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$TokenPaymenRequestImplCopyWith<_$TokenPaymenRequestImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _TokenPaymenRequest&&(identical(other.amount, amount) || other.amount == amount)&&(identical(other.token, token) || other.token == token)&&(identical(other.accountId, accountId) || other.accountId == accountId)&&(identical(other.trInitiatorCode, trInitiatorCode) || other.trInitiatorCode == trInitiatorCode)&&(identical(other.currency, currency) || other.currency == currency)&&(identical(other.invoiceId, invoiceId) || other.invoiceId == invoiceId)&&(identical(other.ipAddress, ipAddress) || other.ipAddress == ipAddress)&&(identical(other.description, description) || other.description == description)&&(identical(other.email, email) || other.email == email)&&(identical(other.jsonData, jsonData) || other.jsonData == jsonData));
 }
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,amount,token,accountId,trInitiatorCode,currency,invoiceId,ipAddress,description,email,jsonData);
+
+@override
+String toString() {
+  return 'TokenPaymenRequest(amount: $amount, token: $token, accountId: $accountId, trInitiatorCode: $trInitiatorCode, currency: $currency, invoiceId: $invoiceId, ipAddress: $ipAddress, description: $description, email: $email, jsonData: $jsonData)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$TokenPaymenRequestCopyWith<$Res> implements $TokenPaymenRequestCopyWith<$Res> {
+  factory _$TokenPaymenRequestCopyWith(_TokenPaymenRequest value, $Res Function(_TokenPaymenRequest) _then) = __$TokenPaymenRequestCopyWithImpl;
+@override @useResult
+$Res call({
+ String amount, String token, String? accountId, int trInitiatorCode, String currency, String? invoiceId, String? ipAddress, String? description, String? email,@PayloadConverter() PayloadData? jsonData
+});
+
+
+@override $PayloadDataCopyWith<$Res>? get jsonData;
+
+}
+/// @nodoc
+class __$TokenPaymenRequestCopyWithImpl<$Res>
+    implements _$TokenPaymenRequestCopyWith<$Res> {
+  __$TokenPaymenRequestCopyWithImpl(this._self, this._then);
+
+  final _TokenPaymenRequest _self;
+  final $Res Function(_TokenPaymenRequest) _then;
+
+/// Create a copy of TokenPaymenRequest
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? amount = null,Object? token = null,Object? accountId = freezed,Object? trInitiatorCode = null,Object? currency = null,Object? invoiceId = freezed,Object? ipAddress = freezed,Object? description = freezed,Object? email = freezed,Object? jsonData = freezed,}) {
+  return _then(_TokenPaymenRequest(
+amount: null == amount ? _self.amount : amount // ignore: cast_nullable_to_non_nullable
+as String,token: null == token ? _self.token : token // ignore: cast_nullable_to_non_nullable
+as String,accountId: freezed == accountId ? _self.accountId : accountId // ignore: cast_nullable_to_non_nullable
+as String?,trInitiatorCode: null == trInitiatorCode ? _self.trInitiatorCode : trInitiatorCode // ignore: cast_nullable_to_non_nullable
+as int,currency: null == currency ? _self.currency : currency // ignore: cast_nullable_to_non_nullable
+as String,invoiceId: freezed == invoiceId ? _self.invoiceId : invoiceId // ignore: cast_nullable_to_non_nullable
+as String?,ipAddress: freezed == ipAddress ? _self.ipAddress : ipAddress // ignore: cast_nullable_to_non_nullable
+as String?,description: freezed == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
+as String?,email: freezed == email ? _self.email : email // ignore: cast_nullable_to_non_nullable
+as String?,jsonData: freezed == jsonData ? _self.jsonData : jsonData // ignore: cast_nullable_to_non_nullable
+as PayloadData?,
+  ));
+}
+
+/// Create a copy of TokenPaymenRequest
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$PayloadDataCopyWith<$Res>? get jsonData {
+    if (_self.jsonData == null) {
+    return null;
+  }
+
+  return $PayloadDataCopyWith<$Res>(_self.jsonData!, (value) {
+    return _then(_self.copyWith(jsonData: value));
+  });
+}
+}
+
+// dart format on

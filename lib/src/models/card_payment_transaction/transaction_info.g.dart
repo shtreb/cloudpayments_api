@@ -6,9 +6,8 @@ part of 'transaction_info.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$TransactionInfoImpl _$$TransactionInfoImplFromJson(
-        Map<String, dynamic> json) =>
-    _$TransactionInfoImpl(
+_TransactionInfo _$TransactionInfoFromJson(Map<String, dynamic> json) =>
+    _TransactionInfo(
       reasonCode: (json['ReasonCode'] as num).toInt(),
       publicId: json['PublicId'] as String?,
       terminalUrl: json['TerminalUrl'] as String?,
@@ -73,8 +72,7 @@ _$TransactionInfoImpl _$$TransactionInfoImplFromJson(
       totalFee: (json['TotalFee'] as num?)?.toDouble(),
     );
 
-Map<String, dynamic> _$$TransactionInfoImplToJson(
-        _$TransactionInfoImpl instance) =>
+Map<String, dynamic> _$TransactionInfoToJson(_TransactionInfo instance) =>
     <String, dynamic>{
       'ReasonCode': instance.reasonCode,
       'PublicId': instance.publicId,

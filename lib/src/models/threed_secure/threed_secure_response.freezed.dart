@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,249 +10,151 @@ part of 'threed_secure_response.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-Three3DSecureResponse _$Three3DSecureResponseFromJson(
-    Map<String, dynamic> json) {
-  return _Three3DSecureResponse.fromJson(json);
-}
 
 /// @nodoc
 mixin _$Three3DSecureResponse {
-  int get transactionId => throw _privateConstructorUsedError;
-  String get paReq => throw _privateConstructorUsedError;
-  String get acsUrl => throw _privateConstructorUsedError;
-  bool? get iFrameIsAllowed => throw _privateConstructorUsedError;
-  String? get threeDsCallbackId => throw _privateConstructorUsedError;
+
+ int get transactionId; String get paReq; String get acsUrl; bool? get iFrameIsAllowed; String? get threeDsCallbackId;
+/// Create a copy of Three3DSecureResponse
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$Three3DSecureResponseCopyWith<Three3DSecureResponse> get copyWith => _$Three3DSecureResponseCopyWithImpl<Three3DSecureResponse>(this as Three3DSecureResponse, _$identity);
 
   /// Serializes this Three3DSecureResponse to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson();
 
-  /// Create a copy of Three3DSecureResponse
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $Three3DSecureResponseCopyWith<Three3DSecureResponse> get copyWith =>
-      throw _privateConstructorUsedError;
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Three3DSecureResponse&&(identical(other.transactionId, transactionId) || other.transactionId == transactionId)&&(identical(other.paReq, paReq) || other.paReq == paReq)&&(identical(other.acsUrl, acsUrl) || other.acsUrl == acsUrl)&&(identical(other.iFrameIsAllowed, iFrameIsAllowed) || other.iFrameIsAllowed == iFrameIsAllowed)&&(identical(other.threeDsCallbackId, threeDsCallbackId) || other.threeDsCallbackId == threeDsCallbackId));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,transactionId,paReq,acsUrl,iFrameIsAllowed,threeDsCallbackId);
+
+@override
+String toString() {
+  return 'Three3DSecureResponse(transactionId: $transactionId, paReq: $paReq, acsUrl: $acsUrl, iFrameIsAllowed: $iFrameIsAllowed, threeDsCallbackId: $threeDsCallbackId)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $Three3DSecureResponseCopyWith<$Res> {
-  factory $Three3DSecureResponseCopyWith(Three3DSecureResponse value,
-          $Res Function(Three3DSecureResponse) then) =
-      _$Three3DSecureResponseCopyWithImpl<$Res, Three3DSecureResponse>;
-  @useResult
-  $Res call(
-      {int transactionId,
-      String paReq,
-      String acsUrl,
-      bool? iFrameIsAllowed,
-      String? threeDsCallbackId});
-}
+abstract mixin class $Three3DSecureResponseCopyWith<$Res>  {
+  factory $Three3DSecureResponseCopyWith(Three3DSecureResponse value, $Res Function(Three3DSecureResponse) _then) = _$Three3DSecureResponseCopyWithImpl;
+@useResult
+$Res call({
+ int transactionId, String paReq, String acsUrl, bool? iFrameIsAllowed, String? threeDsCallbackId
+});
 
+
+
+
+}
 /// @nodoc
-class _$Three3DSecureResponseCopyWithImpl<$Res,
-        $Val extends Three3DSecureResponse>
+class _$Three3DSecureResponseCopyWithImpl<$Res>
     implements $Three3DSecureResponseCopyWith<$Res> {
-  _$Three3DSecureResponseCopyWithImpl(this._value, this._then);
+  _$Three3DSecureResponseCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final Three3DSecureResponse _self;
+  final $Res Function(Three3DSecureResponse) _then;
 
-  /// Create a copy of Three3DSecureResponse
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? transactionId = null,
-    Object? paReq = null,
-    Object? acsUrl = null,
-    Object? iFrameIsAllowed = freezed,
-    Object? threeDsCallbackId = freezed,
-  }) {
-    return _then(_value.copyWith(
-      transactionId: null == transactionId
-          ? _value.transactionId
-          : transactionId // ignore: cast_nullable_to_non_nullable
-              as int,
-      paReq: null == paReq
-          ? _value.paReq
-          : paReq // ignore: cast_nullable_to_non_nullable
-              as String,
-      acsUrl: null == acsUrl
-          ? _value.acsUrl
-          : acsUrl // ignore: cast_nullable_to_non_nullable
-              as String,
-      iFrameIsAllowed: freezed == iFrameIsAllowed
-          ? _value.iFrameIsAllowed
-          : iFrameIsAllowed // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      threeDsCallbackId: freezed == threeDsCallbackId
-          ? _value.threeDsCallbackId
-          : threeDsCallbackId // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
-  }
+/// Create a copy of Three3DSecureResponse
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? transactionId = null,Object? paReq = null,Object? acsUrl = null,Object? iFrameIsAllowed = freezed,Object? threeDsCallbackId = freezed,}) {
+  return _then(_self.copyWith(
+transactionId: null == transactionId ? _self.transactionId : transactionId // ignore: cast_nullable_to_non_nullable
+as int,paReq: null == paReq ? _self.paReq : paReq // ignore: cast_nullable_to_non_nullable
+as String,acsUrl: null == acsUrl ? _self.acsUrl : acsUrl // ignore: cast_nullable_to_non_nullable
+as String,iFrameIsAllowed: freezed == iFrameIsAllowed ? _self.iFrameIsAllowed : iFrameIsAllowed // ignore: cast_nullable_to_non_nullable
+as bool?,threeDsCallbackId: freezed == threeDsCallbackId ? _self.threeDsCallbackId : threeDsCallbackId // ignore: cast_nullable_to_non_nullable
+as String?,
+  ));
 }
 
-/// @nodoc
-abstract class _$$Three3DSecureResponseImplCopyWith<$Res>
-    implements $Three3DSecureResponseCopyWith<$Res> {
-  factory _$$Three3DSecureResponseImplCopyWith(
-          _$Three3DSecureResponseImpl value,
-          $Res Function(_$Three3DSecureResponseImpl) then) =
-      __$$Three3DSecureResponseImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {int transactionId,
-      String paReq,
-      String acsUrl,
-      bool? iFrameIsAllowed,
-      String? threeDsCallbackId});
 }
 
-/// @nodoc
-class __$$Three3DSecureResponseImplCopyWithImpl<$Res>
-    extends _$Three3DSecureResponseCopyWithImpl<$Res,
-        _$Three3DSecureResponseImpl>
-    implements _$$Three3DSecureResponseImplCopyWith<$Res> {
-  __$$Three3DSecureResponseImplCopyWithImpl(_$Three3DSecureResponseImpl _value,
-      $Res Function(_$Three3DSecureResponseImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of Three3DSecureResponse
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? transactionId = null,
-    Object? paReq = null,
-    Object? acsUrl = null,
-    Object? iFrameIsAllowed = freezed,
-    Object? threeDsCallbackId = freezed,
-  }) {
-    return _then(_$Three3DSecureResponseImpl(
-      transactionId: null == transactionId
-          ? _value.transactionId
-          : transactionId // ignore: cast_nullable_to_non_nullable
-              as int,
-      paReq: null == paReq
-          ? _value.paReq
-          : paReq // ignore: cast_nullable_to_non_nullable
-              as String,
-      acsUrl: null == acsUrl
-          ? _value.acsUrl
-          : acsUrl // ignore: cast_nullable_to_non_nullable
-              as String,
-      iFrameIsAllowed: freezed == iFrameIsAllowed
-          ? _value.iFrameIsAllowed
-          : iFrameIsAllowed // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      threeDsCallbackId: freezed == threeDsCallbackId
-          ? _value.threeDsCallbackId
-          : threeDsCallbackId // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
 
 /// @nodoc
 @JsonSerializable()
-class _$Three3DSecureResponseImpl implements _Three3DSecureResponse {
-  _$Three3DSecureResponseImpl(
-      {required this.transactionId,
-      required this.paReq,
-      required this.acsUrl,
-      this.iFrameIsAllowed,
-      this.threeDsCallbackId});
 
-  factory _$Three3DSecureResponseImpl.fromJson(Map<String, dynamic> json) =>
-      _$$Three3DSecureResponseImplFromJson(json);
+class _Three3DSecureResponse implements Three3DSecureResponse {
+   _Three3DSecureResponse({required this.transactionId, required this.paReq, required this.acsUrl, this.iFrameIsAllowed, this.threeDsCallbackId});
+  factory _Three3DSecureResponse.fromJson(Map<String, dynamic> json) => _$Three3DSecureResponseFromJson(json);
 
-  @override
-  final int transactionId;
-  @override
-  final String paReq;
-  @override
-  final String acsUrl;
-  @override
-  final bool? iFrameIsAllowed;
-  @override
-  final String? threeDsCallbackId;
+@override final  int transactionId;
+@override final  String paReq;
+@override final  String acsUrl;
+@override final  bool? iFrameIsAllowed;
+@override final  String? threeDsCallbackId;
 
-  @override
-  String toString() {
-    return 'Three3DSecureResponse(transactionId: $transactionId, paReq: $paReq, acsUrl: $acsUrl, iFrameIsAllowed: $iFrameIsAllowed, threeDsCallbackId: $threeDsCallbackId)';
-  }
+/// Create a copy of Three3DSecureResponse
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$Three3DSecureResponseCopyWith<_Three3DSecureResponse> get copyWith => __$Three3DSecureResponseCopyWithImpl<_Three3DSecureResponse>(this, _$identity);
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$Three3DSecureResponseImpl &&
-            (identical(other.transactionId, transactionId) ||
-                other.transactionId == transactionId) &&
-            (identical(other.paReq, paReq) || other.paReq == paReq) &&
-            (identical(other.acsUrl, acsUrl) || other.acsUrl == acsUrl) &&
-            (identical(other.iFrameIsAllowed, iFrameIsAllowed) ||
-                other.iFrameIsAllowed == iFrameIsAllowed) &&
-            (identical(other.threeDsCallbackId, threeDsCallbackId) ||
-                other.threeDsCallbackId == threeDsCallbackId));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, transactionId, paReq, acsUrl,
-      iFrameIsAllowed, threeDsCallbackId);
-
-  /// Create a copy of Three3DSecureResponse
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$Three3DSecureResponseImplCopyWith<_$Three3DSecureResponseImpl>
-      get copyWith => __$$Three3DSecureResponseImplCopyWithImpl<
-          _$Three3DSecureResponseImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$Three3DSecureResponseImplToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$Three3DSecureResponseToJson(this, );
 }
 
-abstract class _Three3DSecureResponse implements Three3DSecureResponse {
-  factory _Three3DSecureResponse(
-      {required final int transactionId,
-      required final String paReq,
-      required final String acsUrl,
-      final bool? iFrameIsAllowed,
-      final String? threeDsCallbackId}) = _$Three3DSecureResponseImpl;
-
-  factory _Three3DSecureResponse.fromJson(Map<String, dynamic> json) =
-      _$Three3DSecureResponseImpl.fromJson;
-
-  @override
-  int get transactionId;
-  @override
-  String get paReq;
-  @override
-  String get acsUrl;
-  @override
-  bool? get iFrameIsAllowed;
-  @override
-  String? get threeDsCallbackId;
-
-  /// Create a copy of Three3DSecureResponse
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$Three3DSecureResponseImplCopyWith<_$Three3DSecureResponseImpl>
-      get copyWith => throw _privateConstructorUsedError;
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Three3DSecureResponse&&(identical(other.transactionId, transactionId) || other.transactionId == transactionId)&&(identical(other.paReq, paReq) || other.paReq == paReq)&&(identical(other.acsUrl, acsUrl) || other.acsUrl == acsUrl)&&(identical(other.iFrameIsAllowed, iFrameIsAllowed) || other.iFrameIsAllowed == iFrameIsAllowed)&&(identical(other.threeDsCallbackId, threeDsCallbackId) || other.threeDsCallbackId == threeDsCallbackId));
 }
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,transactionId,paReq,acsUrl,iFrameIsAllowed,threeDsCallbackId);
+
+@override
+String toString() {
+  return 'Three3DSecureResponse(transactionId: $transactionId, paReq: $paReq, acsUrl: $acsUrl, iFrameIsAllowed: $iFrameIsAllowed, threeDsCallbackId: $threeDsCallbackId)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$Three3DSecureResponseCopyWith<$Res> implements $Three3DSecureResponseCopyWith<$Res> {
+  factory _$Three3DSecureResponseCopyWith(_Three3DSecureResponse value, $Res Function(_Three3DSecureResponse) _then) = __$Three3DSecureResponseCopyWithImpl;
+@override @useResult
+$Res call({
+ int transactionId, String paReq, String acsUrl, bool? iFrameIsAllowed, String? threeDsCallbackId
+});
+
+
+
+
+}
+/// @nodoc
+class __$Three3DSecureResponseCopyWithImpl<$Res>
+    implements _$Three3DSecureResponseCopyWith<$Res> {
+  __$Three3DSecureResponseCopyWithImpl(this._self, this._then);
+
+  final _Three3DSecureResponse _self;
+  final $Res Function(_Three3DSecureResponse) _then;
+
+/// Create a copy of Three3DSecureResponse
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? transactionId = null,Object? paReq = null,Object? acsUrl = null,Object? iFrameIsAllowed = freezed,Object? threeDsCallbackId = freezed,}) {
+  return _then(_Three3DSecureResponse(
+transactionId: null == transactionId ? _self.transactionId : transactionId // ignore: cast_nullable_to_non_nullable
+as int,paReq: null == paReq ? _self.paReq : paReq // ignore: cast_nullable_to_non_nullable
+as String,acsUrl: null == acsUrl ? _self.acsUrl : acsUrl // ignore: cast_nullable_to_non_nullable
+as String,iFrameIsAllowed: freezed == iFrameIsAllowed ? _self.iFrameIsAllowed : iFrameIsAllowed // ignore: cast_nullable_to_non_nullable
+as bool?,threeDsCallbackId: freezed == threeDsCallbackId ? _self.threeDsCallbackId : threeDsCallbackId // ignore: cast_nullable_to_non_nullable
+as String?,
+  ));
+}
+
+
+}
+
+// dart format on

@@ -8,7 +8,7 @@ part 'card_payment_request.g.dart';
 /// Информация о запросе по криптограмме
 /// {@endtemplate}
 @freezed
-class CardPaymentRequest with _$CardPaymentRequest {
+sealed class CardPaymentRequest with _$CardPaymentRequest {
   /// {@macro card_payment_request}
 
   factory CardPaymentRequest({

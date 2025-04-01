@@ -6,20 +6,21 @@ part of 'recurrent.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$RecurrentImpl _$$RecurrentImplFromJson(Map<String, dynamic> json) =>
-    _$RecurrentImpl(
+_RecurrentBase _$RecurrentBaseFromJson(Map<String, dynamic> json) =>
+    _RecurrentBase(
       interval: $enumDecode(_$ReccurentIntervalEnumMap, json['Interval']),
       period: (json['Period'] as num).toInt(),
       maxPeriods: (json['MaxPeriods'] as num?)?.toInt(),
       amount: json['Amount'] as num?,
-      startDate: json['StartDate'] == null
-          ? null
-          : DateTime.parse(json['StartDate'] as String),
+      startDate:
+          json['StartDate'] == null
+              ? null
+              : DateTime.parse(json['StartDate'] as String),
       customerReceipt: json['CustomerReceipt'] as String?,
-      $type: json['runtimeType'] as String?,
+      $type: json['type'] as String?,
     );
 
-Map<String, dynamic> _$$RecurrentImplToJson(_$RecurrentImpl instance) =>
+Map<String, dynamic> _$RecurrentBaseToJson(_RecurrentBase instance) =>
     <String, dynamic>{
       'Interval': _$ReccurentIntervalEnumMap[instance.interval]!,
       'Period': instance.period,
@@ -27,7 +28,7 @@ Map<String, dynamic> _$$RecurrentImplToJson(_$RecurrentImpl instance) =>
       'Amount': instance.amount,
       'StartDate': instance.startDate?.toIso8601String(),
       'CustomerReceipt': instance.customerReceipt,
-      'runtimeType': instance.$type,
+      'type': instance.$type,
     };
 
 const _$ReccurentIntervalEnumMap = {
@@ -36,24 +37,23 @@ const _$ReccurentIntervalEnumMap = {
   ReccurentInterval.month: 'Month',
 };
 
-_$MonthlyRecurrentImpl _$$MonthlyRecurrentImplFromJson(
-        Map<String, dynamic> json) =>
-    _$MonthlyRecurrentImpl(
+_MonthlyRecurrent _$MonthlyRecurrentFromJson(Map<String, dynamic> json) =>
+    _MonthlyRecurrent(
       interval:
           $enumDecodeNullable(_$ReccurentIntervalEnumMap, json['Interval']) ??
-              ReccurentInterval.month,
-      startDate: json['StartDate'] == null
-          ? null
-          : DateTime.parse(json['StartDate'] as String),
+          ReccurentInterval.month,
+      startDate:
+          json['StartDate'] == null
+              ? null
+              : DateTime.parse(json['StartDate'] as String),
       period: (json['Period'] as num?)?.toInt() ?? 1,
-      $type: json['runtimeType'] as String?,
+      $type: json['type'] as String?,
     );
 
-Map<String, dynamic> _$$MonthlyRecurrentImplToJson(
-        _$MonthlyRecurrentImpl instance) =>
+Map<String, dynamic> _$MonthlyRecurrentToJson(_MonthlyRecurrent instance) =>
     <String, dynamic>{
       'Interval': _$ReccurentIntervalEnumMap[instance.interval]!,
       'StartDate': instance.startDate?.toIso8601String(),
       'Period': instance.period,
-      'runtimeType': instance.$type,
+      'type': instance.$type,
     };

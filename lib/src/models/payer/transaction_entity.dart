@@ -5,7 +5,7 @@ part 'transaction_entity.g.dart';
 
 /// Информация о плательщике/получателе
 @freezed
-class TransactionEntity with _$TransactionEntity {
+sealed class TransactionEntity with _$TransactionEntity {
   ///
   factory TransactionEntity({
     String? firstName,

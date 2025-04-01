@@ -8,7 +8,7 @@ part 'subscription_update_request.g.dart';
 /// Информация о запросе для изменения ранее созданной подписки на рекуррентные платежи
 /// {@endtemplate}
 @freezed
-class SubscriptionUpdateRequest with _$SubscriptionUpdateRequest {
+sealed class SubscriptionUpdateRequest with _$SubscriptionUpdateRequest {
   /// {@macro subscription_update_request}
 
   factory SubscriptionUpdateRequest({

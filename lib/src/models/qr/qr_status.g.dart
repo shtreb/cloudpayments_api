@@ -6,17 +6,15 @@ part of 'qr_status.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$QrStatusCreatedImpl _$$QrStatusCreatedImplFromJson(
-        Map<String, dynamic> json) =>
-    _$QrStatusCreatedImpl(
+_QrStatusCreated _$QrStatusCreatedFromJson(Map<String, dynamic> json) =>
+    _QrStatusCreated(
       transactionId: (json['TransactionId'] as num).toInt(),
       providerQrId: json['ProviderQrId'] as String?,
       statusCode: (json['StatusCode'] as num?)?.toInt(),
       $type: json['Status'] as String?,
     );
 
-Map<String, dynamic> _$$QrStatusCreatedImplToJson(
-        _$QrStatusCreatedImpl instance) =>
+Map<String, dynamic> _$QrStatusCreatedToJson(_QrStatusCreated instance) =>
     <String, dynamic>{
       'TransactionId': instance.transactionId,
       'ProviderQrId': instance.providerQrId,
@@ -24,17 +22,15 @@ Map<String, dynamic> _$$QrStatusCreatedImplToJson(
       'Status': instance.$type,
     };
 
-_$QrStatusPendingImpl _$$QrStatusPendingImplFromJson(
-        Map<String, dynamic> json) =>
-    _$QrStatusPendingImpl(
+_QrStatusPending _$QrStatusPendingFromJson(Map<String, dynamic> json) =>
+    _QrStatusPending(
       transactionId: (json['TransactionId'] as num).toInt(),
       providerQrId: json['ProviderQrId'] as String?,
       statusCode: (json['StatusCode'] as num?)?.toInt(),
       $type: json['Status'] as String?,
     );
 
-Map<String, dynamic> _$$QrStatusPendingImplToJson(
-        _$QrStatusPendingImpl instance) =>
+Map<String, dynamic> _$QrStatusPendingToJson(_QrStatusPending instance) =>
     <String, dynamic>{
       'TransactionId': instance.transactionId,
       'ProviderQrId': instance.providerQrId,
@@ -42,17 +38,15 @@ Map<String, dynamic> _$$QrStatusPendingImplToJson(
       'Status': instance.$type,
     };
 
-_$QrStatusCompletedImpl _$$QrStatusCompletedImplFromJson(
-        Map<String, dynamic> json) =>
-    _$QrStatusCompletedImpl(
+_QrStatusCompleted _$QrStatusCompletedFromJson(Map<String, dynamic> json) =>
+    _QrStatusCompleted(
       transactionId: (json['TransactionId'] as num).toInt(),
       providerQrId: json['ProviderQrId'] as String?,
       statusCode: (json['StatusCode'] as num?)?.toInt(),
       $type: json['Status'] as String?,
     );
 
-Map<String, dynamic> _$$QrStatusCompletedImplToJson(
-        _$QrStatusCompletedImpl instance) =>
+Map<String, dynamic> _$QrStatusCompletedToJson(_QrStatusCompleted instance) =>
     <String, dynamic>{
       'TransactionId': instance.transactionId,
       'ProviderQrId': instance.providerQrId,
@@ -60,17 +54,15 @@ Map<String, dynamic> _$$QrStatusCompletedImplToJson(
       'Status': instance.$type,
     };
 
-_$QrStatusDeclinedImpl _$$QrStatusDeclinedImplFromJson(
-        Map<String, dynamic> json) =>
-    _$QrStatusDeclinedImpl(
+_QrStatusDeclined _$QrStatusDeclinedFromJson(Map<String, dynamic> json) =>
+    _QrStatusDeclined(
       transactionId: (json['TransactionId'] as num).toInt(),
       providerQrId: json['ProviderQrId'] as String?,
       statusCode: (json['StatusCode'] as num?)?.toInt(),
       $type: json['Status'] as String?,
     );
 
-Map<String, dynamic> _$$QrStatusDeclinedImplToJson(
-        _$QrStatusDeclinedImpl instance) =>
+Map<String, dynamic> _$QrStatusDeclinedToJson(_QrStatusDeclined instance) =>
     <String, dynamic>{
       'TransactionId': instance.transactionId,
       'ProviderQrId': instance.providerQrId,

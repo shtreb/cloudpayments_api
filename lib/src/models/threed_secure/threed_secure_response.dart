@@ -5,7 +5,7 @@ part 'threed_secure_response.g.dart';
 
 /// Ответ с сервера при требовании 3d-secure
 @freezed
-class Three3DSecureResponse with _$Three3DSecureResponse {
+sealed class Three3DSecureResponse with _$Three3DSecureResponse {
   ///
   factory Three3DSecureResponse({
     required int transactionId,

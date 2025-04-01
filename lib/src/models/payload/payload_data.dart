@@ -9,14 +9,15 @@ part 'payload_data.g.dart';
 /// в том числе инструкции для создания подписки [Recurrent] или
 ///
 /// формирования онлайн-чека
-@Freezed()
-class PayloadData with _$PayloadData {
+@Freezed(
+  fromJson: true,
+)
+sealed class PayloadData with _$PayloadData {
   ///
   factory PayloadData({
     Recurrent? recurrent,
     Map<String, dynamic>? data,
   }) = _PayloadData;
-  const PayloadData._();
 
   /// Converts a JSON [Map] into a [PayloadData] instance
   factory PayloadData.fromJson(Map<String, dynamic> json) =>

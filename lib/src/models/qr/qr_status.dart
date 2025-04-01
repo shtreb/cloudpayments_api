@@ -7,7 +7,7 @@ part 'qr_status.g.dart';
 /// Статус QR платежа
 /// {@endtemplate}
 @Freezed(unionKey: 'Status', unionValueCase: FreezedUnionCase.pascal)
-class QrStatus with _$QrStatus {
+sealed class QrStatus with _$QrStatus {
   /// {@macro qr_status}
 
   /// Запрошен QR или Link

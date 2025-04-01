@@ -8,7 +8,7 @@ part 'recurrent_create_request.g.dart';
 /// Информация о запросе для создания подписки на рекуррентные платежи
 /// {@endtemplate}
 @freezed
-class RecurrentCreateRequest with _$RecurrentCreateRequest {
+sealed class RecurrentCreateRequest with _$RecurrentCreateRequest {
   /// {@macro recurrent_request}
 
   factory RecurrentCreateRequest({

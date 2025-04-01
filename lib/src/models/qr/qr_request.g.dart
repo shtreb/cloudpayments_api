@@ -6,36 +6,38 @@ part of 'qr_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$QrRequestImpl _$$QrRequestImplFromJson(Map<String, dynamic> json) =>
-    _$QrRequestImpl(
-      amount: json['Amount'] as String,
-      publicId: json['PublicId'] as String,
-      scheme:
-          $enumDecodeNullable(_$CloudPaymentsSchemeEnumMap, json['Scheme']) ??
-              CloudPaymentsScheme.charge,
-      currency: json['Currency'] as String? ?? 'RUB',
-      webview: json['Webview'] as bool? ?? false,
-      invoiceId: json['InvoiceId'] as String?,
-      successRedirectUrl: json['SuccessRedirectUrl'] == null
+_QrRequest _$QrRequestFromJson(Map<String, dynamic> json) => _QrRequest(
+  amount: json['Amount'] as String,
+  publicId: json['PublicId'] as String,
+  scheme:
+      $enumDecodeNullable(_$CloudPaymentsSchemeEnumMap, json['Scheme']) ??
+      CloudPaymentsScheme.charge,
+  currency: json['Currency'] as String? ?? 'RUB',
+  webview: json['Webview'] as bool? ?? false,
+  invoiceId: json['InvoiceId'] as String?,
+  successRedirectUrl:
+      json['SuccessRedirectUrl'] == null
           ? null
           : Uri.parse(json['SuccessRedirectUrl'] as String),
-      ipAddress: json['IpAddress'] as String?,
-      description: json['Description'] as String?,
-      email: json['Email'] as String?,
-      accountId: json['AccountId'] as String?,
-      saveCard: json['SaveCard'] as bool?,
-      browser: json['Browser'] as String? ?? 'Chrome',
-      ttlMinutes: (json['TtlMinutes'] as num?)?.toInt(),
-      device:
-          $enumDecodeNullable(_$CloudPaymentsDeviceEnumMap, json['Device']) ??
-              CloudPaymentsDevice.mobile,
-      os: $enumDecodeNullable(_$CloudPaymentsDeviceOSEnumMap, json['Os']),
-      isTest: json['IsTest'] as bool?,
-      jsonData: _$JsonConverterFromJson<Map<String, dynamic>, PayloadData?>(
-          json['JsonData'], const PayloadConverter().fromJson),
-    );
+  ipAddress: json['IpAddress'] as String?,
+  description: json['Description'] as String?,
+  email: json['Email'] as String?,
+  accountId: json['AccountId'] as String?,
+  saveCard: json['SaveCard'] as bool?,
+  browser: json['Browser'] as String? ?? 'Chrome',
+  ttlMinutes: (json['TtlMinutes'] as num?)?.toInt(),
+  device:
+      $enumDecodeNullable(_$CloudPaymentsDeviceEnumMap, json['Device']) ??
+      CloudPaymentsDevice.mobile,
+  os: $enumDecodeNullable(_$CloudPaymentsDeviceOSEnumMap, json['Os']),
+  isTest: json['IsTest'] as bool?,
+  jsonData: _$JsonConverterFromJson<Map<String, dynamic>, PayloadData?>(
+    json['JsonData'],
+    const PayloadConverter().fromJson,
+  ),
+);
 
-Map<String, dynamic> _$$QrRequestImplToJson(_$QrRequestImpl instance) =>
+Map<String, dynamic> _$QrRequestToJson(_QrRequest instance) =>
     <String, dynamic>{
       'Amount': instance.amount,
       'PublicId': instance.publicId,
@@ -77,5 +79,4 @@ const _$CloudPaymentsDeviceOSEnumMap = {
 Value? _$JsonConverterFromJson<Json, Value>(
   Object? json,
   Value? Function(Json json) fromJson,
-) =>
-    json == null ? null : fromJson(json as Json);
+) => json == null ? null : fromJson(json as Json);

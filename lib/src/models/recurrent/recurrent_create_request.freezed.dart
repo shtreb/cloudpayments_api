@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,526 +10,229 @@ part of 'recurrent_create_request.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-RecurrentCreateRequest _$RecurrentCreateRequestFromJson(
-    Map<String, dynamic> json) {
-  return _RecurrentCreateRequest.fromJson(json);
-}
 
 /// @nodoc
 mixin _$RecurrentCreateRequest {
-  /// Токен карты, выданный системой после первого платежа
-  String get token => throw _privateConstructorUsedError;
 
-  /// Обязательный идентификатор пользователя для создания подписки
-  String get accountId => throw _privateConstructorUsedError;
-
-  /// Назначение платежа в свободной форме
-  String get description => throw _privateConstructorUsedError;
-
-  /// Сумма платежа. Должна быть больше 0
-  String get amount => throw _privateConstructorUsedError;
-
-  /// Дата и время первого платежа по плану во временной зоне UTC.
-  ///
-  ///  Значение должно быть в будущем
-  DateTime get startDate => throw _privateConstructorUsedError;
-
-  /// Интервал. Возможные значения: `Day`, `Week`, `Month`
-  ReccurentInterval get interval => throw _privateConstructorUsedError;
-
-  /// Период. В комбинации с интервалом [interval]
-  ///
-  ///  1 Month значит раз в месяц, а 2 Week — раз в две недели.
-  ///
-  /// Должен быть больше 0
-  int get period => throw _privateConstructorUsedError;
-
-  /// E-mail плательщика
-  String? get email => throw _privateConstructorUsedError;
-
-  /// Если значение true — платежи будут выполняться по двухстадийной схеме
-  ///
-  /// По умолчанию false
-  bool get requireConfirmation => throw _privateConstructorUsedError;
-
-  /// Валюта: RUB/USD/EUR/GBP (см. [справочник](https://developers.cloudpayments.ru/#spisok-valyut)).
-  ///
-  ///  Если параметр не передан, то по умолчанию принимает значение RUB
-  String get currency => throw _privateConstructorUsedError;
-
-  /// Максимальное количество платежей в подписке.
-  ///
-  /// Если указан, должен быть больше 0
-  int? get maxPeriods => throw _privateConstructorUsedError;
-
-  /// Для изменения состава [онлайн-чека](https://developers.cloudpayments.ru/#format-peredachi-dannyh-dlya-onlayn-cheka)
-  Map<String, dynamic>? get customerReceipt =>
-      throw _privateConstructorUsedError;
+/// Токен карты, выданный системой после первого платежа
+ String get token;/// Обязательный идентификатор пользователя для создания подписки
+ String get accountId;/// Назначение платежа в свободной форме
+ String get description;/// Сумма платежа. Должна быть больше 0
+ String get amount;/// Дата и время первого платежа по плану во временной зоне UTC.
+///
+///  Значение должно быть в будущем
+ DateTime get startDate;/// Интервал. Возможные значения: `Day`, `Week`, `Month`
+ ReccurentInterval get interval;/// Период. В комбинации с интервалом [interval]
+///
+///  1 Month значит раз в месяц, а 2 Week — раз в две недели.
+///
+/// Должен быть больше 0
+ int get period;/// E-mail плательщика
+ String? get email;/// Если значение true — платежи будут выполняться по двухстадийной схеме
+///
+/// По умолчанию false
+ bool get requireConfirmation;/// Валюта: RUB/USD/EUR/GBP (см. [справочник](https://developers.cloudpayments.ru/#spisok-valyut)).
+///
+///  Если параметр не передан, то по умолчанию принимает значение RUB
+ String get currency;/// Максимальное количество платежей в подписке.
+///
+/// Если указан, должен быть больше 0
+ int? get maxPeriods;/// Для изменения состава [онлайн-чека](https://developers.cloudpayments.ru/#format-peredachi-dannyh-dlya-onlayn-cheka)
+ Map<String, dynamic>? get customerReceipt;
+/// Create a copy of RecurrentCreateRequest
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$RecurrentCreateRequestCopyWith<RecurrentCreateRequest> get copyWith => _$RecurrentCreateRequestCopyWithImpl<RecurrentCreateRequest>(this as RecurrentCreateRequest, _$identity);
 
   /// Serializes this RecurrentCreateRequest to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson();
 
-  /// Create a copy of RecurrentCreateRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $RecurrentCreateRequestCopyWith<RecurrentCreateRequest> get copyWith =>
-      throw _privateConstructorUsedError;
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is RecurrentCreateRequest&&(identical(other.token, token) || other.token == token)&&(identical(other.accountId, accountId) || other.accountId == accountId)&&(identical(other.description, description) || other.description == description)&&(identical(other.amount, amount) || other.amount == amount)&&(identical(other.startDate, startDate) || other.startDate == startDate)&&(identical(other.interval, interval) || other.interval == interval)&&(identical(other.period, period) || other.period == period)&&(identical(other.email, email) || other.email == email)&&(identical(other.requireConfirmation, requireConfirmation) || other.requireConfirmation == requireConfirmation)&&(identical(other.currency, currency) || other.currency == currency)&&(identical(other.maxPeriods, maxPeriods) || other.maxPeriods == maxPeriods)&&const DeepCollectionEquality().equals(other.customerReceipt, customerReceipt));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,token,accountId,description,amount,startDate,interval,period,email,requireConfirmation,currency,maxPeriods,const DeepCollectionEquality().hash(customerReceipt));
+
+@override
+String toString() {
+  return 'RecurrentCreateRequest(token: $token, accountId: $accountId, description: $description, amount: $amount, startDate: $startDate, interval: $interval, period: $period, email: $email, requireConfirmation: $requireConfirmation, currency: $currency, maxPeriods: $maxPeriods, customerReceipt: $customerReceipt)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $RecurrentCreateRequestCopyWith<$Res> {
-  factory $RecurrentCreateRequestCopyWith(RecurrentCreateRequest value,
-          $Res Function(RecurrentCreateRequest) then) =
-      _$RecurrentCreateRequestCopyWithImpl<$Res, RecurrentCreateRequest>;
-  @useResult
-  $Res call(
-      {String token,
-      String accountId,
-      String description,
-      String amount,
-      DateTime startDate,
-      ReccurentInterval interval,
-      int period,
-      String? email,
-      bool requireConfirmation,
-      String currency,
-      int? maxPeriods,
-      Map<String, dynamic>? customerReceipt});
-}
+abstract mixin class $RecurrentCreateRequestCopyWith<$Res>  {
+  factory $RecurrentCreateRequestCopyWith(RecurrentCreateRequest value, $Res Function(RecurrentCreateRequest) _then) = _$RecurrentCreateRequestCopyWithImpl;
+@useResult
+$Res call({
+ String token, String accountId, String description, String amount, DateTime startDate, ReccurentInterval interval, int period, String? email, bool requireConfirmation, String currency, int? maxPeriods, Map<String, dynamic>? customerReceipt
+});
 
+
+
+
+}
 /// @nodoc
-class _$RecurrentCreateRequestCopyWithImpl<$Res,
-        $Val extends RecurrentCreateRequest>
+class _$RecurrentCreateRequestCopyWithImpl<$Res>
     implements $RecurrentCreateRequestCopyWith<$Res> {
-  _$RecurrentCreateRequestCopyWithImpl(this._value, this._then);
+  _$RecurrentCreateRequestCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final RecurrentCreateRequest _self;
+  final $Res Function(RecurrentCreateRequest) _then;
 
-  /// Create a copy of RecurrentCreateRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? token = null,
-    Object? accountId = null,
-    Object? description = null,
-    Object? amount = null,
-    Object? startDate = null,
-    Object? interval = null,
-    Object? period = null,
-    Object? email = freezed,
-    Object? requireConfirmation = null,
-    Object? currency = null,
-    Object? maxPeriods = freezed,
-    Object? customerReceipt = freezed,
-  }) {
-    return _then(_value.copyWith(
-      token: null == token
-          ? _value.token
-          : token // ignore: cast_nullable_to_non_nullable
-              as String,
-      accountId: null == accountId
-          ? _value.accountId
-          : accountId // ignore: cast_nullable_to_non_nullable
-              as String,
-      description: null == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String,
-      amount: null == amount
-          ? _value.amount
-          : amount // ignore: cast_nullable_to_non_nullable
-              as String,
-      startDate: null == startDate
-          ? _value.startDate
-          : startDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      interval: null == interval
-          ? _value.interval
-          : interval // ignore: cast_nullable_to_non_nullable
-              as ReccurentInterval,
-      period: null == period
-          ? _value.period
-          : period // ignore: cast_nullable_to_non_nullable
-              as int,
-      email: freezed == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      requireConfirmation: null == requireConfirmation
-          ? _value.requireConfirmation
-          : requireConfirmation // ignore: cast_nullable_to_non_nullable
-              as bool,
-      currency: null == currency
-          ? _value.currency
-          : currency // ignore: cast_nullable_to_non_nullable
-              as String,
-      maxPeriods: freezed == maxPeriods
-          ? _value.maxPeriods
-          : maxPeriods // ignore: cast_nullable_to_non_nullable
-              as int?,
-      customerReceipt: freezed == customerReceipt
-          ? _value.customerReceipt
-          : customerReceipt // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ) as $Val);
-  }
+/// Create a copy of RecurrentCreateRequest
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? token = null,Object? accountId = null,Object? description = null,Object? amount = null,Object? startDate = null,Object? interval = null,Object? period = null,Object? email = freezed,Object? requireConfirmation = null,Object? currency = null,Object? maxPeriods = freezed,Object? customerReceipt = freezed,}) {
+  return _then(_self.copyWith(
+token: null == token ? _self.token : token // ignore: cast_nullable_to_non_nullable
+as String,accountId: null == accountId ? _self.accountId : accountId // ignore: cast_nullable_to_non_nullable
+as String,description: null == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
+as String,amount: null == amount ? _self.amount : amount // ignore: cast_nullable_to_non_nullable
+as String,startDate: null == startDate ? _self.startDate : startDate // ignore: cast_nullable_to_non_nullable
+as DateTime,interval: null == interval ? _self.interval : interval // ignore: cast_nullable_to_non_nullable
+as ReccurentInterval,period: null == period ? _self.period : period // ignore: cast_nullable_to_non_nullable
+as int,email: freezed == email ? _self.email : email // ignore: cast_nullable_to_non_nullable
+as String?,requireConfirmation: null == requireConfirmation ? _self.requireConfirmation : requireConfirmation // ignore: cast_nullable_to_non_nullable
+as bool,currency: null == currency ? _self.currency : currency // ignore: cast_nullable_to_non_nullable
+as String,maxPeriods: freezed == maxPeriods ? _self.maxPeriods : maxPeriods // ignore: cast_nullable_to_non_nullable
+as int?,customerReceipt: freezed == customerReceipt ? _self.customerReceipt : customerReceipt // ignore: cast_nullable_to_non_nullable
+as Map<String, dynamic>?,
+  ));
 }
 
-/// @nodoc
-abstract class _$$RecurrentCreateRequestImplCopyWith<$Res>
-    implements $RecurrentCreateRequestCopyWith<$Res> {
-  factory _$$RecurrentCreateRequestImplCopyWith(
-          _$RecurrentCreateRequestImpl value,
-          $Res Function(_$RecurrentCreateRequestImpl) then) =
-      __$$RecurrentCreateRequestImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String token,
-      String accountId,
-      String description,
-      String amount,
-      DateTime startDate,
-      ReccurentInterval interval,
-      int period,
-      String? email,
-      bool requireConfirmation,
-      String currency,
-      int? maxPeriods,
-      Map<String, dynamic>? customerReceipt});
 }
 
-/// @nodoc
-class __$$RecurrentCreateRequestImplCopyWithImpl<$Res>
-    extends _$RecurrentCreateRequestCopyWithImpl<$Res,
-        _$RecurrentCreateRequestImpl>
-    implements _$$RecurrentCreateRequestImplCopyWith<$Res> {
-  __$$RecurrentCreateRequestImplCopyWithImpl(
-      _$RecurrentCreateRequestImpl _value,
-      $Res Function(_$RecurrentCreateRequestImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of RecurrentCreateRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? token = null,
-    Object? accountId = null,
-    Object? description = null,
-    Object? amount = null,
-    Object? startDate = null,
-    Object? interval = null,
-    Object? period = null,
-    Object? email = freezed,
-    Object? requireConfirmation = null,
-    Object? currency = null,
-    Object? maxPeriods = freezed,
-    Object? customerReceipt = freezed,
-  }) {
-    return _then(_$RecurrentCreateRequestImpl(
-      token: null == token
-          ? _value.token
-          : token // ignore: cast_nullable_to_non_nullable
-              as String,
-      accountId: null == accountId
-          ? _value.accountId
-          : accountId // ignore: cast_nullable_to_non_nullable
-              as String,
-      description: null == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String,
-      amount: null == amount
-          ? _value.amount
-          : amount // ignore: cast_nullable_to_non_nullable
-              as String,
-      startDate: null == startDate
-          ? _value.startDate
-          : startDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      interval: null == interval
-          ? _value.interval
-          : interval // ignore: cast_nullable_to_non_nullable
-              as ReccurentInterval,
-      period: null == period
-          ? _value.period
-          : period // ignore: cast_nullable_to_non_nullable
-              as int,
-      email: freezed == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      requireConfirmation: null == requireConfirmation
-          ? _value.requireConfirmation
-          : requireConfirmation // ignore: cast_nullable_to_non_nullable
-              as bool,
-      currency: null == currency
-          ? _value.currency
-          : currency // ignore: cast_nullable_to_non_nullable
-              as String,
-      maxPeriods: freezed == maxPeriods
-          ? _value.maxPeriods
-          : maxPeriods // ignore: cast_nullable_to_non_nullable
-              as int?,
-      customerReceipt: freezed == customerReceipt
-          ? _value._customerReceipt
-          : customerReceipt // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ));
-  }
-}
 
 /// @nodoc
 @JsonSerializable()
-class _$RecurrentCreateRequestImpl implements _RecurrentCreateRequest {
-  _$RecurrentCreateRequestImpl(
-      {required this.token,
-      required this.accountId,
-      required this.description,
-      required this.amount,
-      required this.startDate,
-      required this.interval,
-      required this.period,
-      this.email,
-      this.requireConfirmation = false,
-      this.currency = 'RUB',
-      this.maxPeriods,
-      final Map<String, dynamic>? customerReceipt})
-      : _customerReceipt = customerReceipt;
 
-  factory _$RecurrentCreateRequestImpl.fromJson(Map<String, dynamic> json) =>
-      _$$RecurrentCreateRequestImplFromJson(json);
+class _RecurrentCreateRequest implements RecurrentCreateRequest {
+   _RecurrentCreateRequest({required this.token, required this.accountId, required this.description, required this.amount, required this.startDate, required this.interval, required this.period, this.email, this.requireConfirmation = false, this.currency = 'RUB', this.maxPeriods, final  Map<String, dynamic>? customerReceipt}): _customerReceipt = customerReceipt;
+  factory _RecurrentCreateRequest.fromJson(Map<String, dynamic> json) => _$RecurrentCreateRequestFromJson(json);
 
-  /// Токен карты, выданный системой после первого платежа
-  @override
-  final String token;
-
-  /// Обязательный идентификатор пользователя для создания подписки
-  @override
-  final String accountId;
-
-  /// Назначение платежа в свободной форме
-  @override
-  final String description;
-
-  /// Сумма платежа. Должна быть больше 0
-  @override
-  final String amount;
-
-  /// Дата и время первого платежа по плану во временной зоне UTC.
-  ///
-  ///  Значение должно быть в будущем
-  @override
-  final DateTime startDate;
-
-  /// Интервал. Возможные значения: `Day`, `Week`, `Month`
-  @override
-  final ReccurentInterval interval;
-
-  /// Период. В комбинации с интервалом [interval]
-  ///
-  ///  1 Month значит раз в месяц, а 2 Week — раз в две недели.
-  ///
-  /// Должен быть больше 0
-  @override
-  final int period;
-
-  /// E-mail плательщика
-  @override
-  final String? email;
-
-  /// Если значение true — платежи будут выполняться по двухстадийной схеме
-  ///
-  /// По умолчанию false
-  @override
-  @JsonKey()
-  final bool requireConfirmation;
-
-  /// Валюта: RUB/USD/EUR/GBP (см. [справочник](https://developers.cloudpayments.ru/#spisok-valyut)).
-  ///
-  ///  Если параметр не передан, то по умолчанию принимает значение RUB
-  @override
-  @JsonKey()
-  final String currency;
-
-  /// Максимальное количество платежей в подписке.
-  ///
-  /// Если указан, должен быть больше 0
-  @override
-  final int? maxPeriods;
-
-  /// Для изменения состава [онлайн-чека](https://developers.cloudpayments.ru/#format-peredachi-dannyh-dlya-onlayn-cheka)
-  final Map<String, dynamic>? _customerReceipt;
-
-  /// Для изменения состава [онлайн-чека](https://developers.cloudpayments.ru/#format-peredachi-dannyh-dlya-onlayn-cheka)
-  @override
-  Map<String, dynamic>? get customerReceipt {
-    final value = _customerReceipt;
-    if (value == null) return null;
-    if (_customerReceipt is EqualUnmodifiableMapView) return _customerReceipt;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(value);
-  }
-
-  @override
-  String toString() {
-    return 'RecurrentCreateRequest(token: $token, accountId: $accountId, description: $description, amount: $amount, startDate: $startDate, interval: $interval, period: $period, email: $email, requireConfirmation: $requireConfirmation, currency: $currency, maxPeriods: $maxPeriods, customerReceipt: $customerReceipt)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$RecurrentCreateRequestImpl &&
-            (identical(other.token, token) || other.token == token) &&
-            (identical(other.accountId, accountId) ||
-                other.accountId == accountId) &&
-            (identical(other.description, description) ||
-                other.description == description) &&
-            (identical(other.amount, amount) || other.amount == amount) &&
-            (identical(other.startDate, startDate) ||
-                other.startDate == startDate) &&
-            (identical(other.interval, interval) ||
-                other.interval == interval) &&
-            (identical(other.period, period) || other.period == period) &&
-            (identical(other.email, email) || other.email == email) &&
-            (identical(other.requireConfirmation, requireConfirmation) ||
-                other.requireConfirmation == requireConfirmation) &&
-            (identical(other.currency, currency) ||
-                other.currency == currency) &&
-            (identical(other.maxPeriods, maxPeriods) ||
-                other.maxPeriods == maxPeriods) &&
-            const DeepCollectionEquality()
-                .equals(other._customerReceipt, _customerReceipt));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      token,
-      accountId,
-      description,
-      amount,
-      startDate,
-      interval,
-      period,
-      email,
-      requireConfirmation,
-      currency,
-      maxPeriods,
-      const DeepCollectionEquality().hash(_customerReceipt));
-
-  /// Create a copy of RecurrentCreateRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$RecurrentCreateRequestImplCopyWith<_$RecurrentCreateRequestImpl>
-      get copyWith => __$$RecurrentCreateRequestImplCopyWithImpl<
-          _$RecurrentCreateRequestImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$RecurrentCreateRequestImplToJson(
-      this,
-    );
-  }
+/// Токен карты, выданный системой после первого платежа
+@override final  String token;
+/// Обязательный идентификатор пользователя для создания подписки
+@override final  String accountId;
+/// Назначение платежа в свободной форме
+@override final  String description;
+/// Сумма платежа. Должна быть больше 0
+@override final  String amount;
+/// Дата и время первого платежа по плану во временной зоне UTC.
+///
+///  Значение должно быть в будущем
+@override final  DateTime startDate;
+/// Интервал. Возможные значения: `Day`, `Week`, `Month`
+@override final  ReccurentInterval interval;
+/// Период. В комбинации с интервалом [interval]
+///
+///  1 Month значит раз в месяц, а 2 Week — раз в две недели.
+///
+/// Должен быть больше 0
+@override final  int period;
+/// E-mail плательщика
+@override final  String? email;
+/// Если значение true — платежи будут выполняться по двухстадийной схеме
+///
+/// По умолчанию false
+@override@JsonKey() final  bool requireConfirmation;
+/// Валюта: RUB/USD/EUR/GBP (см. [справочник](https://developers.cloudpayments.ru/#spisok-valyut)).
+///
+///  Если параметр не передан, то по умолчанию принимает значение RUB
+@override@JsonKey() final  String currency;
+/// Максимальное количество платежей в подписке.
+///
+/// Если указан, должен быть больше 0
+@override final  int? maxPeriods;
+/// Для изменения состава [онлайн-чека](https://developers.cloudpayments.ru/#format-peredachi-dannyh-dlya-onlayn-cheka)
+ final  Map<String, dynamic>? _customerReceipt;
+/// Для изменения состава [онлайн-чека](https://developers.cloudpayments.ru/#format-peredachi-dannyh-dlya-onlayn-cheka)
+@override Map<String, dynamic>? get customerReceipt {
+  final value = _customerReceipt;
+  if (value == null) return null;
+  if (_customerReceipt is EqualUnmodifiableMapView) return _customerReceipt;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableMapView(value);
 }
 
-abstract class _RecurrentCreateRequest implements RecurrentCreateRequest {
-  factory _RecurrentCreateRequest(
-          {required final String token,
-          required final String accountId,
-          required final String description,
-          required final String amount,
-          required final DateTime startDate,
-          required final ReccurentInterval interval,
-          required final int period,
-          final String? email,
-          final bool requireConfirmation,
-          final String currency,
-          final int? maxPeriods,
-          final Map<String, dynamic>? customerReceipt}) =
-      _$RecurrentCreateRequestImpl;
 
-  factory _RecurrentCreateRequest.fromJson(Map<String, dynamic> json) =
-      _$RecurrentCreateRequestImpl.fromJson;
+/// Create a copy of RecurrentCreateRequest
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$RecurrentCreateRequestCopyWith<_RecurrentCreateRequest> get copyWith => __$RecurrentCreateRequestCopyWithImpl<_RecurrentCreateRequest>(this, _$identity);
 
-  /// Токен карты, выданный системой после первого платежа
-  @override
-  String get token;
-
-  /// Обязательный идентификатор пользователя для создания подписки
-  @override
-  String get accountId;
-
-  /// Назначение платежа в свободной форме
-  @override
-  String get description;
-
-  /// Сумма платежа. Должна быть больше 0
-  @override
-  String get amount;
-
-  /// Дата и время первого платежа по плану во временной зоне UTC.
-  ///
-  ///  Значение должно быть в будущем
-  @override
-  DateTime get startDate;
-
-  /// Интервал. Возможные значения: `Day`, `Week`, `Month`
-  @override
-  ReccurentInterval get interval;
-
-  /// Период. В комбинации с интервалом [interval]
-  ///
-  ///  1 Month значит раз в месяц, а 2 Week — раз в две недели.
-  ///
-  /// Должен быть больше 0
-  @override
-  int get period;
-
-  /// E-mail плательщика
-  @override
-  String? get email;
-
-  /// Если значение true — платежи будут выполняться по двухстадийной схеме
-  ///
-  /// По умолчанию false
-  @override
-  bool get requireConfirmation;
-
-  /// Валюта: RUB/USD/EUR/GBP (см. [справочник](https://developers.cloudpayments.ru/#spisok-valyut)).
-  ///
-  ///  Если параметр не передан, то по умолчанию принимает значение RUB
-  @override
-  String get currency;
-
-  /// Максимальное количество платежей в подписке.
-  ///
-  /// Если указан, должен быть больше 0
-  @override
-  int? get maxPeriods;
-
-  /// Для изменения состава [онлайн-чека](https://developers.cloudpayments.ru/#format-peredachi-dannyh-dlya-onlayn-cheka)
-  @override
-  Map<String, dynamic>? get customerReceipt;
-
-  /// Create a copy of RecurrentCreateRequest
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RecurrentCreateRequestImplCopyWith<_$RecurrentCreateRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
+@override
+Map<String, dynamic> toJson() {
+  return _$RecurrentCreateRequestToJson(this, );
 }
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RecurrentCreateRequest&&(identical(other.token, token) || other.token == token)&&(identical(other.accountId, accountId) || other.accountId == accountId)&&(identical(other.description, description) || other.description == description)&&(identical(other.amount, amount) || other.amount == amount)&&(identical(other.startDate, startDate) || other.startDate == startDate)&&(identical(other.interval, interval) || other.interval == interval)&&(identical(other.period, period) || other.period == period)&&(identical(other.email, email) || other.email == email)&&(identical(other.requireConfirmation, requireConfirmation) || other.requireConfirmation == requireConfirmation)&&(identical(other.currency, currency) || other.currency == currency)&&(identical(other.maxPeriods, maxPeriods) || other.maxPeriods == maxPeriods)&&const DeepCollectionEquality().equals(other._customerReceipt, _customerReceipt));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,token,accountId,description,amount,startDate,interval,period,email,requireConfirmation,currency,maxPeriods,const DeepCollectionEquality().hash(_customerReceipt));
+
+@override
+String toString() {
+  return 'RecurrentCreateRequest(token: $token, accountId: $accountId, description: $description, amount: $amount, startDate: $startDate, interval: $interval, period: $period, email: $email, requireConfirmation: $requireConfirmation, currency: $currency, maxPeriods: $maxPeriods, customerReceipt: $customerReceipt)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$RecurrentCreateRequestCopyWith<$Res> implements $RecurrentCreateRequestCopyWith<$Res> {
+  factory _$RecurrentCreateRequestCopyWith(_RecurrentCreateRequest value, $Res Function(_RecurrentCreateRequest) _then) = __$RecurrentCreateRequestCopyWithImpl;
+@override @useResult
+$Res call({
+ String token, String accountId, String description, String amount, DateTime startDate, ReccurentInterval interval, int period, String? email, bool requireConfirmation, String currency, int? maxPeriods, Map<String, dynamic>? customerReceipt
+});
+
+
+
+
+}
+/// @nodoc
+class __$RecurrentCreateRequestCopyWithImpl<$Res>
+    implements _$RecurrentCreateRequestCopyWith<$Res> {
+  __$RecurrentCreateRequestCopyWithImpl(this._self, this._then);
+
+  final _RecurrentCreateRequest _self;
+  final $Res Function(_RecurrentCreateRequest) _then;
+
+/// Create a copy of RecurrentCreateRequest
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? token = null,Object? accountId = null,Object? description = null,Object? amount = null,Object? startDate = null,Object? interval = null,Object? period = null,Object? email = freezed,Object? requireConfirmation = null,Object? currency = null,Object? maxPeriods = freezed,Object? customerReceipt = freezed,}) {
+  return _then(_RecurrentCreateRequest(
+token: null == token ? _self.token : token // ignore: cast_nullable_to_non_nullable
+as String,accountId: null == accountId ? _self.accountId : accountId // ignore: cast_nullable_to_non_nullable
+as String,description: null == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
+as String,amount: null == amount ? _self.amount : amount // ignore: cast_nullable_to_non_nullable
+as String,startDate: null == startDate ? _self.startDate : startDate // ignore: cast_nullable_to_non_nullable
+as DateTime,interval: null == interval ? _self.interval : interval // ignore: cast_nullable_to_non_nullable
+as ReccurentInterval,period: null == period ? _self.period : period // ignore: cast_nullable_to_non_nullable
+as int,email: freezed == email ? _self.email : email // ignore: cast_nullable_to_non_nullable
+as String?,requireConfirmation: null == requireConfirmation ? _self.requireConfirmation : requireConfirmation // ignore: cast_nullable_to_non_nullable
+as bool,currency: null == currency ? _self.currency : currency // ignore: cast_nullable_to_non_nullable
+as String,maxPeriods: freezed == maxPeriods ? _self.maxPeriods : maxPeriods // ignore: cast_nullable_to_non_nullable
+as int?,customerReceipt: freezed == customerReceipt ? _self._customerReceipt : customerReceipt // ignore: cast_nullable_to_non_nullable
+as Map<String, dynamic>?,
+  ));
+}
+
+
+}
+
+// dart format on

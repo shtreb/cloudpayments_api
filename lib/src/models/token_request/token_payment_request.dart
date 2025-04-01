@@ -6,7 +6,7 @@ part 'token_payment_request.g.dart';
 
 /// Информация о запросе по токену
 @freezed
-class TokenPaymenRequest with _$TokenPaymenRequest {
+sealed class TokenPaymenRequest with _$TokenPaymenRequest {
   ///
   factory TokenPaymenRequest({
     /// Сумма платежа

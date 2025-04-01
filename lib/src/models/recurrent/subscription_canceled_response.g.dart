@@ -6,16 +6,16 @@ part of 'subscription_canceled_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$SubscriptionCanceledResponseImpl _$$SubscriptionCanceledResponseImplFromJson(
-        Map<String, dynamic> json) =>
-    _$SubscriptionCanceledResponseImpl(
-      message: json['Message'] as String?,
-      success: json['Success'] as bool,
-    );
+_SubscriptionCanceledResponse _$SubscriptionCanceledResponseFromJson(
+  Map<String, dynamic> json,
+) => _SubscriptionCanceledResponse(
+  message: json['Message'] as String?,
+  success: json['Success'] as bool,
+);
 
-Map<String, dynamic> _$$SubscriptionCanceledResponseImplToJson(
-        _$SubscriptionCanceledResponseImpl instance) =>
-    <String, dynamic>{
-      'Message': instance.message,
-      'Success': instance.success,
-    };
+Map<String, dynamic> _$SubscriptionCanceledResponseToJson(
+  _SubscriptionCanceledResponse instance,
+) => <String, dynamic>{
+  'Message': instance.message,
+  'Success': instance.success,
+};

@@ -5,7 +5,7 @@ part 'subscription_canceled_response.g.dart';
 
 /// Ответ при отмены подписки
 @freezed
-class SubscriptionCanceledResponse with _$SubscriptionCanceledResponse {
+sealed class SubscriptionCanceledResponse with _$SubscriptionCanceledResponse {
   ///
   factory SubscriptionCanceledResponse({
     required String? message,

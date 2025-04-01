@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,786 +10,327 @@ part of 'payment_transaction.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
 /// @nodoc
 mixin _$PaymentTransaction {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(TransactionInfo info) success,
-    required TResult Function(String? message) incorrectlyRequest,
-    required TResult Function(Three3DSecureResponse response) required3dsecure,
-    required TResult Function(TransactionInfo info) error,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(TransactionInfo info)? success,
-    TResult? Function(String? message)? incorrectlyRequest,
-    TResult? Function(Three3DSecureResponse response)? required3dsecure,
-    TResult? Function(TransactionInfo info)? error,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(TransactionInfo info)? success,
-    TResult Function(String? message)? incorrectlyRequest,
-    TResult Function(Three3DSecureResponse response)? required3dsecure,
-    TResult Function(TransactionInfo info)? error,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_PaymentTransactionSuccess value) success,
-    required TResult Function(_PaymentTransactionIncorrectlyRequest value)
-        incorrectlyRequest,
-    required TResult Function(_PaymentTransactionRequired3dSecure value)
-        required3dsecure,
-    required TResult Function(_PaymentTransactionError value) error,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_PaymentTransactionSuccess value)? success,
-    TResult? Function(_PaymentTransactionIncorrectlyRequest value)?
-        incorrectlyRequest,
-    TResult? Function(_PaymentTransactionRequired3dSecure value)?
-        required3dsecure,
-    TResult? Function(_PaymentTransactionError value)? error,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_PaymentTransactionSuccess value)? success,
-    TResult Function(_PaymentTransactionIncorrectlyRequest value)?
-        incorrectlyRequest,
-    TResult Function(_PaymentTransactionRequired3dSecure value)?
-        required3dsecure,
-    TResult Function(_PaymentTransactionError value)? error,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is PaymentTransaction);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'PaymentTransaction()';
+}
+
+
 }
 
 /// @nodoc
-abstract class $PaymentTransactionCopyWith<$Res> {
-  factory $PaymentTransactionCopyWith(
-          PaymentTransaction value, $Res Function(PaymentTransaction) then) =
-      _$PaymentTransactionCopyWithImpl<$Res, PaymentTransaction>;
+class $PaymentTransactionCopyWith<$Res>  {
+$PaymentTransactionCopyWith(PaymentTransaction _, $Res Function(PaymentTransaction) __);
+}
+
+
+/// @nodoc
+
+
+class _PaymentTransactionSuccess implements PaymentTransaction {
+  const _PaymentTransactionSuccess(this.info);
+  
+
+ final  TransactionInfo info;
+
+/// Create a copy of PaymentTransaction
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$PaymentTransactionSuccessCopyWith<_PaymentTransactionSuccess> get copyWith => __$PaymentTransactionSuccessCopyWithImpl<_PaymentTransactionSuccess>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PaymentTransactionSuccess&&(identical(other.info, info) || other.info == info));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,info);
+
+@override
+String toString() {
+  return 'PaymentTransaction.success(info: $info)';
+}
+
+
 }
 
 /// @nodoc
-class _$PaymentTransactionCopyWithImpl<$Res, $Val extends PaymentTransaction>
-    implements $PaymentTransactionCopyWith<$Res> {
-  _$PaymentTransactionCopyWithImpl(this._value, this._then);
+abstract mixin class _$PaymentTransactionSuccessCopyWith<$Res> implements $PaymentTransactionCopyWith<$Res> {
+  factory _$PaymentTransactionSuccessCopyWith(_PaymentTransactionSuccess value, $Res Function(_PaymentTransactionSuccess) _then) = __$PaymentTransactionSuccessCopyWithImpl;
+@useResult
+$Res call({
+ TransactionInfo info
+});
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
 
-  /// Create a copy of PaymentTransaction
-  /// with the given fields replaced by the non-null parameter values.
+$TransactionInfoCopyWith<$Res> get info;
+
+}
+/// @nodoc
+class __$PaymentTransactionSuccessCopyWithImpl<$Res>
+    implements _$PaymentTransactionSuccessCopyWith<$Res> {
+  __$PaymentTransactionSuccessCopyWithImpl(this._self, this._then);
+
+  final _PaymentTransactionSuccess _self;
+  final $Res Function(_PaymentTransactionSuccess) _then;
+
+/// Create a copy of PaymentTransaction
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? info = null,}) {
+  return _then(_PaymentTransactionSuccess(
+null == info ? _self.info : info // ignore: cast_nullable_to_non_nullable
+as TransactionInfo,
+  ));
 }
 
-/// @nodoc
-abstract class _$$PaymentTransactionSuccessImplCopyWith<$Res> {
-  factory _$$PaymentTransactionSuccessImplCopyWith(
-          _$PaymentTransactionSuccessImpl value,
-          $Res Function(_$PaymentTransactionSuccessImpl) then) =
-      __$$PaymentTransactionSuccessImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({TransactionInfo info});
-
-  $TransactionInfoCopyWith<$Res> get info;
+/// Create a copy of PaymentTransaction
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$TransactionInfoCopyWith<$Res> get info {
+  
+  return $TransactionInfoCopyWith<$Res>(_self.info, (value) {
+    return _then(_self.copyWith(info: value));
+  });
 }
-
-/// @nodoc
-class __$$PaymentTransactionSuccessImplCopyWithImpl<$Res>
-    extends _$PaymentTransactionCopyWithImpl<$Res,
-        _$PaymentTransactionSuccessImpl>
-    implements _$$PaymentTransactionSuccessImplCopyWith<$Res> {
-  __$$PaymentTransactionSuccessImplCopyWithImpl(
-      _$PaymentTransactionSuccessImpl _value,
-      $Res Function(_$PaymentTransactionSuccessImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of PaymentTransaction
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? info = null,
-  }) {
-    return _then(_$PaymentTransactionSuccessImpl(
-      null == info
-          ? _value.info
-          : info // ignore: cast_nullable_to_non_nullable
-              as TransactionInfo,
-    ));
-  }
-
-  /// Create a copy of PaymentTransaction
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $TransactionInfoCopyWith<$Res> get info {
-    return $TransactionInfoCopyWith<$Res>(_value.info, (value) {
-      return _then(_value.copyWith(info: value));
-    });
-  }
 }
 
 /// @nodoc
 
-class _$PaymentTransactionSuccessImpl implements _PaymentTransactionSuccess {
-  const _$PaymentTransactionSuccessImpl(this.info);
 
-  @override
-  final TransactionInfo info;
+class _PaymentTransactionIncorrectlyRequest implements PaymentTransaction {
+  const _PaymentTransactionIncorrectlyRequest(this.message);
+  
 
-  @override
-  String toString() {
-    return 'PaymentTransaction.success(info: $info)';
-  }
+ final  String? message;
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$PaymentTransactionSuccessImpl &&
-            (identical(other.info, info) || other.info == info));
-  }
+/// Create a copy of PaymentTransaction
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$PaymentTransactionIncorrectlyRequestCopyWith<_PaymentTransactionIncorrectlyRequest> get copyWith => __$PaymentTransactionIncorrectlyRequestCopyWithImpl<_PaymentTransactionIncorrectlyRequest>(this, _$identity);
 
-  @override
-  int get hashCode => Object.hash(runtimeType, info);
 
-  /// Create a copy of PaymentTransaction
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$PaymentTransactionSuccessImplCopyWith<_$PaymentTransactionSuccessImpl>
-      get copyWith => __$$PaymentTransactionSuccessImplCopyWithImpl<
-          _$PaymentTransactionSuccessImpl>(this, _$identity);
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(TransactionInfo info) success,
-    required TResult Function(String? message) incorrectlyRequest,
-    required TResult Function(Three3DSecureResponse response) required3dsecure,
-    required TResult Function(TransactionInfo info) error,
-  }) {
-    return success(info);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(TransactionInfo info)? success,
-    TResult? Function(String? message)? incorrectlyRequest,
-    TResult? Function(Three3DSecureResponse response)? required3dsecure,
-    TResult? Function(TransactionInfo info)? error,
-  }) {
-    return success?.call(info);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(TransactionInfo info)? success,
-    TResult Function(String? message)? incorrectlyRequest,
-    TResult Function(Three3DSecureResponse response)? required3dsecure,
-    TResult Function(TransactionInfo info)? error,
-    required TResult orElse(),
-  }) {
-    if (success != null) {
-      return success(info);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_PaymentTransactionSuccess value) success,
-    required TResult Function(_PaymentTransactionIncorrectlyRequest value)
-        incorrectlyRequest,
-    required TResult Function(_PaymentTransactionRequired3dSecure value)
-        required3dsecure,
-    required TResult Function(_PaymentTransactionError value) error,
-  }) {
-    return success(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_PaymentTransactionSuccess value)? success,
-    TResult? Function(_PaymentTransactionIncorrectlyRequest value)?
-        incorrectlyRequest,
-    TResult? Function(_PaymentTransactionRequired3dSecure value)?
-        required3dsecure,
-    TResult? Function(_PaymentTransactionError value)? error,
-  }) {
-    return success?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_PaymentTransactionSuccess value)? success,
-    TResult Function(_PaymentTransactionIncorrectlyRequest value)?
-        incorrectlyRequest,
-    TResult Function(_PaymentTransactionRequired3dSecure value)?
-        required3dsecure,
-    TResult Function(_PaymentTransactionError value)? error,
-    required TResult orElse(),
-  }) {
-    if (success != null) {
-      return success(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PaymentTransactionIncorrectlyRequest&&(identical(other.message, message) || other.message == message));
 }
 
-abstract class _PaymentTransactionSuccess implements PaymentTransaction {
-  const factory _PaymentTransactionSuccess(final TransactionInfo info) =
-      _$PaymentTransactionSuccessImpl;
 
-  TransactionInfo get info;
+@override
+int get hashCode => Object.hash(runtimeType,message);
 
-  /// Create a copy of PaymentTransaction
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$PaymentTransactionSuccessImplCopyWith<_$PaymentTransactionSuccessImpl>
-      get copyWith => throw _privateConstructorUsedError;
+@override
+String toString() {
+  return 'PaymentTransaction.incorrectlyRequest(message: $message)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$PaymentTransactionIncorrectlyRequestImplCopyWith<$Res> {
-  factory _$$PaymentTransactionIncorrectlyRequestImplCopyWith(
-          _$PaymentTransactionIncorrectlyRequestImpl value,
-          $Res Function(_$PaymentTransactionIncorrectlyRequestImpl) then) =
-      __$$PaymentTransactionIncorrectlyRequestImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String? message});
+abstract mixin class _$PaymentTransactionIncorrectlyRequestCopyWith<$Res> implements $PaymentTransactionCopyWith<$Res> {
+  factory _$PaymentTransactionIncorrectlyRequestCopyWith(_PaymentTransactionIncorrectlyRequest value, $Res Function(_PaymentTransactionIncorrectlyRequest) _then) = __$PaymentTransactionIncorrectlyRequestCopyWithImpl;
+@useResult
+$Res call({
+ String? message
+});
+
+
+
+
+}
+/// @nodoc
+class __$PaymentTransactionIncorrectlyRequestCopyWithImpl<$Res>
+    implements _$PaymentTransactionIncorrectlyRequestCopyWith<$Res> {
+  __$PaymentTransactionIncorrectlyRequestCopyWithImpl(this._self, this._then);
+
+  final _PaymentTransactionIncorrectlyRequest _self;
+  final $Res Function(_PaymentTransactionIncorrectlyRequest) _then;
+
+/// Create a copy of PaymentTransaction
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? message = freezed,}) {
+  return _then(_PaymentTransactionIncorrectlyRequest(
+freezed == message ? _self.message : message // ignore: cast_nullable_to_non_nullable
+as String?,
+  ));
 }
 
-/// @nodoc
-class __$$PaymentTransactionIncorrectlyRequestImplCopyWithImpl<$Res>
-    extends _$PaymentTransactionCopyWithImpl<$Res,
-        _$PaymentTransactionIncorrectlyRequestImpl>
-    implements _$$PaymentTransactionIncorrectlyRequestImplCopyWith<$Res> {
-  __$$PaymentTransactionIncorrectlyRequestImplCopyWithImpl(
-      _$PaymentTransactionIncorrectlyRequestImpl _value,
-      $Res Function(_$PaymentTransactionIncorrectlyRequestImpl) _then)
-      : super(_value, _then);
 
-  /// Create a copy of PaymentTransaction
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? message = freezed,
-  }) {
-    return _then(_$PaymentTransactionIncorrectlyRequestImpl(
-      freezed == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$PaymentTransactionIncorrectlyRequestImpl
-    implements _PaymentTransactionIncorrectlyRequest {
-  const _$PaymentTransactionIncorrectlyRequestImpl(this.message);
 
-  @override
-  final String? message;
+class _PaymentTransactionRequired3dSecure implements PaymentTransaction {
+  const _PaymentTransactionRequired3dSecure(this.response);
+  
 
-  @override
-  String toString() {
-    return 'PaymentTransaction.incorrectlyRequest(message: $message)';
-  }
+ final  Three3DSecureResponse response;
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$PaymentTransactionIncorrectlyRequestImpl &&
-            (identical(other.message, message) || other.message == message));
-  }
+/// Create a copy of PaymentTransaction
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$PaymentTransactionRequired3dSecureCopyWith<_PaymentTransactionRequired3dSecure> get copyWith => __$PaymentTransactionRequired3dSecureCopyWithImpl<_PaymentTransactionRequired3dSecure>(this, _$identity);
 
-  @override
-  int get hashCode => Object.hash(runtimeType, message);
 
-  /// Create a copy of PaymentTransaction
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$PaymentTransactionIncorrectlyRequestImplCopyWith<
-          _$PaymentTransactionIncorrectlyRequestImpl>
-      get copyWith => __$$PaymentTransactionIncorrectlyRequestImplCopyWithImpl<
-          _$PaymentTransactionIncorrectlyRequestImpl>(this, _$identity);
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(TransactionInfo info) success,
-    required TResult Function(String? message) incorrectlyRequest,
-    required TResult Function(Three3DSecureResponse response) required3dsecure,
-    required TResult Function(TransactionInfo info) error,
-  }) {
-    return incorrectlyRequest(message);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(TransactionInfo info)? success,
-    TResult? Function(String? message)? incorrectlyRequest,
-    TResult? Function(Three3DSecureResponse response)? required3dsecure,
-    TResult? Function(TransactionInfo info)? error,
-  }) {
-    return incorrectlyRequest?.call(message);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(TransactionInfo info)? success,
-    TResult Function(String? message)? incorrectlyRequest,
-    TResult Function(Three3DSecureResponse response)? required3dsecure,
-    TResult Function(TransactionInfo info)? error,
-    required TResult orElse(),
-  }) {
-    if (incorrectlyRequest != null) {
-      return incorrectlyRequest(message);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_PaymentTransactionSuccess value) success,
-    required TResult Function(_PaymentTransactionIncorrectlyRequest value)
-        incorrectlyRequest,
-    required TResult Function(_PaymentTransactionRequired3dSecure value)
-        required3dsecure,
-    required TResult Function(_PaymentTransactionError value) error,
-  }) {
-    return incorrectlyRequest(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_PaymentTransactionSuccess value)? success,
-    TResult? Function(_PaymentTransactionIncorrectlyRequest value)?
-        incorrectlyRequest,
-    TResult? Function(_PaymentTransactionRequired3dSecure value)?
-        required3dsecure,
-    TResult? Function(_PaymentTransactionError value)? error,
-  }) {
-    return incorrectlyRequest?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_PaymentTransactionSuccess value)? success,
-    TResult Function(_PaymentTransactionIncorrectlyRequest value)?
-        incorrectlyRequest,
-    TResult Function(_PaymentTransactionRequired3dSecure value)?
-        required3dsecure,
-    TResult Function(_PaymentTransactionError value)? error,
-    required TResult orElse(),
-  }) {
-    if (incorrectlyRequest != null) {
-      return incorrectlyRequest(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PaymentTransactionRequired3dSecure&&(identical(other.response, response) || other.response == response));
 }
 
-abstract class _PaymentTransactionIncorrectlyRequest
-    implements PaymentTransaction {
-  const factory _PaymentTransactionIncorrectlyRequest(final String? message) =
-      _$PaymentTransactionIncorrectlyRequestImpl;
 
-  String? get message;
+@override
+int get hashCode => Object.hash(runtimeType,response);
 
-  /// Create a copy of PaymentTransaction
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$PaymentTransactionIncorrectlyRequestImplCopyWith<
-          _$PaymentTransactionIncorrectlyRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
+@override
+String toString() {
+  return 'PaymentTransaction.required3dsecure(response: $response)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$PaymentTransactionRequired3dSecureImplCopyWith<$Res> {
-  factory _$$PaymentTransactionRequired3dSecureImplCopyWith(
-          _$PaymentTransactionRequired3dSecureImpl value,
-          $Res Function(_$PaymentTransactionRequired3dSecureImpl) then) =
-      __$$PaymentTransactionRequired3dSecureImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({Three3DSecureResponse response});
+abstract mixin class _$PaymentTransactionRequired3dSecureCopyWith<$Res> implements $PaymentTransactionCopyWith<$Res> {
+  factory _$PaymentTransactionRequired3dSecureCopyWith(_PaymentTransactionRequired3dSecure value, $Res Function(_PaymentTransactionRequired3dSecure) _then) = __$PaymentTransactionRequired3dSecureCopyWithImpl;
+@useResult
+$Res call({
+ Three3DSecureResponse response
+});
 
-  $Three3DSecureResponseCopyWith<$Res> get response;
+
+$Three3DSecureResponseCopyWith<$Res> get response;
+
+}
+/// @nodoc
+class __$PaymentTransactionRequired3dSecureCopyWithImpl<$Res>
+    implements _$PaymentTransactionRequired3dSecureCopyWith<$Res> {
+  __$PaymentTransactionRequired3dSecureCopyWithImpl(this._self, this._then);
+
+  final _PaymentTransactionRequired3dSecure _self;
+  final $Res Function(_PaymentTransactionRequired3dSecure) _then;
+
+/// Create a copy of PaymentTransaction
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? response = null,}) {
+  return _then(_PaymentTransactionRequired3dSecure(
+null == response ? _self.response : response // ignore: cast_nullable_to_non_nullable
+as Three3DSecureResponse,
+  ));
 }
 
-/// @nodoc
-class __$$PaymentTransactionRequired3dSecureImplCopyWithImpl<$Res>
-    extends _$PaymentTransactionCopyWithImpl<$Res,
-        _$PaymentTransactionRequired3dSecureImpl>
-    implements _$$PaymentTransactionRequired3dSecureImplCopyWith<$Res> {
-  __$$PaymentTransactionRequired3dSecureImplCopyWithImpl(
-      _$PaymentTransactionRequired3dSecureImpl _value,
-      $Res Function(_$PaymentTransactionRequired3dSecureImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of PaymentTransaction
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? response = null,
-  }) {
-    return _then(_$PaymentTransactionRequired3dSecureImpl(
-      null == response
-          ? _value.response
-          : response // ignore: cast_nullable_to_non_nullable
-              as Three3DSecureResponse,
-    ));
-  }
-
-  /// Create a copy of PaymentTransaction
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $Three3DSecureResponseCopyWith<$Res> get response {
-    return $Three3DSecureResponseCopyWith<$Res>(_value.response, (value) {
-      return _then(_value.copyWith(response: value));
-    });
-  }
+/// Create a copy of PaymentTransaction
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$Three3DSecureResponseCopyWith<$Res> get response {
+  
+  return $Three3DSecureResponseCopyWith<$Res>(_self.response, (value) {
+    return _then(_self.copyWith(response: value));
+  });
+}
 }
 
 /// @nodoc
 
-class _$PaymentTransactionRequired3dSecureImpl
-    implements _PaymentTransactionRequired3dSecure {
-  const _$PaymentTransactionRequired3dSecureImpl(this.response);
 
-  @override
-  final Three3DSecureResponse response;
+class _PaymentTransactionError implements PaymentTransaction {
+  const _PaymentTransactionError(this.info);
+  
 
-  @override
-  String toString() {
-    return 'PaymentTransaction.required3dsecure(response: $response)';
-  }
+ final  TransactionInfo info;
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$PaymentTransactionRequired3dSecureImpl &&
-            (identical(other.response, response) ||
-                other.response == response));
-  }
+/// Create a copy of PaymentTransaction
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$PaymentTransactionErrorCopyWith<_PaymentTransactionError> get copyWith => __$PaymentTransactionErrorCopyWithImpl<_PaymentTransactionError>(this, _$identity);
 
-  @override
-  int get hashCode => Object.hash(runtimeType, response);
 
-  /// Create a copy of PaymentTransaction
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$PaymentTransactionRequired3dSecureImplCopyWith<
-          _$PaymentTransactionRequired3dSecureImpl>
-      get copyWith => __$$PaymentTransactionRequired3dSecureImplCopyWithImpl<
-          _$PaymentTransactionRequired3dSecureImpl>(this, _$identity);
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(TransactionInfo info) success,
-    required TResult Function(String? message) incorrectlyRequest,
-    required TResult Function(Three3DSecureResponse response) required3dsecure,
-    required TResult Function(TransactionInfo info) error,
-  }) {
-    return required3dsecure(response);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(TransactionInfo info)? success,
-    TResult? Function(String? message)? incorrectlyRequest,
-    TResult? Function(Three3DSecureResponse response)? required3dsecure,
-    TResult? Function(TransactionInfo info)? error,
-  }) {
-    return required3dsecure?.call(response);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(TransactionInfo info)? success,
-    TResult Function(String? message)? incorrectlyRequest,
-    TResult Function(Three3DSecureResponse response)? required3dsecure,
-    TResult Function(TransactionInfo info)? error,
-    required TResult orElse(),
-  }) {
-    if (required3dsecure != null) {
-      return required3dsecure(response);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_PaymentTransactionSuccess value) success,
-    required TResult Function(_PaymentTransactionIncorrectlyRequest value)
-        incorrectlyRequest,
-    required TResult Function(_PaymentTransactionRequired3dSecure value)
-        required3dsecure,
-    required TResult Function(_PaymentTransactionError value) error,
-  }) {
-    return required3dsecure(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_PaymentTransactionSuccess value)? success,
-    TResult? Function(_PaymentTransactionIncorrectlyRequest value)?
-        incorrectlyRequest,
-    TResult? Function(_PaymentTransactionRequired3dSecure value)?
-        required3dsecure,
-    TResult? Function(_PaymentTransactionError value)? error,
-  }) {
-    return required3dsecure?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_PaymentTransactionSuccess value)? success,
-    TResult Function(_PaymentTransactionIncorrectlyRequest value)?
-        incorrectlyRequest,
-    TResult Function(_PaymentTransactionRequired3dSecure value)?
-        required3dsecure,
-    TResult Function(_PaymentTransactionError value)? error,
-    required TResult orElse(),
-  }) {
-    if (required3dsecure != null) {
-      return required3dsecure(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PaymentTransactionError&&(identical(other.info, info) || other.info == info));
 }
 
-abstract class _PaymentTransactionRequired3dSecure
-    implements PaymentTransaction {
-  const factory _PaymentTransactionRequired3dSecure(
-          final Three3DSecureResponse response) =
-      _$PaymentTransactionRequired3dSecureImpl;
 
-  Three3DSecureResponse get response;
+@override
+int get hashCode => Object.hash(runtimeType,info);
 
-  /// Create a copy of PaymentTransaction
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$PaymentTransactionRequired3dSecureImplCopyWith<
-          _$PaymentTransactionRequired3dSecureImpl>
-      get copyWith => throw _privateConstructorUsedError;
+@override
+String toString() {
+  return 'PaymentTransaction.error(info: $info)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$PaymentTransactionErrorImplCopyWith<$Res> {
-  factory _$$PaymentTransactionErrorImplCopyWith(
-          _$PaymentTransactionErrorImpl value,
-          $Res Function(_$PaymentTransactionErrorImpl) then) =
-      __$$PaymentTransactionErrorImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({TransactionInfo info});
+abstract mixin class _$PaymentTransactionErrorCopyWith<$Res> implements $PaymentTransactionCopyWith<$Res> {
+  factory _$PaymentTransactionErrorCopyWith(_PaymentTransactionError value, $Res Function(_PaymentTransactionError) _then) = __$PaymentTransactionErrorCopyWithImpl;
+@useResult
+$Res call({
+ TransactionInfo info
+});
 
-  $TransactionInfoCopyWith<$Res> get info;
+
+$TransactionInfoCopyWith<$Res> get info;
+
 }
-
 /// @nodoc
-class __$$PaymentTransactionErrorImplCopyWithImpl<$Res>
-    extends _$PaymentTransactionCopyWithImpl<$Res,
-        _$PaymentTransactionErrorImpl>
-    implements _$$PaymentTransactionErrorImplCopyWith<$Res> {
-  __$$PaymentTransactionErrorImplCopyWithImpl(
-      _$PaymentTransactionErrorImpl _value,
-      $Res Function(_$PaymentTransactionErrorImpl) _then)
-      : super(_value, _then);
+class __$PaymentTransactionErrorCopyWithImpl<$Res>
+    implements _$PaymentTransactionErrorCopyWith<$Res> {
+  __$PaymentTransactionErrorCopyWithImpl(this._self, this._then);
 
-  /// Create a copy of PaymentTransaction
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? info = null,
-  }) {
-    return _then(_$PaymentTransactionErrorImpl(
-      null == info
-          ? _value.info
-          : info // ignore: cast_nullable_to_non_nullable
-              as TransactionInfo,
-    ));
-  }
+  final _PaymentTransactionError _self;
+  final $Res Function(_PaymentTransactionError) _then;
 
-  /// Create a copy of PaymentTransaction
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $TransactionInfoCopyWith<$Res> get info {
-    return $TransactionInfoCopyWith<$Res>(_value.info, (value) {
-      return _then(_value.copyWith(info: value));
-    });
-  }
+/// Create a copy of PaymentTransaction
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? info = null,}) {
+  return _then(_PaymentTransactionError(
+null == info ? _self.info : info // ignore: cast_nullable_to_non_nullable
+as TransactionInfo,
+  ));
 }
 
-/// @nodoc
-
-class _$PaymentTransactionErrorImpl implements _PaymentTransactionError {
-  const _$PaymentTransactionErrorImpl(this.info);
-
-  @override
-  final TransactionInfo info;
-
-  @override
-  String toString() {
-    return 'PaymentTransaction.error(info: $info)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$PaymentTransactionErrorImpl &&
-            (identical(other.info, info) || other.info == info));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, info);
-
-  /// Create a copy of PaymentTransaction
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$PaymentTransactionErrorImplCopyWith<_$PaymentTransactionErrorImpl>
-      get copyWith => __$$PaymentTransactionErrorImplCopyWithImpl<
-          _$PaymentTransactionErrorImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(TransactionInfo info) success,
-    required TResult Function(String? message) incorrectlyRequest,
-    required TResult Function(Three3DSecureResponse response) required3dsecure,
-    required TResult Function(TransactionInfo info) error,
-  }) {
-    return error(info);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(TransactionInfo info)? success,
-    TResult? Function(String? message)? incorrectlyRequest,
-    TResult? Function(Three3DSecureResponse response)? required3dsecure,
-    TResult? Function(TransactionInfo info)? error,
-  }) {
-    return error?.call(info);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(TransactionInfo info)? success,
-    TResult Function(String? message)? incorrectlyRequest,
-    TResult Function(Three3DSecureResponse response)? required3dsecure,
-    TResult Function(TransactionInfo info)? error,
-    required TResult orElse(),
-  }) {
-    if (error != null) {
-      return error(info);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_PaymentTransactionSuccess value) success,
-    required TResult Function(_PaymentTransactionIncorrectlyRequest value)
-        incorrectlyRequest,
-    required TResult Function(_PaymentTransactionRequired3dSecure value)
-        required3dsecure,
-    required TResult Function(_PaymentTransactionError value) error,
-  }) {
-    return error(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_PaymentTransactionSuccess value)? success,
-    TResult? Function(_PaymentTransactionIncorrectlyRequest value)?
-        incorrectlyRequest,
-    TResult? Function(_PaymentTransactionRequired3dSecure value)?
-        required3dsecure,
-    TResult? Function(_PaymentTransactionError value)? error,
-  }) {
-    return error?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_PaymentTransactionSuccess value)? success,
-    TResult Function(_PaymentTransactionIncorrectlyRequest value)?
-        incorrectlyRequest,
-    TResult Function(_PaymentTransactionRequired3dSecure value)?
-        required3dsecure,
-    TResult Function(_PaymentTransactionError value)? error,
-    required TResult orElse(),
-  }) {
-    if (error != null) {
-      return error(this);
-    }
-    return orElse();
-  }
+/// Create a copy of PaymentTransaction
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$TransactionInfoCopyWith<$Res> get info {
+  
+  return $TransactionInfoCopyWith<$Res>(_self.info, (value) {
+    return _then(_self.copyWith(info: value));
+  });
+}
 }
 
-abstract class _PaymentTransactionError implements PaymentTransaction {
-  const factory _PaymentTransactionError(final TransactionInfo info) =
-      _$PaymentTransactionErrorImpl;
-
-  TransactionInfo get info;
-
-  /// Create a copy of PaymentTransaction
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$PaymentTransactionErrorImplCopyWith<_$PaymentTransactionErrorImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
+// dart format on

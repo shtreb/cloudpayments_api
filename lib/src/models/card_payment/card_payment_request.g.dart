@@ -6,24 +6,26 @@ part of 'card_payment_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$CardPaymentImpl _$$CardPaymentImplFromJson(Map<String, dynamic> json) =>
-    _$CardPaymentImpl(
-      amount: json['Amount'] as String,
-      ipAddress: json['IpAddress'] as String,
-      cardCryptogramPacket: json['CardCryptogramPacket'] as String,
-      currency: json['Currency'] as String? ?? 'RUB',
-      invoiceId: json['InvoiceId'] as String?,
-      description: json['Description'] as String?,
-      accountId: json['AccountId'] as String?,
-      name: json['Name'] as String?,
-      payer: json['Payer'] == null
+_CardPayment _$CardPaymentFromJson(Map<String, dynamic> json) => _CardPayment(
+  amount: json['Amount'] as String,
+  ipAddress: json['IpAddress'] as String,
+  cardCryptogramPacket: json['CardCryptogramPacket'] as String,
+  currency: json['Currency'] as String? ?? 'RUB',
+  invoiceId: json['InvoiceId'] as String?,
+  description: json['Description'] as String?,
+  accountId: json['AccountId'] as String?,
+  name: json['Name'] as String?,
+  payer:
+      json['Payer'] == null
           ? null
           : TransactionEntity.fromJson(json['Payer'] as Map<String, dynamic>),
-      jsonData: _$JsonConverterFromJson<Map<String, dynamic>, PayloadData?>(
-          json['JsonData'], const PayloadConverter().fromJson),
-    );
+  jsonData: _$JsonConverterFromJson<Map<String, dynamic>, PayloadData?>(
+    json['JsonData'],
+    const PayloadConverter().fromJson,
+  ),
+);
 
-Map<String, dynamic> _$$CardPaymentImplToJson(_$CardPaymentImpl instance) =>
+Map<String, dynamic> _$CardPaymentToJson(_CardPayment instance) =>
     <String, dynamic>{
       'Amount': instance.amount,
       'IpAddress': instance.ipAddress,
@@ -40,5 +42,4 @@ Map<String, dynamic> _$$CardPaymentImplToJson(_$CardPaymentImpl instance) =>
 Value? _$JsonConverterFromJson<Json, Value>(
   Object? json,
   Value? Function(Json json) fromJson,
-) =>
-    json == null ? null : fromJson(json as Json);
+) => json == null ? null : fromJson(json as Json);

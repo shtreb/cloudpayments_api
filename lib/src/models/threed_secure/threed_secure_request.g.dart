@@ -6,16 +6,16 @@ part of 'threed_secure_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$Three3DSecureRequestImpl _$$Three3DSecureRequestImplFromJson(
-        Map<String, dynamic> json) =>
-    _$Three3DSecureRequestImpl(
-      transactionId: (json['TransactionId'] as num).toInt(),
-      paRes: json['PaRes'] as String,
-    );
+_Three3DSecureRequest _$Three3DSecureRequestFromJson(
+  Map<String, dynamic> json,
+) => _Three3DSecureRequest(
+  transactionId: (json['TransactionId'] as num).toInt(),
+  paRes: json['PaRes'] as String,
+);
 
-Map<String, dynamic> _$$Three3DSecureRequestImplToJson(
-        _$Three3DSecureRequestImpl instance) =>
-    <String, dynamic>{
-      'TransactionId': instance.transactionId,
-      'PaRes': instance.paRes,
-    };
+Map<String, dynamic> _$Three3DSecureRequestToJson(
+  _Three3DSecureRequest instance,
+) => <String, dynamic>{
+  'TransactionId': instance.transactionId,
+  'PaRes': instance.paRes,
+};

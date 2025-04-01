@@ -7,7 +7,7 @@ part 'recurrent_info.g.dart';
 /// Информация рекуретном платеже
 /// {@endtemplate}
 @Freezed()
-class RecurrentInfo with _$RecurrentInfo {
+sealed class RecurrentInfo with _$RecurrentInfo {
   /// {@macro recurrent_info}
   factory RecurrentInfo({
     required String id,

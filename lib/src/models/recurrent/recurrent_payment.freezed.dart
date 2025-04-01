@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,374 +10,177 @@ part of 'recurrent_payment.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
 /// @nodoc
 mixin _$RecurrentPayment {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(RecurrentInfo info) success,
-    required TResult Function(String? message) error,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(RecurrentInfo info)? success,
-    TResult? Function(String? message)? error,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(RecurrentInfo info)? success,
-    TResult Function(String? message)? error,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_RecurrentPaymentSuccess value) success,
-    required TResult Function(_RecurrentPaymentIncorrectlyRequest value) error,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_RecurrentPaymentSuccess value)? success,
-    TResult? Function(_RecurrentPaymentIncorrectlyRequest value)? error,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_RecurrentPaymentSuccess value)? success,
-    TResult Function(_RecurrentPaymentIncorrectlyRequest value)? error,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+
+
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is RecurrentPayment);
+}
+
+
+@override
+int get hashCode => runtimeType.hashCode;
+
+@override
+String toString() {
+  return 'RecurrentPayment()';
+}
+
+
 }
 
 /// @nodoc
-abstract class $RecurrentPaymentCopyWith<$Res> {
-  factory $RecurrentPaymentCopyWith(
-          RecurrentPayment value, $Res Function(RecurrentPayment) then) =
-      _$RecurrentPaymentCopyWithImpl<$Res, RecurrentPayment>;
+class $RecurrentPaymentCopyWith<$Res>  {
+$RecurrentPaymentCopyWith(RecurrentPayment _, $Res Function(RecurrentPayment) __);
+}
+
+
+/// @nodoc
+
+
+class _RecurrentPaymentSuccess implements RecurrentPayment {
+  const _RecurrentPaymentSuccess(this.info);
+  
+
+ final  RecurrentInfo info;
+
+/// Create a copy of RecurrentPayment
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$RecurrentPaymentSuccessCopyWith<_RecurrentPaymentSuccess> get copyWith => __$RecurrentPaymentSuccessCopyWithImpl<_RecurrentPaymentSuccess>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RecurrentPaymentSuccess&&(identical(other.info, info) || other.info == info));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,info);
+
+@override
+String toString() {
+  return 'RecurrentPayment.success(info: $info)';
+}
+
+
 }
 
 /// @nodoc
-class _$RecurrentPaymentCopyWithImpl<$Res, $Val extends RecurrentPayment>
-    implements $RecurrentPaymentCopyWith<$Res> {
-  _$RecurrentPaymentCopyWithImpl(this._value, this._then);
+abstract mixin class _$RecurrentPaymentSuccessCopyWith<$Res> implements $RecurrentPaymentCopyWith<$Res> {
+  factory _$RecurrentPaymentSuccessCopyWith(_RecurrentPaymentSuccess value, $Res Function(_RecurrentPaymentSuccess) _then) = __$RecurrentPaymentSuccessCopyWithImpl;
+@useResult
+$Res call({
+ RecurrentInfo info
+});
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
 
-  /// Create a copy of RecurrentPayment
-  /// with the given fields replaced by the non-null parameter values.
+$RecurrentInfoCopyWith<$Res> get info;
+
+}
+/// @nodoc
+class __$RecurrentPaymentSuccessCopyWithImpl<$Res>
+    implements _$RecurrentPaymentSuccessCopyWith<$Res> {
+  __$RecurrentPaymentSuccessCopyWithImpl(this._self, this._then);
+
+  final _RecurrentPaymentSuccess _self;
+  final $Res Function(_RecurrentPaymentSuccess) _then;
+
+/// Create a copy of RecurrentPayment
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? info = null,}) {
+  return _then(_RecurrentPaymentSuccess(
+null == info ? _self.info : info // ignore: cast_nullable_to_non_nullable
+as RecurrentInfo,
+  ));
 }
 
-/// @nodoc
-abstract class _$$RecurrentPaymentSuccessImplCopyWith<$Res> {
-  factory _$$RecurrentPaymentSuccessImplCopyWith(
-          _$RecurrentPaymentSuccessImpl value,
-          $Res Function(_$RecurrentPaymentSuccessImpl) then) =
-      __$$RecurrentPaymentSuccessImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({RecurrentInfo info});
-
-  $RecurrentInfoCopyWith<$Res> get info;
+/// Create a copy of RecurrentPayment
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$RecurrentInfoCopyWith<$Res> get info {
+  
+  return $RecurrentInfoCopyWith<$Res>(_self.info, (value) {
+    return _then(_self.copyWith(info: value));
+  });
 }
-
-/// @nodoc
-class __$$RecurrentPaymentSuccessImplCopyWithImpl<$Res>
-    extends _$RecurrentPaymentCopyWithImpl<$Res, _$RecurrentPaymentSuccessImpl>
-    implements _$$RecurrentPaymentSuccessImplCopyWith<$Res> {
-  __$$RecurrentPaymentSuccessImplCopyWithImpl(
-      _$RecurrentPaymentSuccessImpl _value,
-      $Res Function(_$RecurrentPaymentSuccessImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of RecurrentPayment
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? info = null,
-  }) {
-    return _then(_$RecurrentPaymentSuccessImpl(
-      null == info
-          ? _value.info
-          : info // ignore: cast_nullable_to_non_nullable
-              as RecurrentInfo,
-    ));
-  }
-
-  /// Create a copy of RecurrentPayment
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $RecurrentInfoCopyWith<$Res> get info {
-    return $RecurrentInfoCopyWith<$Res>(_value.info, (value) {
-      return _then(_value.copyWith(info: value));
-    });
-  }
 }
 
 /// @nodoc
 
-class _$RecurrentPaymentSuccessImpl implements _RecurrentPaymentSuccess {
-  const _$RecurrentPaymentSuccessImpl(this.info);
 
-  @override
-  final RecurrentInfo info;
+class _RecurrentPaymentIncorrectlyRequest implements RecurrentPayment {
+  const _RecurrentPaymentIncorrectlyRequest(this.message);
+  
 
-  @override
-  String toString() {
-    return 'RecurrentPayment.success(info: $info)';
-  }
+ final  String? message;
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$RecurrentPaymentSuccessImpl &&
-            (identical(other.info, info) || other.info == info));
-  }
+/// Create a copy of RecurrentPayment
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$RecurrentPaymentIncorrectlyRequestCopyWith<_RecurrentPaymentIncorrectlyRequest> get copyWith => __$RecurrentPaymentIncorrectlyRequestCopyWithImpl<_RecurrentPaymentIncorrectlyRequest>(this, _$identity);
 
-  @override
-  int get hashCode => Object.hash(runtimeType, info);
 
-  /// Create a copy of RecurrentPayment
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$RecurrentPaymentSuccessImplCopyWith<_$RecurrentPaymentSuccessImpl>
-      get copyWith => __$$RecurrentPaymentSuccessImplCopyWithImpl<
-          _$RecurrentPaymentSuccessImpl>(this, _$identity);
 
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(RecurrentInfo info) success,
-    required TResult Function(String? message) error,
-  }) {
-    return success(info);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(RecurrentInfo info)? success,
-    TResult? Function(String? message)? error,
-  }) {
-    return success?.call(info);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(RecurrentInfo info)? success,
-    TResult Function(String? message)? error,
-    required TResult orElse(),
-  }) {
-    if (success != null) {
-      return success(info);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_RecurrentPaymentSuccess value) success,
-    required TResult Function(_RecurrentPaymentIncorrectlyRequest value) error,
-  }) {
-    return success(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_RecurrentPaymentSuccess value)? success,
-    TResult? Function(_RecurrentPaymentIncorrectlyRequest value)? error,
-  }) {
-    return success?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_RecurrentPaymentSuccess value)? success,
-    TResult Function(_RecurrentPaymentIncorrectlyRequest value)? error,
-    required TResult orElse(),
-  }) {
-    if (success != null) {
-      return success(this);
-    }
-    return orElse();
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RecurrentPaymentIncorrectlyRequest&&(identical(other.message, message) || other.message == message));
 }
 
-abstract class _RecurrentPaymentSuccess implements RecurrentPayment {
-  const factory _RecurrentPaymentSuccess(final RecurrentInfo info) =
-      _$RecurrentPaymentSuccessImpl;
 
-  RecurrentInfo get info;
+@override
+int get hashCode => Object.hash(runtimeType,message);
 
-  /// Create a copy of RecurrentPayment
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RecurrentPaymentSuccessImplCopyWith<_$RecurrentPaymentSuccessImpl>
-      get copyWith => throw _privateConstructorUsedError;
+@override
+String toString() {
+  return 'RecurrentPayment.error(message: $message)';
+}
+
+
 }
 
 /// @nodoc
-abstract class _$$RecurrentPaymentIncorrectlyRequestImplCopyWith<$Res> {
-  factory _$$RecurrentPaymentIncorrectlyRequestImplCopyWith(
-          _$RecurrentPaymentIncorrectlyRequestImpl value,
-          $Res Function(_$RecurrentPaymentIncorrectlyRequestImpl) then) =
-      __$$RecurrentPaymentIncorrectlyRequestImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String? message});
-}
+abstract mixin class _$RecurrentPaymentIncorrectlyRequestCopyWith<$Res> implements $RecurrentPaymentCopyWith<$Res> {
+  factory _$RecurrentPaymentIncorrectlyRequestCopyWith(_RecurrentPaymentIncorrectlyRequest value, $Res Function(_RecurrentPaymentIncorrectlyRequest) _then) = __$RecurrentPaymentIncorrectlyRequestCopyWithImpl;
+@useResult
+$Res call({
+ String? message
+});
 
+
+
+
+}
 /// @nodoc
-class __$$RecurrentPaymentIncorrectlyRequestImplCopyWithImpl<$Res>
-    extends _$RecurrentPaymentCopyWithImpl<$Res,
-        _$RecurrentPaymentIncorrectlyRequestImpl>
-    implements _$$RecurrentPaymentIncorrectlyRequestImplCopyWith<$Res> {
-  __$$RecurrentPaymentIncorrectlyRequestImplCopyWithImpl(
-      _$RecurrentPaymentIncorrectlyRequestImpl _value,
-      $Res Function(_$RecurrentPaymentIncorrectlyRequestImpl) _then)
-      : super(_value, _then);
+class __$RecurrentPaymentIncorrectlyRequestCopyWithImpl<$Res>
+    implements _$RecurrentPaymentIncorrectlyRequestCopyWith<$Res> {
+  __$RecurrentPaymentIncorrectlyRequestCopyWithImpl(this._self, this._then);
 
-  /// Create a copy of RecurrentPayment
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? message = freezed,
-  }) {
-    return _then(_$RecurrentPaymentIncorrectlyRequestImpl(
-      freezed == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
+  final _RecurrentPaymentIncorrectlyRequest _self;
+  final $Res Function(_RecurrentPaymentIncorrectlyRequest) _then;
+
+/// Create a copy of RecurrentPayment
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? message = freezed,}) {
+  return _then(_RecurrentPaymentIncorrectlyRequest(
+freezed == message ? _self.message : message // ignore: cast_nullable_to_non_nullable
+as String?,
+  ));
 }
 
-/// @nodoc
 
-class _$RecurrentPaymentIncorrectlyRequestImpl
-    implements _RecurrentPaymentIncorrectlyRequest {
-  const _$RecurrentPaymentIncorrectlyRequestImpl(this.message);
-
-  @override
-  final String? message;
-
-  @override
-  String toString() {
-    return 'RecurrentPayment.error(message: $message)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$RecurrentPaymentIncorrectlyRequestImpl &&
-            (identical(other.message, message) || other.message == message));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, message);
-
-  /// Create a copy of RecurrentPayment
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$RecurrentPaymentIncorrectlyRequestImplCopyWith<
-          _$RecurrentPaymentIncorrectlyRequestImpl>
-      get copyWith => __$$RecurrentPaymentIncorrectlyRequestImplCopyWithImpl<
-          _$RecurrentPaymentIncorrectlyRequestImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(RecurrentInfo info) success,
-    required TResult Function(String? message) error,
-  }) {
-    return error(message);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(RecurrentInfo info)? success,
-    TResult? Function(String? message)? error,
-  }) {
-    return error?.call(message);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(RecurrentInfo info)? success,
-    TResult Function(String? message)? error,
-    required TResult orElse(),
-  }) {
-    if (error != null) {
-      return error(message);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_RecurrentPaymentSuccess value) success,
-    required TResult Function(_RecurrentPaymentIncorrectlyRequest value) error,
-  }) {
-    return error(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_RecurrentPaymentSuccess value)? success,
-    TResult? Function(_RecurrentPaymentIncorrectlyRequest value)? error,
-  }) {
-    return error?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_RecurrentPaymentSuccess value)? success,
-    TResult Function(_RecurrentPaymentIncorrectlyRequest value)? error,
-    required TResult orElse(),
-  }) {
-    if (error != null) {
-      return error(this);
-    }
-    return orElse();
-  }
 }
 
-abstract class _RecurrentPaymentIncorrectlyRequest implements RecurrentPayment {
-  const factory _RecurrentPaymentIncorrectlyRequest(final String? message) =
-      _$RecurrentPaymentIncorrectlyRequestImpl;
-
-  String? get message;
-
-  /// Create a copy of RecurrentPayment
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RecurrentPaymentIncorrectlyRequestImplCopyWith<
-          _$RecurrentPaymentIncorrectlyRequestImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
+// dart format on

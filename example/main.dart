@@ -20,10 +20,14 @@ void main() async {
 
   final result = await cloudPaymentsApi.chargeCryptogramPayment(paymentRequest);
 
-  result.when(
-    success: (TransactionInfo info) {},
-    incorrectlyRequest: (message) {},
-    required3dsecure: (Three3DSecureResponse response) {},
-    error: (TransactionInfo info) {},
-  );
+  switch(result) {
+    case PaymentTransaction.success:
+      break;
+    case PaymentTransaction.incorrectlyRequest:
+      break;
+    case PaymentTransaction.required3dsecure:
+      break;
+    case PaymentTransaction.error:
+      break;
+  }
 }

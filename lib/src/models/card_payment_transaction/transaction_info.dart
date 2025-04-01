@@ -7,7 +7,7 @@ part 'transaction_info.g.dart';
 /// Ответ от сервера при попытки совершить платеж
 /// {@endtemplate}
 @Freezed()
-class TransactionInfo with _$TransactionInfo {
+sealed class TransactionInfo with _$TransactionInfo {
   /// {@macro transaction_info}
 
   factory TransactionInfo({

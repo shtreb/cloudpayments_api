@@ -6,9 +6,8 @@ part of 'token_payment_request.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$TokenPaymenRequestImpl _$$TokenPaymenRequestImplFromJson(
-        Map<String, dynamic> json) =>
-    _$TokenPaymenRequestImpl(
+_TokenPaymenRequest _$TokenPaymenRequestFromJson(Map<String, dynamic> json) =>
+    _TokenPaymenRequest(
       amount: json['Amount'] as String,
       token: json['Token'] as String,
       accountId: json['AccountId'] as String?,
@@ -19,11 +18,12 @@ _$TokenPaymenRequestImpl _$$TokenPaymenRequestImplFromJson(
       description: json['Description'] as String?,
       email: json['Email'] as String?,
       jsonData: _$JsonConverterFromJson<Map<String, dynamic>, PayloadData?>(
-          json['JsonData'], const PayloadConverter().fromJson),
+        json['JsonData'],
+        const PayloadConverter().fromJson,
+      ),
     );
 
-Map<String, dynamic> _$$TokenPaymenRequestImplToJson(
-        _$TokenPaymenRequestImpl instance) =>
+Map<String, dynamic> _$TokenPaymenRequestToJson(_TokenPaymenRequest instance) =>
     <String, dynamic>{
       'Amount': instance.amount,
       'Token': instance.token,
@@ -40,5 +40,4 @@ Map<String, dynamic> _$$TokenPaymenRequestImplToJson(
 Value? _$JsonConverterFromJson<Json, Value>(
   Object? json,
   Value? Function(Json json) fromJson,
-) =>
-    json == null ? null : fromJson(json as Json);
+) => json == null ? null : fromJson(json as Json);

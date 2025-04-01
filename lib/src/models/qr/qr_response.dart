@@ -7,7 +7,7 @@ part 'qr_response.g.dart';
 /// Информация о платеже при генерации Qr оплаты
 /// {@endtemplate}
 @freezed
-class QrResponse with _$QrResponse {
+sealed class QrResponse with _$QrResponse {
   /// {@macro qr_response}
 
   factory QrResponse({
